@@ -5,6 +5,12 @@
  */
 package proyecto_eddi;
 
+//<editor-fold defaultstate="collapsed" desc="Imports">
+import java.awt.Color;
+import java.awt.Toolkit;
+import javax.swing.ImageIcon;
+
+//</editor-fold>
 /**
  *
  * @author david
@@ -27,22 +33,355 @@ public class Main extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        bt_Laberinto = new javax.swing.JButton();
+        bt_calculo = new javax.swing.JButton();
+        bt_inicio = new javax.swing.JButton();
+        bt_resolucion = new javax.swing.JButton();
+        bt_compresion = new javax.swing.JButton();
+        bt_coloreable = new javax.swing.JButton();
+        bt_origenes = new javax.swing.JButton();
+        bt_origen = new javax.swing.JButton();
+        bt_arbol = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Proyecto EDD1");
+        setIconImage(new ImageIcon("Images/poop.png").getImage());
+        setResizable(false);
+
+        jPanel1.setBackground(new java.awt.Color(28, 30, 35));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon("/home/david/Documents/Progra_Clases/EDD1/legendary-guacamole/Proyecto_EDDI/Images/poop.png")); // NOI18N
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(841, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addContainerGap())
+        );
+
+        jPanel2.setBackground(new java.awt.Color(51, 54, 63));
+
+        bt_Laberinto.setBackground(new java.awt.Color(51, 54, 63));
+        bt_Laberinto.setForeground(new java.awt.Color(255, 255, 255));
+        bt_Laberinto.setText("Laberinto");
+        bt_Laberinto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        buttonGroup1.add(bt_Laberinto);
+        bt_Laberinto.setFocusable(false);
+        bt_Laberinto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_LaberintoMouseClicked(evt);
+            }
+        });
+
+        bt_calculo.setBackground(new java.awt.Color(51, 54, 63));
+        bt_calculo.setForeground(new java.awt.Color(255, 255, 255));
+        bt_calculo.setText("<html>Calculo de Evalucion<br />  por desempeño</html>");
+        bt_calculo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        buttonGroup1.add(bt_calculo);
+        bt_calculo.setFocusPainted(false);
+        bt_calculo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_calculoMouseClicked(evt);
+            }
+        });
+
+        bt_inicio.setBackground(new java.awt.Color(56, 70, 101));
+        bt_inicio.setForeground(new java.awt.Color(255, 255, 255));
+        bt_inicio.setText("Inicio");
+        bt_inicio.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        buttonGroup1.add(bt_inicio);
+        bt_inicio.setFocusable(false);
+        bt_inicio.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_inicioMouseClicked(evt);
+            }
+        });
+
+        bt_resolucion.setBackground(new java.awt.Color(51, 54, 63));
+        bt_resolucion.setForeground(new java.awt.Color(255, 255, 255));
+        bt_resolucion.setText("<html>  Resolucion de<br />  problemas matematicos</html>");
+        bt_resolucion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        buttonGroup1.add(bt_resolucion);
+        bt_resolucion.setFocusPainted(false);
+        bt_resolucion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_resolucionMouseClicked(evt);
+            }
+        });
+
+        bt_compresion.setBackground(new java.awt.Color(51, 54, 63));
+        bt_compresion.setForeground(new java.awt.Color(255, 255, 255));
+        bt_compresion.setText("<html>Compresion de<br />  archivo de texto</html>");
+        bt_compresion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        buttonGroup1.add(bt_compresion);
+        bt_compresion.setFocusPainted(false);
+        bt_compresion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_compresionMouseClicked(evt);
+            }
+        });
+
+        bt_coloreable.setBackground(new java.awt.Color(51, 54, 63));
+        bt_coloreable.setForeground(new java.awt.Color(255, 255, 255));
+        bt_coloreable.setText("bi-coloreable");
+        bt_coloreable.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        buttonGroup1.add(bt_coloreable);
+        bt_coloreable.setFocusPainted(false);
+        bt_coloreable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_coloreableMouseClicked(evt);
+            }
+        });
+
+        bt_origenes.setBackground(new java.awt.Color(51, 54, 63));
+        bt_origenes.setForeground(new java.awt.Color(255, 255, 255));
+        bt_origenes.setText("Origenes/destinos");
+        bt_origenes.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        buttonGroup1.add(bt_origenes);
+        bt_origenes.setFocusPainted(false);
+        bt_origenes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_origenesMouseClicked(evt);
+            }
+        });
+
+        bt_origen.setBackground(new java.awt.Color(51, 54, 63));
+        bt_origen.setForeground(new java.awt.Color(255, 255, 255));
+        bt_origen.setText("Origen/destinos");
+        bt_origen.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        buttonGroup1.add(bt_origen);
+        bt_origen.setFocusPainted(false);
+        bt_origen.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_origenMouseClicked(evt);
+            }
+        });
+
+        bt_arbol.setBackground(new java.awt.Color(51, 54, 63));
+        bt_arbol.setForeground(new java.awt.Color(255, 255, 255));
+        bt_arbol.setText("Arbol");
+        bt_arbol.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        buttonGroup1.add(bt_arbol);
+        bt_arbol.setFocusPainted(false);
+        bt_arbol.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_arbolMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(bt_Laberinto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(bt_calculo)
+            .addComponent(bt_inicio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(bt_resolucion)
+            .addComponent(bt_compresion)
+            .addComponent(bt_coloreable, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(bt_origenes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(bt_origen, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(bt_arbol, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addComponent(bt_inicio, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(bt_Laberinto, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(bt_calculo, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(bt_resolucion, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(bt_compresion, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(bt_coloreable, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(bt_origenes, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(bt_origen, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(bt_arbol, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(195, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1000, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void bt_LaberintoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_LaberintoMouseClicked
+        // TODO add your handling code here:
+        buttonGroup1.setSelected(bt_Laberinto.getModel(), true);
+        if (buttonGroup1.isSelected(bt_Laberinto.getModel())) {
+            bt_calculo.setBackground(new Color(51, 54, 63));
+            bt_inicio.setBackground(new Color(51, 54, 63));
+            bt_resolucion.setBackground(new Color(51, 54, 63));
+            bt_compresion.setBackground(new Color(51, 54, 63));
+            bt_coloreable.setBackground(new Color(51, 54, 63));
+            bt_origenes.setBackground(new Color(51, 53, 63));
+            bt_origen.setBackground(new Color(51, 54, 63));
+            bt_arbol.setBackground(new Color(51,54,63));
+            bt_Laberinto.setBackground(new Color(56, 70, 101));
+        }
+    }//GEN-LAST:event_bt_LaberintoMouseClicked
+
+    private void bt_calculoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_calculoMouseClicked
+        // TODO add your handling code here:
+        buttonGroup1.setSelected(bt_calculo.getModel(), true);
+        if (buttonGroup1.isSelected(bt_calculo.getModel())) {
+            bt_Laberinto.setBackground(new Color(51, 54, 63));
+            bt_inicio.setBackground(new Color(51, 54, 63));
+            bt_resolucion.setBackground(new Color(51, 54, 63));
+            bt_compresion.setBackground(new Color(51, 54, 63));
+            bt_coloreable.setBackground(new Color(51, 54, 63));
+            bt_origenes.setBackground(new Color(51, 53, 63));
+            bt_origen.setBackground(new Color(51, 54, 63));
+            bt_arbol.setBackground(new Color(51,54,63));
+            bt_calculo.setBackground(new Color(56, 70, 101));
+        }
+    }//GEN-LAST:event_bt_calculoMouseClicked
+
+    private void bt_inicioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_inicioMouseClicked
+        // TODO add your handling code here:
+        buttonGroup1.setSelected(bt_inicio.getModel(), true);
+        if (buttonGroup1.isSelected(bt_inicio.getModel())) {
+            bt_Laberinto.setBackground(new Color(51, 54, 63));
+            bt_calculo.setBackground(new Color(51, 54, 63));
+            bt_resolucion.setBackground(new Color(51, 54, 63));
+            bt_compresion.setBackground(new Color(51, 54, 63));
+            bt_coloreable.setBackground(new Color(51, 54, 63));
+            bt_origenes.setBackground(new Color(51, 53, 63));
+            bt_origen.setBackground(new Color(51, 54, 63));
+            bt_arbol.setBackground(new Color(51,54,63));
+            bt_inicio.setBackground(new Color(56, 70, 101));
+        }
+    }//GEN-LAST:event_bt_inicioMouseClicked
+
+    private void bt_resolucionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_resolucionMouseClicked
+        // TODO add your handling code here:
+        buttonGroup1.setSelected(bt_resolucion.getModel(), true);
+        if (buttonGroup1.isSelected(bt_resolucion.getModel())) {
+            bt_Laberinto.setBackground(new Color(51, 54, 63));
+            bt_calculo.setBackground(new Color(51, 54, 63));
+            bt_inicio.setBackground(new Color(51, 54, 63));
+            bt_compresion.setBackground(new Color(51, 54, 63));
+            bt_coloreable.setBackground(new Color(51, 54, 63));
+            bt_origenes.setBackground(new Color(51, 53, 63));
+            bt_origen.setBackground(new Color(51, 54, 63));
+            bt_arbol.setBackground(new Color(51,54,63));
+            bt_resolucion.setBackground(new Color(56, 70, 101));
+        }
+    }//GEN-LAST:event_bt_resolucionMouseClicked
+
+    private void bt_compresionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_compresionMouseClicked
+        // TODO add your handling code here:
+        buttonGroup1.setSelected(bt_compresion.getModel(), true);
+        if (buttonGroup1.isSelected(bt_compresion.getModel())) {
+            bt_Laberinto.setBackground(new Color(51, 54, 63));
+            bt_calculo.setBackground(new Color(51, 54, 63));
+            bt_inicio.setBackground(new Color(51, 54, 63));
+            bt_resolucion.setBackground(new Color(51, 54, 63));
+            bt_coloreable.setBackground(new Color(51, 54, 63));
+            bt_origenes.setBackground(new Color(51, 53, 63));
+            bt_origen.setBackground(new Color(51, 54, 63));
+            bt_arbol.setBackground(new Color(51,54,63));
+            bt_compresion.setBackground(new Color(56, 70, 101));
+        }
+    }//GEN-LAST:event_bt_compresionMouseClicked
+
+    private void bt_coloreableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_coloreableMouseClicked
+        // TODO add your handling code here:
+        buttonGroup1.setSelected(bt_coloreable.getModel(), true);
+        if (buttonGroup1.isSelected(bt_coloreable.getModel())) {
+            bt_Laberinto.setBackground(new Color(51, 54, 63));
+            bt_calculo.setBackground(new Color(51, 54, 63));
+            bt_inicio.setBackground(new Color(51, 54, 63));
+            bt_resolucion.setBackground(new Color(51, 54, 63));
+            bt_compresion.setBackground(new Color(51, 54, 63));
+            bt_origenes.setBackground(new Color(51, 53, 63));
+            bt_origen.setBackground(new Color(51, 54, 63));
+            bt_arbol.setBackground(new Color(51,54,63));
+            bt_coloreable.setBackground(new Color(56, 70, 101));
+        }
+    }//GEN-LAST:event_bt_coloreableMouseClicked
+
+    private void bt_origenesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_origenesMouseClicked
+        // TODO add your handling code here:
+        buttonGroup1.setSelected(bt_origenes.getModel(), true);
+        if (buttonGroup1.isSelected(bt_origenes.getModel())) {
+            bt_Laberinto.setBackground(new Color(51, 54, 63));
+            bt_calculo.setBackground(new Color(51, 54, 63));
+            bt_inicio.setBackground(new Color(51, 54, 63));
+            bt_resolucion.setBackground(new Color(51, 54, 63));
+            bt_compresion.setBackground(new Color(51, 54, 63));
+            bt_coloreable.setBackground(new Color(51, 54, 63));
+            bt_origen.setBackground(new Color(51, 54, 63));
+            bt_arbol.setBackground(new Color(51,54,63));
+            bt_origenes.setBackground(new Color(56, 70, 101));
+        }
+    }//GEN-LAST:event_bt_origenesMouseClicked
+
+    private void bt_origenMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_origenMouseClicked
+        // TODO add your handling code here:
+        buttonGroup1.setSelected(bt_origen.getModel(), true);
+        if (buttonGroup1.isSelected(bt_origen.getModel())) {
+            bt_Laberinto.setBackground(new Color(51, 54, 63));
+            bt_calculo.setBackground(new Color(51, 54, 63));
+            bt_inicio.setBackground(new Color(51, 54, 63));
+            bt_resolucion.setBackground(new Color(51, 54, 63));
+            bt_compresion.setBackground(new Color(51, 54, 63));
+            bt_coloreable.setBackground(new Color(51, 54, 63));
+            bt_origenes.setBackground(new Color(51, 53, 63));
+            bt_arbol.setBackground(new Color(51,54,63));
+            bt_origen.setBackground(new Color(56, 70, 101));
+        }
+    }//GEN-LAST:event_bt_origenMouseClicked
+
+    private void bt_arbolMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_arbolMouseClicked
+        // TODO add your handling code here:
+        buttonGroup1.setSelected(bt_arbol.getModel(), true);
+        if (buttonGroup1.isSelected(bt_arbol.getModel())) {
+            bt_Laberinto.setBackground(new Color(51, 54, 63));
+            bt_calculo.setBackground(new Color(51, 54, 63));
+            bt_inicio.setBackground(new Color(51, 54, 63));
+            bt_resolucion.setBackground(new Color(51, 54, 63));
+            bt_compresion.setBackground(new Color(51, 54, 63));
+            bt_coloreable.setBackground(new Color(51, 54, 63));
+            bt_origenes.setBackground(new Color(51, 53, 63));            
+            bt_origen.setBackground(new Color(51, 53, 63));
+            bt_arbol.setBackground(new Color(56, 70, 101));
+        }
+    }//GEN-LAST:event_bt_arbolMouseClicked
 
     /**
      * @param args the command line arguments
@@ -55,7 +394,7 @@ public class Main extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Metal".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -78,7 +417,21 @@ public class Main extends javax.swing.JFrame {
             }
         });
     }
-
+//<editor-fold defaultstate="collapsed" desc="Variables">
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bt_Laberinto;
+    private javax.swing.JButton bt_arbol;
+    private javax.swing.JButton bt_calculo;
+    private javax.swing.JButton bt_coloreable;
+    private javax.swing.JButton bt_compresion;
+    private javax.swing.JButton bt_inicio;
+    private javax.swing.JButton bt_origen;
+    private javax.swing.JButton bt_origenes;
+    private javax.swing.JButton bt_resolucion;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
+//</editor-fold>
 }
