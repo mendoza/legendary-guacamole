@@ -6,6 +6,7 @@
 package proyecto_eddi;
 
 //<editor-fold defaultstate="collapsed" desc="Imports">
+import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Toolkit;
 import javax.swing.ImageIcon;
@@ -22,6 +23,7 @@ public class Main extends javax.swing.JFrame {
      */
     public Main() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -34,8 +36,6 @@ public class Main extends javax.swing.JFrame {
     private void initComponents() {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         bt_Laberinto = new javax.swing.JButton();
         bt_calculo = new javax.swing.JButton();
@@ -46,32 +46,30 @@ public class Main extends javax.swing.JFrame {
         bt_origenes = new javax.swing.JButton();
         bt_origen = new javax.swing.JButton();
         bt_arbol = new javax.swing.JButton();
+        panelPrincipal = new javax.swing.JPanel();
+        panelInicio = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        panelLaberinto = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        panelCalculo = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        panelResolucion = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        panelCompresion = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        panelColoreable = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        panelOrigen = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
+        panelOrigenes = new javax.swing.JPanel();
+        jLabel8 = new javax.swing.JLabel();
+        panelArbol = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Proyecto EDD1");
         setIconImage(new ImageIcon("Images/poop.png").getImage());
         setResizable(false);
-
-        jPanel1.setBackground(new java.awt.Color(28, 30, 35));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon("/home/david/Documents/Progra_Clases/EDD1/legendary-guacamole/Proyecto_EDDI/Images/poop.png")); // NOI18N
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(841, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addContainerGap())
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addContainerGap())
-        );
 
         jPanel2.setBackground(new java.awt.Color(51, 54, 63));
 
@@ -86,6 +84,11 @@ public class Main extends javax.swing.JFrame {
                 bt_LaberintoMouseClicked(evt);
             }
         });
+        bt_Laberinto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_LaberintoActionPerformed(evt);
+            }
+        });
 
         bt_calculo.setBackground(new java.awt.Color(51, 54, 63));
         bt_calculo.setForeground(new java.awt.Color(255, 255, 255));
@@ -96,6 +99,11 @@ public class Main extends javax.swing.JFrame {
         bt_calculo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 bt_calculoMouseClicked(evt);
+            }
+        });
+        bt_calculo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_calculoActionPerformed(evt);
             }
         });
 
@@ -110,6 +118,11 @@ public class Main extends javax.swing.JFrame {
                 bt_inicioMouseClicked(evt);
             }
         });
+        bt_inicio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_inicioActionPerformed(evt);
+            }
+        });
 
         bt_resolucion.setBackground(new java.awt.Color(51, 54, 63));
         bt_resolucion.setForeground(new java.awt.Color(255, 255, 255));
@@ -120,6 +133,11 @@ public class Main extends javax.swing.JFrame {
         bt_resolucion.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 bt_resolucionMouseClicked(evt);
+            }
+        });
+        bt_resolucion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_resolucionActionPerformed(evt);
             }
         });
 
@@ -134,6 +152,11 @@ public class Main extends javax.swing.JFrame {
                 bt_compresionMouseClicked(evt);
             }
         });
+        bt_compresion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_compresionActionPerformed(evt);
+            }
+        });
 
         bt_coloreable.setBackground(new java.awt.Color(51, 54, 63));
         bt_coloreable.setForeground(new java.awt.Color(255, 255, 255));
@@ -144,6 +167,11 @@ public class Main extends javax.swing.JFrame {
         bt_coloreable.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 bt_coloreableMouseClicked(evt);
+            }
+        });
+        bt_coloreable.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_coloreableActionPerformed(evt);
             }
         });
 
@@ -158,6 +186,11 @@ public class Main extends javax.swing.JFrame {
                 bt_origenesMouseClicked(evt);
             }
         });
+        bt_origenes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_origenesActionPerformed(evt);
+            }
+        });
 
         bt_origen.setBackground(new java.awt.Color(51, 54, 63));
         bt_origen.setForeground(new java.awt.Color(255, 255, 255));
@@ -168,6 +201,11 @@ public class Main extends javax.swing.JFrame {
         bt_origen.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 bt_origenMouseClicked(evt);
+            }
+        });
+        bt_origen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_origenActionPerformed(evt);
             }
         });
 
@@ -182,6 +220,11 @@ public class Main extends javax.swing.JFrame {
                 bt_arbolMouseClicked(evt);
             }
         });
+        bt_arbol.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_arbolActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -190,7 +233,7 @@ public class Main extends javax.swing.JFrame {
             .addComponent(bt_Laberinto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(bt_calculo)
             .addComponent(bt_inicio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(bt_resolucion)
+            .addComponent(bt_resolucion, javax.swing.GroupLayout.DEFAULT_SIZE, 209, Short.MAX_VALUE)
             .addComponent(bt_compresion)
             .addComponent(bt_coloreable, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(bt_origenes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -217,22 +260,218 @@ public class Main extends javax.swing.JFrame {
                 .addComponent(bt_origen, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(bt_arbol, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(195, Short.MAX_VALUE))
+                .addContainerGap(134, Short.MAX_VALUE))
         );
+
+        panelPrincipal.setName("panelPrincipal"); // NOI18N
+        panelPrincipal.setLayout(new java.awt.CardLayout());
+
+        panelInicio.setName("panelInicio"); // NOI18N
+
+        jLabel1.setText("Inicio, obvio estos labels se borraran. Solo son con fines didacticos");
+
+        javax.swing.GroupLayout panelInicioLayout = new javax.swing.GroupLayout(panelInicio);
+        panelInicio.setLayout(panelInicioLayout);
+        panelInicioLayout.setHorizontalGroup(
+            panelInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelInicioLayout.createSequentialGroup()
+                .addGap(157, 157, 157)
+                .addComponent(jLabel1))
+        );
+        panelInicioLayout.setVerticalGroup(
+            panelInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelInicioLayout.createSequentialGroup()
+                .addGap(88, 88, 88)
+                .addComponent(jLabel1))
+        );
+
+        panelPrincipal.add(panelInicio, "panelInicio");
+
+        panelLaberinto.setName("panelLaberinto"); // NOI18N
+
+        jLabel2.setText("Esto es el laberinto");
+
+        javax.swing.GroupLayout panelLaberintoLayout = new javax.swing.GroupLayout(panelLaberinto);
+        panelLaberinto.setLayout(panelLaberintoLayout);
+        panelLaberintoLayout.setHorizontalGroup(
+            panelLaberintoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelLaberintoLayout.createSequentialGroup()
+                .addGap(235, 235, 235)
+                .addComponent(jLabel2)
+                .addContainerGap(431, Short.MAX_VALUE))
+        );
+        panelLaberintoLayout.setVerticalGroup(
+            panelLaberintoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelLaberintoLayout.createSequentialGroup()
+                .addGap(124, 124, 124)
+                .addComponent(jLabel2)
+                .addContainerGap(396, Short.MAX_VALUE))
+        );
+
+        panelPrincipal.add(panelLaberinto, "panelLaberinto");
+        panelLaberinto.getAccessibleContext().setAccessibleName("");
+
+        jLabel3.setText("Calculo de evaluacion");
+
+        javax.swing.GroupLayout panelCalculoLayout = new javax.swing.GroupLayout(panelCalculo);
+        panelCalculo.setLayout(panelCalculoLayout);
+        panelCalculoLayout.setHorizontalGroup(
+            panelCalculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelCalculoLayout.createSequentialGroup()
+                .addGap(237, 237, 237)
+                .addComponent(jLabel3)
+                .addContainerGap(411, Short.MAX_VALUE))
+        );
+        panelCalculoLayout.setVerticalGroup(
+            panelCalculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelCalculoLayout.createSequentialGroup()
+                .addGap(116, 116, 116)
+                .addComponent(jLabel3)
+                .addContainerGap(404, Short.MAX_VALUE))
+        );
+
+        panelPrincipal.add(panelCalculo, "panelCalculo");
+
+        jLabel4.setText("Resolucion de problemas mat.");
+
+        javax.swing.GroupLayout panelResolucionLayout = new javax.swing.GroupLayout(panelResolucion);
+        panelResolucion.setLayout(panelResolucionLayout);
+        panelResolucionLayout.setHorizontalGroup(
+            panelResolucionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelResolucionLayout.createSequentialGroup()
+                .addGap(275, 275, 275)
+                .addComponent(jLabel4)
+                .addContainerGap(316, Short.MAX_VALUE))
+        );
+        panelResolucionLayout.setVerticalGroup(
+            panelResolucionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelResolucionLayout.createSequentialGroup()
+                .addGap(112, 112, 112)
+                .addComponent(jLabel4)
+                .addContainerGap(408, Short.MAX_VALUE))
+        );
+
+        panelPrincipal.add(panelResolucion, "panelResolucion");
+
+        jLabel5.setText("Compresion de archivos");
+
+        javax.swing.GroupLayout panelCompresionLayout = new javax.swing.GroupLayout(panelCompresion);
+        panelCompresion.setLayout(panelCompresionLayout);
+        panelCompresionLayout.setHorizontalGroup(
+            panelCompresionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelCompresionLayout.createSequentialGroup()
+                .addGap(295, 295, 295)
+                .addComponent(jLabel5)
+                .addContainerGap(338, Short.MAX_VALUE))
+        );
+        panelCompresionLayout.setVerticalGroup(
+            panelCompresionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelCompresionLayout.createSequentialGroup()
+                .addGap(102, 102, 102)
+                .addComponent(jLabel5)
+                .addContainerGap(418, Short.MAX_VALUE))
+        );
+
+        panelPrincipal.add(panelCompresion, "panelCompresion");
+
+        jLabel6.setText("Coloreable");
+
+        javax.swing.GroupLayout panelColoreableLayout = new javax.swing.GroupLayout(panelColoreable);
+        panelColoreable.setLayout(panelColoreableLayout);
+        panelColoreableLayout.setHorizontalGroup(
+            panelColoreableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelColoreableLayout.createSequentialGroup()
+                .addGap(310, 310, 310)
+                .addComponent(jLabel6)
+                .addContainerGap(411, Short.MAX_VALUE))
+        );
+        panelColoreableLayout.setVerticalGroup(
+            panelColoreableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelColoreableLayout.createSequentialGroup()
+                .addGap(98, 98, 98)
+                .addComponent(jLabel6)
+                .addContainerGap(422, Short.MAX_VALUE))
+        );
+
+        panelPrincipal.add(panelColoreable, "panelColoreable");
+
+        jLabel7.setText("Origen");
+
+        javax.swing.GroupLayout panelOrigenLayout = new javax.swing.GroupLayout(panelOrigen);
+        panelOrigen.setLayout(panelOrigenLayout);
+        panelOrigenLayout.setHorizontalGroup(
+            panelOrigenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelOrigenLayout.createSequentialGroup()
+                .addGap(297, 297, 297)
+                .addComponent(jLabel7)
+                .addContainerGap(453, Short.MAX_VALUE))
+        );
+        panelOrigenLayout.setVerticalGroup(
+            panelOrigenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelOrigenLayout.createSequentialGroup()
+                .addGap(126, 126, 126)
+                .addComponent(jLabel7)
+                .addContainerGap(394, Short.MAX_VALUE))
+        );
+
+        panelPrincipal.add(panelOrigen, "panelOrigen");
+
+        jLabel8.setText("Origenes");
+
+        javax.swing.GroupLayout panelOrigenesLayout = new javax.swing.GroupLayout(panelOrigenes);
+        panelOrigenes.setLayout(panelOrigenesLayout);
+        panelOrigenesLayout.setHorizontalGroup(
+            panelOrigenesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelOrigenesLayout.createSequentialGroup()
+                .addGap(286, 286, 286)
+                .addComponent(jLabel8)
+                .addContainerGap(448, Short.MAX_VALUE))
+        );
+        panelOrigenesLayout.setVerticalGroup(
+            panelOrigenesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelOrigenesLayout.createSequentialGroup()
+                .addGap(121, 121, 121)
+                .addComponent(jLabel8)
+                .addContainerGap(399, Short.MAX_VALUE))
+        );
+
+        panelPrincipal.add(panelOrigenes, "panelOrigenes");
+
+        jLabel9.setText("Arbol");
+
+        javax.swing.GroupLayout panelArbolLayout = new javax.swing.GroupLayout(panelArbol);
+        panelArbol.setLayout(panelArbolLayout);
+        panelArbolLayout.setHorizontalGroup(
+            panelArbolLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelArbolLayout.createSequentialGroup()
+                .addGap(288, 288, 288)
+                .addComponent(jLabel9)
+                .addContainerGap(473, Short.MAX_VALUE))
+        );
+        panelArbolLayout.setVerticalGroup(
+            panelArbolLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelArbolLayout.createSequentialGroup()
+                .addGap(114, 114, 114)
+                .addComponent(jLabel9)
+                .addContainerGap(406, Short.MAX_VALUE))
+        );
+
+        panelPrincipal.add(panelArbol, "panelArbol");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(panelPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 798, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(panelPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -250,7 +489,7 @@ public class Main extends javax.swing.JFrame {
             bt_coloreable.setBackground(new Color(51, 54, 63));
             bt_origenes.setBackground(new Color(51, 53, 63));
             bt_origen.setBackground(new Color(51, 54, 63));
-            bt_arbol.setBackground(new Color(51,54,63));
+            bt_arbol.setBackground(new Color(51, 54, 63));
             bt_Laberinto.setBackground(new Color(56, 70, 101));
         }
     }//GEN-LAST:event_bt_LaberintoMouseClicked
@@ -266,7 +505,7 @@ public class Main extends javax.swing.JFrame {
             bt_coloreable.setBackground(new Color(51, 54, 63));
             bt_origenes.setBackground(new Color(51, 53, 63));
             bt_origen.setBackground(new Color(51, 54, 63));
-            bt_arbol.setBackground(new Color(51,54,63));
+            bt_arbol.setBackground(new Color(51, 54, 63));
             bt_calculo.setBackground(new Color(56, 70, 101));
         }
     }//GEN-LAST:event_bt_calculoMouseClicked
@@ -282,7 +521,7 @@ public class Main extends javax.swing.JFrame {
             bt_coloreable.setBackground(new Color(51, 54, 63));
             bt_origenes.setBackground(new Color(51, 53, 63));
             bt_origen.setBackground(new Color(51, 54, 63));
-            bt_arbol.setBackground(new Color(51,54,63));
+            bt_arbol.setBackground(new Color(51, 54, 63));
             bt_inicio.setBackground(new Color(56, 70, 101));
         }
     }//GEN-LAST:event_bt_inicioMouseClicked
@@ -298,7 +537,7 @@ public class Main extends javax.swing.JFrame {
             bt_coloreable.setBackground(new Color(51, 54, 63));
             bt_origenes.setBackground(new Color(51, 53, 63));
             bt_origen.setBackground(new Color(51, 54, 63));
-            bt_arbol.setBackground(new Color(51,54,63));
+            bt_arbol.setBackground(new Color(51, 54, 63));
             bt_resolucion.setBackground(new Color(56, 70, 101));
         }
     }//GEN-LAST:event_bt_resolucionMouseClicked
@@ -314,7 +553,7 @@ public class Main extends javax.swing.JFrame {
             bt_coloreable.setBackground(new Color(51, 54, 63));
             bt_origenes.setBackground(new Color(51, 53, 63));
             bt_origen.setBackground(new Color(51, 54, 63));
-            bt_arbol.setBackground(new Color(51,54,63));
+            bt_arbol.setBackground(new Color(51, 54, 63));
             bt_compresion.setBackground(new Color(56, 70, 101));
         }
     }//GEN-LAST:event_bt_compresionMouseClicked
@@ -330,7 +569,7 @@ public class Main extends javax.swing.JFrame {
             bt_compresion.setBackground(new Color(51, 54, 63));
             bt_origenes.setBackground(new Color(51, 53, 63));
             bt_origen.setBackground(new Color(51, 54, 63));
-            bt_arbol.setBackground(new Color(51,54,63));
+            bt_arbol.setBackground(new Color(51, 54, 63));
             bt_coloreable.setBackground(new Color(56, 70, 101));
         }
     }//GEN-LAST:event_bt_coloreableMouseClicked
@@ -346,7 +585,7 @@ public class Main extends javax.swing.JFrame {
             bt_compresion.setBackground(new Color(51, 54, 63));
             bt_coloreable.setBackground(new Color(51, 54, 63));
             bt_origen.setBackground(new Color(51, 54, 63));
-            bt_arbol.setBackground(new Color(51,54,63));
+            bt_arbol.setBackground(new Color(51, 54, 63));
             bt_origenes.setBackground(new Color(56, 70, 101));
         }
     }//GEN-LAST:event_bt_origenesMouseClicked
@@ -362,7 +601,7 @@ public class Main extends javax.swing.JFrame {
             bt_compresion.setBackground(new Color(51, 54, 63));
             bt_coloreable.setBackground(new Color(51, 54, 63));
             bt_origenes.setBackground(new Color(51, 53, 63));
-            bt_arbol.setBackground(new Color(51,54,63));
+            bt_arbol.setBackground(new Color(51, 54, 63));
             bt_origen.setBackground(new Color(56, 70, 101));
         }
     }//GEN-LAST:event_bt_origenMouseClicked
@@ -377,11 +616,56 @@ public class Main extends javax.swing.JFrame {
             bt_resolucion.setBackground(new Color(51, 54, 63));
             bt_compresion.setBackground(new Color(51, 54, 63));
             bt_coloreable.setBackground(new Color(51, 54, 63));
-            bt_origenes.setBackground(new Color(51, 53, 63));            
+            bt_origenes.setBackground(new Color(51, 53, 63));
             bt_origen.setBackground(new Color(51, 53, 63));
             bt_arbol.setBackground(new Color(56, 70, 101));
         }
     }//GEN-LAST:event_bt_arbolMouseClicked
+
+    private void bt_inicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_inicioActionPerformed
+        card = (CardLayout)panelPrincipal.getLayout();
+        card.show(panelPrincipal,"panelInicio");
+    }//GEN-LAST:event_bt_inicioActionPerformed
+
+    private void bt_LaberintoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_LaberintoActionPerformed
+        card = (CardLayout)panelPrincipal.getLayout();
+        card.show(panelPrincipal,"panelLaberinto");
+    }//GEN-LAST:event_bt_LaberintoActionPerformed
+
+    private void bt_calculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_calculoActionPerformed
+        card = (CardLayout)panelPrincipal.getLayout();
+        card.show(panelPrincipal,"panelCalculo");
+    }//GEN-LAST:event_bt_calculoActionPerformed
+
+    private void bt_resolucionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_resolucionActionPerformed
+        card = (CardLayout)panelPrincipal.getLayout();
+        card.show(panelPrincipal,"panelResolucion");
+    }//GEN-LAST:event_bt_resolucionActionPerformed
+
+    private void bt_compresionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_compresionActionPerformed
+        card = (CardLayout)panelPrincipal.getLayout();
+        card.show(panelPrincipal,"panelCompresion");
+    }//GEN-LAST:event_bt_compresionActionPerformed
+
+    private void bt_coloreableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_coloreableActionPerformed
+        card = (CardLayout)panelPrincipal.getLayout();
+        card.show(panelPrincipal,"panelColoreable");
+    }//GEN-LAST:event_bt_coloreableActionPerformed
+
+    private void bt_origenesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_origenesActionPerformed
+        card = (CardLayout)panelPrincipal.getLayout();
+        card.show(panelPrincipal,"panelOrigenes");
+    }//GEN-LAST:event_bt_origenesActionPerformed
+
+    private void bt_origenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_origenActionPerformed
+        card = (CardLayout)panelPrincipal.getLayout();
+        card.show(panelPrincipal,"panelOrigen");
+    }//GEN-LAST:event_bt_origenActionPerformed
+
+    private void bt_arbolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_arbolActionPerformed
+        card = (CardLayout)panelPrincipal.getLayout();
+        card.show(panelPrincipal,"panelArbol");
+    }//GEN-LAST:event_bt_arbolActionPerformed
 
     /**
      * @param args the command line arguments
@@ -430,8 +714,26 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton bt_resolucion;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel panelArbol;
+    private javax.swing.JPanel panelCalculo;
+    private javax.swing.JPanel panelColoreable;
+    private javax.swing.JPanel panelCompresion;
+    private javax.swing.JPanel panelInicio;
+    private javax.swing.JPanel panelLaberinto;
+    private javax.swing.JPanel panelOrigen;
+    private javax.swing.JPanel panelOrigenes;
+    private javax.swing.JPanel panelPrincipal;
+    private javax.swing.JPanel panelResolucion;
     // End of variables declaration//GEN-END:variables
 //</editor-fold>
+    private CardLayout card = new CardLayout();
 }
