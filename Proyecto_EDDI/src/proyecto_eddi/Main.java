@@ -5,16 +5,15 @@
  */
 package proyecto_eddi;
 
-//<editor-fold defaultstate="collapsed" desc="Imports">
+//<editor-fold defaultstate="collapsed" desc=" Imports ">
 import java.awt.CardLayout;
 import java.awt.Color;
-import java.awt.Toolkit;
 import javax.swing.ImageIcon;
 
 //</editor-fold>
 /**
  *
- * @author david
+ * @author David Mendoza & Josue Rodriguez
  */
 public class Main extends javax.swing.JFrame {
 
@@ -51,6 +50,7 @@ public class Main extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         panelLaberinto = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
+        javax.swing.JPanel laberintopanel = new panellaberinto(750,660,30);
         panelCalculo = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         panelResolucion = new javax.swing.JPanel();
@@ -69,7 +69,7 @@ public class Main extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Proyecto EDD1");
         setIconImage(new ImageIcon("Images/poop.png").getImage());
-        setResizable(false);
+        setSize(new java.awt.Dimension(0, 0));
 
         jPanel2.setBackground(new java.awt.Color(51, 54, 63));
 
@@ -79,11 +79,6 @@ public class Main extends javax.swing.JFrame {
         bt_Laberinto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         buttonGroup1.add(bt_Laberinto);
         bt_Laberinto.setFocusable(false);
-        bt_Laberinto.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                bt_LaberintoMouseClicked(evt);
-            }
-        });
         bt_Laberinto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bt_LaberintoActionPerformed(evt);
@@ -96,11 +91,6 @@ public class Main extends javax.swing.JFrame {
         bt_calculo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         buttonGroup1.add(bt_calculo);
         bt_calculo.setFocusPainted(false);
-        bt_calculo.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                bt_calculoMouseClicked(evt);
-            }
-        });
         bt_calculo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bt_calculoActionPerformed(evt);
@@ -113,11 +103,6 @@ public class Main extends javax.swing.JFrame {
         bt_inicio.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         buttonGroup1.add(bt_inicio);
         bt_inicio.setFocusable(false);
-        bt_inicio.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                bt_inicioMouseClicked(evt);
-            }
-        });
         bt_inicio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bt_inicioActionPerformed(evt);
@@ -130,11 +115,6 @@ public class Main extends javax.swing.JFrame {
         bt_resolucion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         buttonGroup1.add(bt_resolucion);
         bt_resolucion.setFocusPainted(false);
-        bt_resolucion.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                bt_resolucionMouseClicked(evt);
-            }
-        });
         bt_resolucion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bt_resolucionActionPerformed(evt);
@@ -147,11 +127,6 @@ public class Main extends javax.swing.JFrame {
         bt_compresion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         buttonGroup1.add(bt_compresion);
         bt_compresion.setFocusPainted(false);
-        bt_compresion.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                bt_compresionMouseClicked(evt);
-            }
-        });
         bt_compresion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bt_compresionActionPerformed(evt);
@@ -164,11 +139,6 @@ public class Main extends javax.swing.JFrame {
         bt_coloreable.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         buttonGroup1.add(bt_coloreable);
         bt_coloreable.setFocusPainted(false);
-        bt_coloreable.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                bt_coloreableMouseClicked(evt);
-            }
-        });
         bt_coloreable.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bt_coloreableActionPerformed(evt);
@@ -181,11 +151,6 @@ public class Main extends javax.swing.JFrame {
         bt_origenes.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         buttonGroup1.add(bt_origenes);
         bt_origenes.setFocusPainted(false);
-        bt_origenes.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                bt_origenesMouseClicked(evt);
-            }
-        });
         bt_origenes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bt_origenesActionPerformed(evt);
@@ -198,11 +163,6 @@ public class Main extends javax.swing.JFrame {
         bt_origen.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         buttonGroup1.add(bt_origen);
         bt_origen.setFocusPainted(false);
-        bt_origen.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                bt_origenMouseClicked(evt);
-            }
-        });
         bt_origen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bt_origenActionPerformed(evt);
@@ -215,11 +175,6 @@ public class Main extends javax.swing.JFrame {
         bt_arbol.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         buttonGroup1.add(bt_arbol);
         bt_arbol.setFocusPainted(false);
-        bt_arbol.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                bt_arbolMouseClicked(evt);
-            }
-        });
         bt_arbol.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bt_arbolActionPerformed(evt);
@@ -260,14 +215,17 @@ public class Main extends javax.swing.JFrame {
                 .addComponent(bt_origen, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(bt_arbol, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(134, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        panelPrincipal.setBackground(new java.awt.Color(29, 30, 35));
         panelPrincipal.setName("panelPrincipal"); // NOI18N
         panelPrincipal.setLayout(new java.awt.CardLayout());
 
+        panelInicio.setBackground(new java.awt.Color(29, 30, 35));
         panelInicio.setName("panelInicio"); // NOI18N
 
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Inicio, obvio estos labels se borraran. Solo son con fines didacticos");
 
         javax.swing.GroupLayout panelInicioLayout = new javax.swing.GroupLayout(panelInicio);
@@ -287,30 +245,52 @@ public class Main extends javax.swing.JFrame {
 
         panelPrincipal.add(panelInicio, "panelInicio");
 
+        panelLaberinto.setBackground(new java.awt.Color(29, 30, 35));
         panelLaberinto.setName("panelLaberinto"); // NOI18N
 
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Esto es el laberinto");
+
+        laberintopanel.setPreferredSize(new java.awt.Dimension(600, 600));
+
+        javax.swing.GroupLayout laberintopanelLayout = new javax.swing.GroupLayout(laberintopanel);
+        laberintopanel.setLayout(laberintopanelLayout);
+        laberintopanelLayout.setHorizontalGroup(
+            laberintopanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 750, Short.MAX_VALUE)
+        );
+        laberintopanelLayout.setVerticalGroup(
+            laberintopanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 712, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout panelLaberintoLayout = new javax.swing.GroupLayout(panelLaberinto);
         panelLaberinto.setLayout(panelLaberintoLayout);
         panelLaberintoLayout.setHorizontalGroup(
             panelLaberintoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelLaberintoLayout.createSequentialGroup()
-                .addGap(235, 235, 235)
-                .addComponent(jLabel2)
-                .addContainerGap(431, Short.MAX_VALUE))
+                .addContainerGap()
+                .addGroup(panelLaberintoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(laberintopanel, javax.swing.GroupLayout.PREFERRED_SIZE, 750, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
+                .addContainerGap(36, Short.MAX_VALUE))
         );
         panelLaberintoLayout.setVerticalGroup(
             panelLaberintoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelLaberintoLayout.createSequentialGroup()
-                .addGap(124, 124, 124)
+                .addContainerGap()
                 .addComponent(jLabel2)
-                .addContainerGap(396, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(laberintopanel, javax.swing.GroupLayout.DEFAULT_SIZE, 712, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         panelPrincipal.add(panelLaberinto, "panelLaberinto");
         panelLaberinto.getAccessibleContext().setAccessibleName("");
 
+        panelCalculo.setBackground(new java.awt.Color(29, 30, 35));
+
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Calculo de evaluacion");
 
         javax.swing.GroupLayout panelCalculoLayout = new javax.swing.GroupLayout(panelCalculo);
@@ -320,18 +300,21 @@ public class Main extends javax.swing.JFrame {
             .addGroup(panelCalculoLayout.createSequentialGroup()
                 .addGap(237, 237, 237)
                 .addComponent(jLabel3)
-                .addContainerGap(411, Short.MAX_VALUE))
+                .addContainerGap(408, Short.MAX_VALUE))
         );
         panelCalculoLayout.setVerticalGroup(
             panelCalculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelCalculoLayout.createSequentialGroup()
                 .addGap(116, 116, 116)
                 .addComponent(jLabel3)
-                .addContainerGap(404, Short.MAX_VALUE))
+                .addContainerGap(638, Short.MAX_VALUE))
         );
 
         panelPrincipal.add(panelCalculo, "panelCalculo");
 
+        panelResolucion.setBackground(new java.awt.Color(29, 30, 35));
+
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Resolucion de problemas mat.");
 
         javax.swing.GroupLayout panelResolucionLayout = new javax.swing.GroupLayout(panelResolucion);
@@ -341,18 +324,21 @@ public class Main extends javax.swing.JFrame {
             .addGroup(panelResolucionLayout.createSequentialGroup()
                 .addGap(275, 275, 275)
                 .addComponent(jLabel4)
-                .addContainerGap(316, Short.MAX_VALUE))
+                .addContainerGap(309, Short.MAX_VALUE))
         );
         panelResolucionLayout.setVerticalGroup(
             panelResolucionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelResolucionLayout.createSequentialGroup()
                 .addGap(112, 112, 112)
                 .addComponent(jLabel4)
-                .addContainerGap(408, Short.MAX_VALUE))
+                .addContainerGap(642, Short.MAX_VALUE))
         );
 
         panelPrincipal.add(panelResolucion, "panelResolucion");
 
+        panelCompresion.setBackground(new java.awt.Color(29, 30, 35));
+
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Compresion de archivos");
 
         javax.swing.GroupLayout panelCompresionLayout = new javax.swing.GroupLayout(panelCompresion);
@@ -362,18 +348,21 @@ public class Main extends javax.swing.JFrame {
             .addGroup(panelCompresionLayout.createSequentialGroup()
                 .addGap(295, 295, 295)
                 .addComponent(jLabel5)
-                .addContainerGap(338, Short.MAX_VALUE))
+                .addContainerGap(334, Short.MAX_VALUE))
         );
         panelCompresionLayout.setVerticalGroup(
             panelCompresionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelCompresionLayout.createSequentialGroup()
                 .addGap(102, 102, 102)
                 .addComponent(jLabel5)
-                .addContainerGap(418, Short.MAX_VALUE))
+                .addContainerGap(652, Short.MAX_VALUE))
         );
 
         panelPrincipal.add(panelCompresion, "panelCompresion");
 
+        panelColoreable.setBackground(new java.awt.Color(29, 30, 35));
+
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Coloreable");
 
         javax.swing.GroupLayout panelColoreableLayout = new javax.swing.GroupLayout(panelColoreable);
@@ -390,11 +379,14 @@ public class Main extends javax.swing.JFrame {
             .addGroup(panelColoreableLayout.createSequentialGroup()
                 .addGap(98, 98, 98)
                 .addComponent(jLabel6)
-                .addContainerGap(422, Short.MAX_VALUE))
+                .addContainerGap(656, Short.MAX_VALUE))
         );
 
         panelPrincipal.add(panelColoreable, "panelColoreable");
 
+        panelOrigen.setBackground(new java.awt.Color(29, 30, 35));
+
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Origen");
 
         javax.swing.GroupLayout panelOrigenLayout = new javax.swing.GroupLayout(panelOrigen);
@@ -411,11 +403,14 @@ public class Main extends javax.swing.JFrame {
             .addGroup(panelOrigenLayout.createSequentialGroup()
                 .addGap(126, 126, 126)
                 .addComponent(jLabel7)
-                .addContainerGap(394, Short.MAX_VALUE))
+                .addContainerGap(628, Short.MAX_VALUE))
         );
 
         panelPrincipal.add(panelOrigen, "panelOrigen");
 
+        panelOrigenes.setBackground(new java.awt.Color(29, 30, 35));
+
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Origenes");
 
         javax.swing.GroupLayout panelOrigenesLayout = new javax.swing.GroupLayout(panelOrigenes);
@@ -425,18 +420,21 @@ public class Main extends javax.swing.JFrame {
             .addGroup(panelOrigenesLayout.createSequentialGroup()
                 .addGap(286, 286, 286)
                 .addComponent(jLabel8)
-                .addContainerGap(448, Short.MAX_VALUE))
+                .addContainerGap(447, Short.MAX_VALUE))
         );
         panelOrigenesLayout.setVerticalGroup(
             panelOrigenesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelOrigenesLayout.createSequentialGroup()
                 .addGap(121, 121, 121)
                 .addComponent(jLabel8)
-                .addContainerGap(399, Short.MAX_VALUE))
+                .addContainerGap(633, Short.MAX_VALUE))
         );
 
         panelPrincipal.add(panelOrigenes, "panelOrigenes");
 
+        panelArbol.setBackground(new java.awt.Color(29, 30, 35));
+
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Arbol");
 
         javax.swing.GroupLayout panelArbolLayout = new javax.swing.GroupLayout(panelArbol);
@@ -453,7 +451,7 @@ public class Main extends javax.swing.JFrame {
             .addGroup(panelArbolLayout.createSequentialGroup()
                 .addGap(114, 114, 114)
                 .addComponent(jLabel9)
-                .addContainerGap(406, Short.MAX_VALUE))
+                .addContainerGap(640, Short.MAX_VALUE))
         );
 
         panelPrincipal.add(panelArbol, "panelArbol");
@@ -464,54 +462,24 @@ public class Main extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(0, 0, 0)
                 .addComponent(panelPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 798, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(0, 0, 0))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(panelPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(panelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void bt_LaberintoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_LaberintoMouseClicked
-        // TODO add your handling code here:
-        buttonGroup1.setSelected(bt_Laberinto.getModel(), true);
-        if (buttonGroup1.isSelected(bt_Laberinto.getModel())) {
-            bt_calculo.setBackground(new Color(51, 54, 63));
-            bt_inicio.setBackground(new Color(51, 54, 63));
-            bt_resolucion.setBackground(new Color(51, 54, 63));
-            bt_compresion.setBackground(new Color(51, 54, 63));
-            bt_coloreable.setBackground(new Color(51, 54, 63));
-            bt_origenes.setBackground(new Color(51, 53, 63));
-            bt_origen.setBackground(new Color(51, 54, 63));
-            bt_arbol.setBackground(new Color(51, 54, 63));
-            bt_Laberinto.setBackground(new Color(56, 70, 101));
-        }
-    }//GEN-LAST:event_bt_LaberintoMouseClicked
-
-    private void bt_calculoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_calculoMouseClicked
-        // TODO add your handling code here:
-        buttonGroup1.setSelected(bt_calculo.getModel(), true);
-        if (buttonGroup1.isSelected(bt_calculo.getModel())) {
-            bt_Laberinto.setBackground(new Color(51, 54, 63));
-            bt_inicio.setBackground(new Color(51, 54, 63));
-            bt_resolucion.setBackground(new Color(51, 54, 63));
-            bt_compresion.setBackground(new Color(51, 54, 63));
-            bt_coloreable.setBackground(new Color(51, 54, 63));
-            bt_origenes.setBackground(new Color(51, 53, 63));
-            bt_origen.setBackground(new Color(51, 54, 63));
-            bt_arbol.setBackground(new Color(51, 54, 63));
-            bt_calculo.setBackground(new Color(56, 70, 101));
-        }
-    }//GEN-LAST:event_bt_calculoMouseClicked
-
-    private void bt_inicioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_inicioMouseClicked
-        // TODO add your handling code here:
+    private void bt_inicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_inicioActionPerformed
         buttonGroup1.setSelected(bt_inicio.getModel(), true);
         if (buttonGroup1.isSelected(bt_inicio.getModel())) {
             bt_Laberinto.setBackground(new Color(51, 54, 63));
@@ -524,10 +492,45 @@ public class Main extends javax.swing.JFrame {
             bt_arbol.setBackground(new Color(51, 54, 63));
             bt_inicio.setBackground(new Color(56, 70, 101));
         }
-    }//GEN-LAST:event_bt_inicioMouseClicked
+        card = (CardLayout) panelPrincipal.getLayout();
+        card.show(panelPrincipal, "panelInicio");
+    }//GEN-LAST:event_bt_inicioActionPerformed
 
-    private void bt_resolucionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_resolucionMouseClicked
-        // TODO add your handling code here:
+    private void bt_LaberintoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_LaberintoActionPerformed
+        buttonGroup1.setSelected(bt_Laberinto.getModel(), true);
+        if (buttonGroup1.isSelected(bt_Laberinto.getModel())) {
+            bt_calculo.setBackground(new Color(51, 54, 63));
+            bt_inicio.setBackground(new Color(51, 54, 63));
+            bt_resolucion.setBackground(new Color(51, 54, 63));
+            bt_compresion.setBackground(new Color(51, 54, 63));
+            bt_coloreable.setBackground(new Color(51, 54, 63));
+            bt_origenes.setBackground(new Color(51, 53, 63));
+            bt_origen.setBackground(new Color(51, 54, 63));
+            bt_arbol.setBackground(new Color(51, 54, 63));
+            bt_Laberinto.setBackground(new Color(56, 70, 101));
+        }
+        card = (CardLayout) panelPrincipal.getLayout();
+        card.show(panelPrincipal, "panelLaberinto");
+    }//GEN-LAST:event_bt_LaberintoActionPerformed
+
+    private void bt_calculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_calculoActionPerformed
+        buttonGroup1.setSelected(bt_calculo.getModel(), true);
+        if (buttonGroup1.isSelected(bt_calculo.getModel())) {
+            bt_Laberinto.setBackground(new Color(51, 54, 63));
+            bt_inicio.setBackground(new Color(51, 54, 63));
+            bt_resolucion.setBackground(new Color(51, 54, 63));
+            bt_compresion.setBackground(new Color(51, 54, 63));
+            bt_coloreable.setBackground(new Color(51, 54, 63));
+            bt_origenes.setBackground(new Color(51, 53, 63));
+            bt_origen.setBackground(new Color(51, 54, 63));
+            bt_arbol.setBackground(new Color(51, 54, 63));
+            bt_calculo.setBackground(new Color(56, 70, 101));
+        }
+        card = (CardLayout) panelPrincipal.getLayout();
+        card.show(panelPrincipal, "panelCalculo");
+    }//GEN-LAST:event_bt_calculoActionPerformed
+
+    private void bt_resolucionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_resolucionActionPerformed
         buttonGroup1.setSelected(bt_resolucion.getModel(), true);
         if (buttonGroup1.isSelected(bt_resolucion.getModel())) {
             bt_Laberinto.setBackground(new Color(51, 54, 63));
@@ -540,10 +543,11 @@ public class Main extends javax.swing.JFrame {
             bt_arbol.setBackground(new Color(51, 54, 63));
             bt_resolucion.setBackground(new Color(56, 70, 101));
         }
-    }//GEN-LAST:event_bt_resolucionMouseClicked
+        card = (CardLayout) panelPrincipal.getLayout();
+        card.show(panelPrincipal, "panelResolucion");
+    }//GEN-LAST:event_bt_resolucionActionPerformed
 
-    private void bt_compresionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_compresionMouseClicked
-        // TODO add your handling code here:
+    private void bt_compresionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_compresionActionPerformed
         buttonGroup1.setSelected(bt_compresion.getModel(), true);
         if (buttonGroup1.isSelected(bt_compresion.getModel())) {
             bt_Laberinto.setBackground(new Color(51, 54, 63));
@@ -556,10 +560,11 @@ public class Main extends javax.swing.JFrame {
             bt_arbol.setBackground(new Color(51, 54, 63));
             bt_compresion.setBackground(new Color(56, 70, 101));
         }
-    }//GEN-LAST:event_bt_compresionMouseClicked
+        card = (CardLayout) panelPrincipal.getLayout();
+        card.show(panelPrincipal, "panelCompresion");
+    }//GEN-LAST:event_bt_compresionActionPerformed
 
-    private void bt_coloreableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_coloreableMouseClicked
-        // TODO add your handling code here:
+    private void bt_coloreableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_coloreableActionPerformed
         buttonGroup1.setSelected(bt_coloreable.getModel(), true);
         if (buttonGroup1.isSelected(bt_coloreable.getModel())) {
             bt_Laberinto.setBackground(new Color(51, 54, 63));
@@ -572,10 +577,11 @@ public class Main extends javax.swing.JFrame {
             bt_arbol.setBackground(new Color(51, 54, 63));
             bt_coloreable.setBackground(new Color(56, 70, 101));
         }
-    }//GEN-LAST:event_bt_coloreableMouseClicked
+        card = (CardLayout) panelPrincipal.getLayout();
+        card.show(panelPrincipal, "panelColoreable");
+    }//GEN-LAST:event_bt_coloreableActionPerformed
 
-    private void bt_origenesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_origenesMouseClicked
-        // TODO add your handling code here:
+    private void bt_origenesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_origenesActionPerformed
         buttonGroup1.setSelected(bt_origenes.getModel(), true);
         if (buttonGroup1.isSelected(bt_origenes.getModel())) {
             bt_Laberinto.setBackground(new Color(51, 54, 63));
@@ -588,10 +594,11 @@ public class Main extends javax.swing.JFrame {
             bt_arbol.setBackground(new Color(51, 54, 63));
             bt_origenes.setBackground(new Color(56, 70, 101));
         }
-    }//GEN-LAST:event_bt_origenesMouseClicked
+        card = (CardLayout) panelPrincipal.getLayout();
+        card.show(panelPrincipal, "panelOrigenes");
+    }//GEN-LAST:event_bt_origenesActionPerformed
 
-    private void bt_origenMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_origenMouseClicked
-        // TODO add your handling code here:
+    private void bt_origenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_origenActionPerformed
         buttonGroup1.setSelected(bt_origen.getModel(), true);
         if (buttonGroup1.isSelected(bt_origen.getModel())) {
             bt_Laberinto.setBackground(new Color(51, 54, 63));
@@ -604,10 +611,11 @@ public class Main extends javax.swing.JFrame {
             bt_arbol.setBackground(new Color(51, 54, 63));
             bt_origen.setBackground(new Color(56, 70, 101));
         }
-    }//GEN-LAST:event_bt_origenMouseClicked
+        card = (CardLayout) panelPrincipal.getLayout();
+        card.show(panelPrincipal, "panelOrigen");
+    }//GEN-LAST:event_bt_origenActionPerformed
 
-    private void bt_arbolMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_arbolMouseClicked
-        // TODO add your handling code here:
+    private void bt_arbolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_arbolActionPerformed
         buttonGroup1.setSelected(bt_arbol.getModel(), true);
         if (buttonGroup1.isSelected(bt_arbol.getModel())) {
             bt_Laberinto.setBackground(new Color(51, 54, 63));
@@ -620,51 +628,8 @@ public class Main extends javax.swing.JFrame {
             bt_origen.setBackground(new Color(51, 53, 63));
             bt_arbol.setBackground(new Color(56, 70, 101));
         }
-    }//GEN-LAST:event_bt_arbolMouseClicked
-
-    private void bt_inicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_inicioActionPerformed
-        card = (CardLayout)panelPrincipal.getLayout();
-        card.show(panelPrincipal,"panelInicio");
-    }//GEN-LAST:event_bt_inicioActionPerformed
-
-    private void bt_LaberintoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_LaberintoActionPerformed
-        card = (CardLayout)panelPrincipal.getLayout();
-        card.show(panelPrincipal,"panelLaberinto");
-    }//GEN-LAST:event_bt_LaberintoActionPerformed
-
-    private void bt_calculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_calculoActionPerformed
-        card = (CardLayout)panelPrincipal.getLayout();
-        card.show(panelPrincipal,"panelCalculo");
-    }//GEN-LAST:event_bt_calculoActionPerformed
-
-    private void bt_resolucionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_resolucionActionPerformed
-        card = (CardLayout)panelPrincipal.getLayout();
-        card.show(panelPrincipal,"panelResolucion");
-    }//GEN-LAST:event_bt_resolucionActionPerformed
-
-    private void bt_compresionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_compresionActionPerformed
-        card = (CardLayout)panelPrincipal.getLayout();
-        card.show(panelPrincipal,"panelCompresion");
-    }//GEN-LAST:event_bt_compresionActionPerformed
-
-    private void bt_coloreableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_coloreableActionPerformed
-        card = (CardLayout)panelPrincipal.getLayout();
-        card.show(panelPrincipal,"panelColoreable");
-    }//GEN-LAST:event_bt_coloreableActionPerformed
-
-    private void bt_origenesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_origenesActionPerformed
-        card = (CardLayout)panelPrincipal.getLayout();
-        card.show(panelPrincipal,"panelOrigenes");
-    }//GEN-LAST:event_bt_origenesActionPerformed
-
-    private void bt_origenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_origenActionPerformed
-        card = (CardLayout)panelPrincipal.getLayout();
-        card.show(panelPrincipal,"panelOrigen");
-    }//GEN-LAST:event_bt_origenActionPerformed
-
-    private void bt_arbolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_arbolActionPerformed
-        card = (CardLayout)panelPrincipal.getLayout();
-        card.show(panelPrincipal,"panelArbol");
+        card = (CardLayout) panelPrincipal.getLayout();
+        card.show(panelPrincipal, "panelArbol");
     }//GEN-LAST:event_bt_arbolActionPerformed
 
     /**
@@ -701,7 +666,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
     }
-//<editor-fold defaultstate="collapsed" desc="Variables">
+//<editor-fold defaultstate="collapsed" desc=" Variables ">
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bt_Laberinto;
     private javax.swing.JButton bt_arbol;
@@ -734,6 +699,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel panelPrincipal;
     private javax.swing.JPanel panelResolucion;
     // End of variables declaration//GEN-END:variables
-//</editor-fold>
     private CardLayout card = new CardLayout();
+//</editor-fold>
 }
