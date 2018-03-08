@@ -50,7 +50,7 @@ public class Main extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         panelLaberinto = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        javax.swing.JPanel laberintopanel = new panellaberinto(750,660,30);
+        laberintopanel = new panellaberinto(750,600,22);
         panelCalculo = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         panelResolucion = new javax.swing.JPanel();
@@ -257,7 +257,7 @@ public class Main extends javax.swing.JFrame {
         laberintopanel.setLayout(laberintopanelLayout);
         laberintopanelLayout.setHorizontalGroup(
             laberintopanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 750, Short.MAX_VALUE)
+            .addGap(0, 476, Short.MAX_VALUE)
         );
         laberintopanelLayout.setVerticalGroup(
             laberintopanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -271,9 +271,9 @@ public class Main extends javax.swing.JFrame {
             .addGroup(panelLaberintoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(panelLaberintoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(laberintopanel, javax.swing.GroupLayout.PREFERRED_SIZE, 750, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
-                .addContainerGap(36, Short.MAX_VALUE))
+                    .addComponent(jLabel2)
+                    .addComponent(laberintopanel, javax.swing.GroupLayout.PREFERRED_SIZE, 476, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(310, Short.MAX_VALUE))
         );
         panelLaberintoLayout.setVerticalGroup(
             panelLaberintoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -509,6 +509,19 @@ public class Main extends javax.swing.JFrame {
             bt_arbol.setBackground(new Color(51, 54, 63));
             bt_Laberinto.setBackground(new Color(56, 70, 101));
         }
+        /*       int [][] maze =((panellaberinto)laberintopanel).getMaze();
+        for (int i = 0; i < maze.length; i++) {
+        for (int j = 0; j < maze[0].length; j++) {
+        if (maze[i][j] == 1) {
+        maze[i][j] = 0;
+        }else{
+        maze[i][j] =1;
+        }
+        }
+        }
+        ((panellaberinto)laberintopanel).setMaze(maze);
+        laberintopanel.revalidate();
+        esto era para ver como funciona el boton metodo para volver a pintarlo, no es feo sigue siendo mejor que c++ :v(SFML)*/
         card = (CardLayout) panelPrincipal.getLayout();
         card.show(panelPrincipal, "panelLaberinto");
     }//GEN-LAST:event_bt_LaberintoActionPerformed
@@ -688,6 +701,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
+    public javax.swing.JPanel laberintopanel;
     private javax.swing.JPanel panelArbol;
     private javax.swing.JPanel panelCalculo;
     private javax.swing.JPanel panelColoreable;
