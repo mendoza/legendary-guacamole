@@ -50,7 +50,7 @@ public class Main extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         panelLaberinto = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        laberintopanel = new panellaberinto(750,600,22);
+        laberintopanel = new panellaberinto(600,600,22);
         panelCalculo = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         panelResolucion = new javax.swing.JPanel();
@@ -509,17 +509,17 @@ public class Main extends javax.swing.JFrame {
             bt_arbol.setBackground(new Color(51, 54, 63));
             bt_Laberinto.setBackground(new Color(56, 70, 101));
         }
-        /*       int [][] maze =((panellaberinto)laberintopanel).getMaze();
+        /*int[][] maze = ((panellaberinto) laberintopanel).getMaze();
         for (int i = 0; i < maze.length; i++) {
-        for (int j = 0; j < maze[0].length; j++) {
-        if (maze[i][j] == 1) {
-        maze[i][j] = 0;
-        }else{
-        maze[i][j] =1;
+            for (int j = 0; j < maze[0].length; j++) {
+                if (maze[i][j] == 1) {
+                    maze[i][j] = 0;
+                } else {
+                    maze[i][j] = 1;
+                }
+            }
         }
-        }
-        }
-        ((panellaberinto)laberintopanel).setMaze(maze);
+        ((panellaberinto) laberintopanel).setMaze(maze);
         laberintopanel.revalidate();
         esto era para ver como funciona el boton metodo para volver a pintarlo, no es feo sigue siendo mejor que c++ :v(SFML)*/
         card = (CardLayout) panelPrincipal.getLayout();
@@ -671,9 +671,9 @@ public class Main extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new Main().setVisible(true);
             }

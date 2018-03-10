@@ -41,7 +41,7 @@ public class panellaberinto extends JPanel {
     {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}};
 
     public panellaberinto() {
-        
+
     }
 
     public panellaberinto(int x, int y, int reso) {
@@ -70,7 +70,6 @@ public class panellaberinto extends JPanel {
             }
         }
     }
-
 
     public int[][] getMaze() {
         return maze;
