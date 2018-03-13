@@ -35,6 +35,7 @@ public class Main extends javax.swing.JFrame {
     private void initComponents() {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
+        buttonGroup2 = new javax.swing.ButtonGroup();
         jPanel2 = new javax.swing.JPanel();
         bt_Laberinto = new javax.swing.JButton();
         bt_calculo = new javax.swing.JButton();
@@ -51,6 +52,8 @@ public class Main extends javax.swing.JFrame {
         panelLaberinto = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         laberintopanel = new panellaberinto(600,600,22);
+        rb_labe1 = new javax.swing.JRadioButton();
+        rb_labe2 = new javax.swing.JRadioButton();
         panelCalculo = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         panelResolucion = new javax.swing.JPanel();
@@ -264,6 +267,29 @@ public class Main extends javax.swing.JFrame {
             .addGap(0, 712, Short.MAX_VALUE)
         );
 
+        rb_labe1.setBackground(new java.awt.Color(29, 30, 35));
+        buttonGroup2.add(rb_labe1);
+        rb_labe1.setForeground(new java.awt.Color(255, 255, 255));
+        rb_labe1.setSelected(true);
+        rb_labe1.setText("Laberinto 1");
+        rb_labe1.setFocusPainted(false);
+        rb_labe1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                rb_labe1MouseClicked(evt);
+            }
+        });
+
+        rb_labe2.setBackground(new java.awt.Color(29, 30, 35));
+        buttonGroup2.add(rb_labe2);
+        rb_labe2.setForeground(new java.awt.Color(255, 255, 255));
+        rb_labe2.setText("Laberinto 2");
+        rb_labe2.setFocusPainted(false);
+        rb_labe2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                rb_labe2MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout panelLaberintoLayout = new javax.swing.GroupLayout(panelLaberinto);
         panelLaberinto.setLayout(panelLaberintoLayout);
         panelLaberintoLayout.setHorizontalGroup(
@@ -272,17 +298,30 @@ public class Main extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(panelLaberintoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2)
-                    .addComponent(laberintopanel, javax.swing.GroupLayout.PREFERRED_SIZE, 476, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(310, Short.MAX_VALUE))
+                    .addGroup(panelLaberintoLayout.createSequentialGroup()
+                        .addComponent(laberintopanel, javax.swing.GroupLayout.PREFERRED_SIZE, 476, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(29, 29, 29)
+                        .addComponent(rb_labe1)
+                        .addGap(18, 18, 18)
+                        .addComponent(rb_labe2)))
+                .addContainerGap(57, Short.MAX_VALUE))
         );
         panelLaberintoLayout.setVerticalGroup(
             panelLaberintoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelLaberintoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel2)
-                .addGap(18, 18, 18)
-                .addComponent(laberintopanel, javax.swing.GroupLayout.DEFAULT_SIZE, 712, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGroup(panelLaberintoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelLaberintoLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(laberintopanel, javax.swing.GroupLayout.DEFAULT_SIZE, 712, Short.MAX_VALUE)
+                        .addContainerGap())
+                    .addGroup(panelLaberintoLayout.createSequentialGroup()
+                        .addGap(53, 53, 53)
+                        .addGroup(panelLaberintoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(rb_labe1)
+                            .addComponent(rb_labe2))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         panelPrincipal.add(panelLaberinto, "panelLaberinto");
@@ -645,6 +684,25 @@ public class Main extends javax.swing.JFrame {
         card.show(panelPrincipal, "panelArbol");
     }//GEN-LAST:event_bt_arbolActionPerformed
 
+    private void rb_labe2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rb_labe2MouseClicked
+        // TODO add your handling code here:
+        if (buttonGroup2.isSelected(rb_labe2.getModel())) {
+            int[][] maze2 = ((panellaberinto) laberintopanel).getMaze2();
+            ((panellaberinto) laberintopanel).setMaze(maze2);
+            laberintopanel.repaint();
+        }
+
+    }//GEN-LAST:event_rb_labe2MouseClicked
+
+    private void rb_labe1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rb_labe1MouseClicked
+        // TODO add your handling code here:
+        if (buttonGroup2.isSelected(rb_labe1.getModel())) {
+            int[][] maze1 = ((panellaberinto) laberintopanel).getMaze1();
+            ((panellaberinto) laberintopanel).setMaze(maze1);
+            laberintopanel.repaint();
+        }
+    }//GEN-LAST:event_rb_labe1MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -691,6 +749,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton bt_origenes;
     private javax.swing.JButton bt_resolucion;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -712,6 +771,8 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel panelOrigenes;
     private javax.swing.JPanel panelPrincipal;
     private javax.swing.JPanel panelResolucion;
+    private javax.swing.JRadioButton rb_labe1;
+    private javax.swing.JRadioButton rb_labe2;
     // End of variables declaration//GEN-END:variables
     private CardLayout card = new CardLayout();
 //</editor-fold>
