@@ -54,6 +54,7 @@ public class Main extends javax.swing.JFrame {
         laberintopanel = new panellaberinto(600,600,22);
         rb_labe1 = new javax.swing.JRadioButton();
         rb_labe2 = new javax.swing.JRadioButton();
+        comenzarLaberinto = new javax.swing.JButton();
         panelCalculo = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         panelResolucion = new javax.swing.JPanel();
@@ -290,6 +291,13 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
+        comenzarLaberinto.setText("Comenzar recorrido");
+        comenzarLaberinto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comenzarLaberintoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout panelLaberintoLayout = new javax.swing.GroupLayout(panelLaberinto);
         panelLaberinto.setLayout(panelLaberintoLayout);
         panelLaberintoLayout.setHorizontalGroup(
@@ -300,11 +308,16 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(jLabel2)
                     .addGroup(panelLaberintoLayout.createSequentialGroup()
                         .addComponent(laberintopanel, javax.swing.GroupLayout.PREFERRED_SIZE, 476, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(29, 29, 29)
-                        .addComponent(rb_labe1)
-                        .addGap(18, 18, 18)
-                        .addComponent(rb_labe2)))
-                .addContainerGap(57, Short.MAX_VALUE))
+                        .addGroup(panelLaberintoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(panelLaberintoLayout.createSequentialGroup()
+                                .addGap(29, 29, 29)
+                                .addComponent(rb_labe1)
+                                .addGap(18, 18, 18)
+                                .addComponent(rb_labe2))
+                            .addGroup(panelLaberintoLayout.createSequentialGroup()
+                                .addGap(73, 73, 73)
+                                .addComponent(comenzarLaberinto)))))
+                .addContainerGap(55, Short.MAX_VALUE))
         );
         panelLaberintoLayout.setVerticalGroup(
             panelLaberintoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -321,6 +334,8 @@ public class Main extends javax.swing.JFrame {
                         .addGroup(panelLaberintoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(rb_labe1)
                             .addComponent(rb_labe2))
+                        .addGap(42, 42, 42)
+                        .addComponent(comenzarLaberinto)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
@@ -548,6 +563,8 @@ public class Main extends javax.swing.JFrame {
             bt_arbol.setBackground(new Color(51, 54, 63));
             bt_Laberinto.setBackground(new Color(56, 70, 101));
         }
+        panellaberinto hola = new panellaberinto(1);
+        hola.guidance();
         /*int[][] maze = ((panellaberinto) laberintopanel).getMaze();
         for (int i = 0; i < maze.length; i++) {
             for (int j = 0; j < maze[0].length; j++) {
@@ -703,6 +720,17 @@ public class Main extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_rb_labe1MouseClicked
 
+    private void comenzarLaberintoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comenzarLaberintoActionPerformed
+        int type = 0;
+        if (buttonGroup2.isSelected(rb_labe2.getModel())) {
+            type = 2;
+        } else {
+            type = 1;
+        }
+        panellaberinto play = new panellaberinto(type);
+        play.getOut();
+    }//GEN-LAST:event_comenzarLaberintoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -750,6 +778,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton bt_resolucion;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.JButton comenzarLaberinto;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
