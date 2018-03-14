@@ -51,7 +51,7 @@ public class Main extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         panelLaberinto = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        laberintopanel = new panellaberinto(600,600,22);
+        laberintopanel = new laberinto(600,600,22);
         rb_labe1 = new javax.swing.JRadioButton();
         rb_labe2 = new javax.swing.JRadioButton();
         comenzarLaberinto = new javax.swing.JButton();
@@ -563,21 +563,6 @@ public class Main extends javax.swing.JFrame {
             bt_arbol.setBackground(new Color(51, 54, 63));
             bt_Laberinto.setBackground(new Color(56, 70, 101));
         }
-        panellaberinto hola = new panellaberinto(1);
-        hola.guidance();
-        /*int[][] maze = ((panellaberinto) laberintopanel).getMaze();
-        for (int i = 0; i < maze.length; i++) {
-            for (int j = 0; j < maze[0].length; j++) {
-                if (maze[i][j] == 1) {
-                    maze[i][j] = 0;
-                } else {
-                    maze[i][j] = 1;
-                }
-            }
-        }
-        ((panellaberinto) laberintopanel).setMaze(maze);
-        laberintopanel.revalidate();
-        esto era para ver como funciona el boton metodo para volver a pintarlo, no es feo sigue siendo mejor que c++ :v(SFML)*/
         card = (CardLayout) panelPrincipal.getLayout();
         card.show(panelPrincipal, "panelLaberinto");
     }//GEN-LAST:event_bt_LaberintoActionPerformed
@@ -704,8 +689,8 @@ public class Main extends javax.swing.JFrame {
     private void rb_labe2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rb_labe2MouseClicked
         // TODO add your handling code here:
         if (buttonGroup2.isSelected(rb_labe2.getModel())) {
-            int[][] maze2 = ((panellaberinto) laberintopanel).getMaze2();
-            ((panellaberinto) laberintopanel).setMaze(maze2);
+            int[][] maze2 = ((laberinto) laberintopanel).getMaze2();
+            ((laberinto) laberintopanel).setMaze(maze2);
             laberintopanel.repaint();
         }
 
@@ -714,21 +699,15 @@ public class Main extends javax.swing.JFrame {
     private void rb_labe1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rb_labe1MouseClicked
         // TODO add your handling code here:
         if (buttonGroup2.isSelected(rb_labe1.getModel())) {
-            int[][] maze1 = ((panellaberinto) laberintopanel).getMaze1();
-            ((panellaberinto) laberintopanel).setMaze(maze1);
+            int[][] maze1 = ((laberinto) laberintopanel).getMaze1();
+            ((laberinto) laberintopanel).setMaze(maze1);
             laberintopanel.repaint();
         }
     }//GEN-LAST:event_rb_labe1MouseClicked
 
     private void comenzarLaberintoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comenzarLaberintoActionPerformed
-        int type = 0;
-        if (buttonGroup2.isSelected(rb_labe2.getModel())) {
-            type = 2;
-        } else {
-            type = 1;
-        }
-        panellaberinto play = new panellaberinto(type);
-        play.getOut();
+        ((laberinto)laberintopanel).getOut();
+        laberintopanel.repaint();
     }//GEN-LAST:event_comenzarLaberintoActionPerformed
 
     /**

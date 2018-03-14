@@ -13,7 +13,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 import javax.swing.JPanel;
 
-public class panellaberinto extends JPanel {
+public class laberinto extends JPanel {
 
     private int x;
     private int y;
@@ -22,7 +22,7 @@ public class panellaberinto extends JPanel {
     private int[][] maze;
     public final int[][] maze1 = {
         {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
-        {0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+        {2, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
         {1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1},
         {1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
         {1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
@@ -40,12 +40,12 @@ public class panellaberinto extends JPanel {
         {1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1},
         {1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1},
         {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1},
-        {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+        {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3},
         {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}};
 
     private final int[][] maze2 = {
         {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
-        {0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1},
+        {2, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1},
         {1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1},
         {1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1},
         {1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1},
@@ -63,24 +63,24 @@ public class panellaberinto extends JPanel {
         {1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1},
         {1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1},
         {1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1},
-        {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+        {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 3},
         {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}};
 
-    public panellaberinto() {
-        
+    public laberinto() {
+
     }
-    
-    public panellaberinto(int mazetype){
-        if(mazetype==1){
+
+    public laberinto(int mazetype) {
+        if (mazetype == 1) {
             type = 1;
             maze = maze1.clone();
-        }else if(mazetype ==2){
+        } else if (mazetype == 2) {
             type = 2;
             maze = maze2.clone();
         }
     }
 
-    public panellaberinto(int x, int y, int reso) {
+    public laberinto(int x, int y, int reso) {
         this.x = x;
         this.y = y;
         this.reso = reso;
@@ -100,15 +100,23 @@ public class panellaberinto extends JPanel {
         for (int i = 0; i < maze.length; i++) {
             for (int j = 0; j < maze[i].length; j++) {
                 Color c = null;
-                if (maze[i][j] == 1) {
-                    c = Color.white;
-                } else if (maze[i][j] == 0) {
-                    c = Color.BLACK;
-                }
-                if (i == 19 && j == 30) {
-                    c = Color.GREEN;
-                } else if (i == 1 && j == 0) {
-                    c = Color.RED;
+                switch (maze[i][j]) {
+                    case 1:
+                        c = Color.white;
+                        break;
+                    case 0:
+                        c = Color.BLACK;
+                        break;
+                    case 2:
+                        c = Color.RED;
+                        break;
+                    case 3:
+                        c = Color.GREEN;
+                        break;
+                    case 4:
+                        c = Color.YELLOW;
+                    default:
+                        break;
                 }
                 g.setColor(c);
                 g.fillRect(i * reso, j * reso, reso - 1, reso - 1);
@@ -134,33 +142,33 @@ public class panellaberinto extends JPanel {
         //No me digas que queres usar templates pq te mato....
         pila.push(new CasillaLaberinto(1, 0));
         CasillaLaberinto actual, vecino;
-        while(!pila.isEmpty()){
+        while (!pila.isEmpty()) {
             actual = (CasillaLaberinto) pila.pop();
             if (!Finished(actual.getI(), actual.getJ())) {
-                Mark(actual.getI(),actual.getJ());
+                Mark(actual.getI(), actual.getJ());
                 vecino = actual.Arriba();
-                if (inBounds(vecino.getI(),vecino.getJ()) && isPath(vecino.getI(),vecino.getJ())) {
+                if (inBounds(vecino.getI(), vecino.getJ()) && isPath(vecino.getI(), vecino.getJ())) {
                     pila.push(vecino);
                 }
                 vecino = actual.Derecha();
-                if (inBounds(vecino.getI(),vecino.getJ()) && isPath(vecino.getI(),vecino.getJ())) {
+                if (inBounds(vecino.getI(), vecino.getJ()) && isPath(vecino.getI(), vecino.getJ())) {
                     pila.push(vecino);
                 }
                 vecino = actual.Abajo();
-                if (inBounds(vecino.getI(),vecino.getJ()) && isPath(vecino.getI(),vecino.getJ())) {
+                if (inBounds(vecino.getI(), vecino.getJ()) && isPath(vecino.getI(), vecino.getJ())) {
                     pila.push(vecino);
                 }
                 vecino = actual.Izquierda();
-                if (inBounds(vecino.getI(),vecino.getJ()) && isPath(vecino.getI(),vecino.getJ())) {
+                if (inBounds(vecino.getI(), vecino.getJ()) && isPath(vecino.getI(), vecino.getJ())) {
                     pila.push(vecino);
                 }
             }
+            //Mark(actual);
             System.out.println("am i in a loop?");
 
         } //while (!pila.isEmpty());
         System.out.println("***Hey, salió!***");
         guidance();
-
     }
 
     public void guidance() {
@@ -170,43 +178,48 @@ public class panellaberinto extends JPanel {
             }
             System.out.println();
             //prueba para fines didacticos, se puede borrar despues
-
         }
     }
 
     public boolean inBounds(int i, int j) {
-        return (i < 21 && j < 31&& i>=0 && j>=0);
+        return (i < 21 && j < 31 && i >= 0 && j >= 0);
         /*esto solo es una validacion para saber que no me he pasado de la matriz*/
     }
 
     public boolean isMarked(int i, int j) {
-        return (maze1[i][j] == 2);
+        return (maze[i][j] == 2);
     }
 
     public void Mark(int i, int j) {
-        maze1[i][j] = 2;
+        maze[i][j] = 2;
     }
+    
+    //this was useless :v
+    public void Mark(CasillaLaberinto ronald){
+        maze[ronald.getI()][ronald.getJ()] = 4;
+    }
+    //fin useless
 
     public boolean isPath(int i, int j) {
         boolean retorno = false;
-        if(inBounds(i,j)){
-            if(maze[i][j]==0){
+        if (inBounds(i, j)) {
+            if (maze[i][j] == 0) {
                 retorno = true;
-            }            
-        }       
+            }
+        }
         return retorno;
     }
 
     public boolean Finished(int i, int j) {
         return (i == 19 && j == 30);
     }
-    
-    public void resetMaze(){
-        if(type==1){
+
+    public void resetMaze() {
+        if (type == 1) {
             maze = maze1.clone();
-        }else if(type==2){
+        } else if (type == 2) {
             maze = maze1.clone();
         }
     }
-    
+
 }
