@@ -599,6 +599,8 @@ public class Main extends javax.swing.JFrame {
         }
         card = (CardLayout) panelPrincipal.getLayout();
         card.show(panelPrincipal, "panelResolucion");
+        String operacion = "6-4/2*1+3*2";
+        CalculadoraMat holis = new CalculadoraMat(operacion);
     }//GEN-LAST:event_bt_resolucionActionPerformed
 
     private void bt_compresionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_compresionActionPerformed

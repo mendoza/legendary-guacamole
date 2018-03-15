@@ -139,7 +139,6 @@ public class laberinto extends JPanel {
         //cuando le pongo maze solamente me tira null pointer
         //int[][] laberinto = maze1.clone();
         ArrayStack pila = new ArrayStack();
-        //No me digas que queres usar templates pq te mato....
         pila.push(new CasillaLaberinto(1, 0));
         CasillaLaberinto actual, vecino;
         while (!pila.isEmpty()) {
@@ -164,11 +163,11 @@ public class laberinto extends JPanel {
                 }
             }
             //Mark(actual);
-            System.out.println("am i in a loop?");
+            //System.out.println("am i in a loop?");
 
         } //while (!pila.isEmpty());
-        System.out.println("***Hey, salió!***");
-        guidance();
+        //System.out.println("***Hey, salió!***");
+        //guidance();
     }
 
     public void guidance() {

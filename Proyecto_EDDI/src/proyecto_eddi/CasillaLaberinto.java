@@ -11,6 +11,17 @@ package proyecto_eddi;
  */
 public class CasillaLaberinto {
     private int i, j;
+    private boolean ruta;
+
+    public boolean isRuta() {
+        return ruta;
+    }
+
+    public void setRuta(boolean ruta) {
+        this.ruta = ruta;
+    }
+    
+    
     
     CasillaLaberinto(){
         
