@@ -599,7 +599,7 @@ public class Main extends javax.swing.JFrame {
         }
         card = (CardLayout) panelPrincipal.getLayout();
         card.show(panelPrincipal, "panelResolucion");
-        String operacion = "6-4/2*1+3*2";
+        String operacion = "6-4/2*1+3*2+15";
         CalculadoraMat holis = new CalculadoraMat(operacion);
     }//GEN-LAST:event_bt_resolucionActionPerformed
 

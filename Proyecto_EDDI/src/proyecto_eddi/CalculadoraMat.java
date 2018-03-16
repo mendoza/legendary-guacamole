@@ -15,31 +15,47 @@ public class CalculadoraMat {
     
     CalculadoraMat(String operacion){
         int size = 0;
+        //A partir de aqui comienza la creacion de las listas
         for (int i = 0; i < operacion.length(); i++) {
             char aux = operacion.charAt(i);
             if(aux=='*'||aux=='/'||aux=='+'||aux=='-'){
                 size++;
             }
         }
-        numeros = new ArrayList(size+1);
+        System.out.println("El tamaño calculado de operaciones es: "+size);
+        //Me estaba agarrando el size x2
+        numeros = new ArrayList((size)+1);
         operandos = new ArrayList(size);
-        int centinela = 0;
+        int centinela = 1;
         String[] separador = operacion.split("\\+|\\-|\\*|\\/");
         for (int i = 0; i < separador.length; i++) {
-            numeros.insert(Integer.parseInt(separador[i]), i);
+            numeros.insert(Integer.parseInt(separador[i]), i+1);
+            System.out.println("numeros "+separador[i]+" vuelta: "+ i);
+            
         }
         for (int i = 0; i < operacion.length(); i++) {
             char aux = operacion.charAt(i);
             if(aux=='*'||aux=='/'||aux=='+'||aux=='-'){
                 operandos.insert(aux, centinela);
                 centinela++;
+                System.out.println("operandos "+aux+" vuelta: "+ i);
+            
             }
         }
-        centinela = 0;
+        System.out.println("Size de numeros: "+numeros.getSize());
+        System.out.println("Size de Operandos: "+operandos.getSize());
+        operandos.printList();
+        //fin de la creacion de las listas
+        //A partir de aqui comienza la resolucion de problemas
+        centinela = 1;
         int vuelta = 1;
         char searcher = '*';
-        while(!operandos.isEmpty()&& numeros.getSize()>1){
-            if((char)operandos.get(centinela) == searcher){
+        while(!operandos.isEmpty()){
+            System.out.println("Centinela: " + centinela);
+            char helper = (char)operandos.get(centinela);
+            System.out.println("Helper: "+helper);
+            if(helper == searcher){
+                System.out.println("entro al if helper == searcher");
                 int izquierda = (int)numeros.get(centinela);
                 int derecha = (int)numeros.get(centinela+1);
                 switch (searcher) {
@@ -48,22 +64,45 @@ public class CalculadoraMat {
                         numeros.erase(centinela+1);
                         break;
                     case '/':
-                        numeros.insert((izquierda*derecha), centinela);
+                        numeros.insert((izquierda/derecha), centinela);
                         numeros.erase(centinela+1);
                         break;
                     case '+':
-                        numeros.insert((izquierda*derecha), centinela);
+                        if((char)operandos.get(centinela-1)=='-'){
+                            izquierda*=-1;
+                        }
+                        numeros.insert((izquierda+derecha), centinela);
                         numeros.erase(centinela+1);
                         break;
                     case '-':
-                        numeros.insert((izquierda*derecha), centinela);
+                        if((char)operandos.get(centinela-1)=='-'){
+                            izquierda*=-1;
+                        }
+                        numeros.insert((izquierda-derecha), centinela);
                         numeros.erase(centinela+1);
                         break;    
                     default:
                         throw new AssertionError();
                 }
+                operandos.erase(centinela);
+                centinela--;
+            }
+            centinela++;
+            if(centinela == operandos.getSize() || centinela<=0){
+                System.out.println("Cumplio una vuelta");
+                centinela = 1;
+                if(vuelta == 1){
+                    searcher = '/';
+                }else if(vuelta == 2){
+                    searcher = '+';
+                }else if(vuelta == 3){
+                    searcher = '-';
+                }
+                vuelta++;
             }
         }
+        //fin de la resolucion de problemas
+        System.out.println("El resultado es: "+numeros.get(0));
     }
     
 }
