@@ -18,11 +18,11 @@ public class CalculadoraMat {
 
     }
 
-    public int Resolver(String formula) {
+    public float Resolver(String formula) {
         String[] nums = formula.split("\\+|\\-|\\/|\\*");
-        int[] num = new int[nums.length];
+        float[] num = new float[nums.length];
         for (int i = 0; i < nums.length; i++) {
-            num[i] = Integer.parseInt(nums[i]);
+            num[i] = Float.parseFloat(nums[i]);
         }
 
         for (int i = 0; i < num.length; i++) {
@@ -48,26 +48,29 @@ public class CalculadoraMat {
             }
         }
         while (operandos.contains('*')) {
-            numeros.set(operandos.indexOf('*'), ((int) numeros.get(operandos.indexOf('*'))) * ((int) numeros.get(operandos.indexOf('*') + 1)));
+            numeros.set(operandos.indexOf('*'), ((float) numeros.get(operandos.indexOf('*'))) * ((float) numeros.get(operandos.indexOf('*') + 1)));
             numeros.remove(operandos.indexOf('*') + 1);
             operandos.remove(operandos.indexOf('*'));
         }
         while (operandos.contains('/')) {
-            numeros.set(operandos.indexOf('/'), ((int) numeros.get(operandos.indexOf('/'))) / ((int) numeros.get(operandos.indexOf('/') + 1)));
+            numeros.set(operandos.indexOf('/'), ((float) numeros.get(operandos.indexOf('/'))) / ((float) numeros.get(operandos.indexOf('/') + 1)));
             numeros.remove(operandos.indexOf('/') + 1);
             operandos.remove(operandos.indexOf('/'));
         }
         while (operandos.contains('-')) {
-            numeros.set(operandos.indexOf('-'), ((int) numeros.get(operandos.indexOf('-'))) - ((int) numeros.get(operandos.indexOf('-') + 1)));
+            numeros.set(operandos.indexOf('-'), ((float) numeros.get(operandos.indexOf('-'))) - ((float) numeros.get(operandos.indexOf('-') + 1)));
             numeros.remove(operandos.indexOf('-') + 1);
             operandos.remove(operandos.indexOf('-'));
         }
         while (operandos.contains('+')) {
-            numeros.set(operandos.indexOf('+'), ((int) numeros.get(operandos.indexOf('+'))) + ((int) numeros.get(operandos.indexOf('+') + 1)));
+            numeros.set(operandos.indexOf('+'), ((float) numeros.get(operandos.indexOf('+'))) + ((float) numeros.get(operandos.indexOf('+') + 1)));
             numeros.remove(operandos.indexOf('+') + 1);
             operandos.remove(operandos.indexOf('+'));
         }
-        return (int) (numeros.get(0));
+        float resu = (float) (numeros.get(0));
+        this.numeros = new ArrayList();
+        this.operandos = new ArrayList();
+        return resu;
     }
 
 }

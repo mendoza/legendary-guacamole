@@ -5,6 +5,7 @@
  */
 package proyecto_eddi;
 //<editor-fold defaultstate="collapsed" desc=" Imports ">
+
 import java.awt.CardLayout;
 import java.awt.Color;
 import javax.swing.ImageIcon;
@@ -599,7 +600,6 @@ public class Main extends javax.swing.JFrame {
         card = (CardLayout) panelPrincipal.getLayout();
         card.show(panelPrincipal, "panelResolucion");
         String operacion = "6-4/2*1+3*2";
-        CalculadoraMat Calculadora = new CalculadoraMat();
         System.out.println("esto es el resultado: " + Calculadora.Resolver(operacion));
     }//GEN-LAST:event_bt_resolucionActionPerformed
 
@@ -785,5 +785,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JRadioButton rb_labe2;
     // End of variables declaration//GEN-END:variables
     private CardLayout card = new CardLayout();
+    CalculadoraMat Calculadora = new CalculadoraMat();
 //</editor-fold>
 }
