@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package proyecto_eddi;
-
 //<editor-fold defaultstate="collapsed" desc=" Imports ">
 import java.awt.CardLayout;
 import java.awt.Color;
@@ -599,8 +598,9 @@ public class Main extends javax.swing.JFrame {
         }
         card = (CardLayout) panelPrincipal.getLayout();
         card.show(panelPrincipal, "panelResolucion");
-        String operacion = "6-4/2*1+3*2+15";
-        CalculadoraMat holis = new CalculadoraMat(operacion);
+        String operacion = "6-4/2*1+3*2";
+        CalculadoraMat Calculadora = new CalculadoraMat();
+        System.out.println("esto es el resultado: " + Calculadora.Resolver(operacion));
     }//GEN-LAST:event_bt_resolucionActionPerformed
 
     private void bt_compresionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_compresionActionPerformed
@@ -708,7 +708,7 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_rb_labe1MouseClicked
 
     private void comenzarLaberintoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comenzarLaberintoActionPerformed
-        ((laberinto)laberintopanel).getOut();
+        ((laberinto) laberintopanel).getOut();
         laberintopanel.repaint();
     }//GEN-LAST:event_comenzarLaberintoActionPerformed
 
