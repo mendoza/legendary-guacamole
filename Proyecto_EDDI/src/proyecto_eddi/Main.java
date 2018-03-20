@@ -390,6 +390,7 @@ public class Main extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Resolucion de problemas mat.");
 
+        operacionIngresada.setEditable(false);
         operacionIngresada.setBackground(new java.awt.Color(51, 54, 63));
         operacionIngresada.setFont(new java.awt.Font("Ubuntu", 1, 36)); // NOI18N
         operacionIngresada.setForeground(new java.awt.Color(255, 255, 255));

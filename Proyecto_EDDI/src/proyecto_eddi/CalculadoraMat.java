@@ -55,34 +55,35 @@ public class CalculadoraMat {
                 numeros.remove(operandos.indexOf('*') + 1);
                 operandos.remove(operandos.indexOf('*'));
             }
+            
             while (operandos.contains('/')) {
                 numeros.set(operandos.indexOf('/'), ((float) numeros.get(operandos.indexOf('/'))) / ((float) numeros.get(operandos.indexOf('/') + 1)));
                 numeros.remove(operandos.indexOf('/') + 1);
                 operandos.remove(operandos.indexOf('/'));
             }
+            
             while (operandos.contains('-')) {
                 numeros.set(operandos.indexOf('-'), ((float) numeros.get(operandos.indexOf('-'))) - ((float) numeros.get(operandos.indexOf('-') + 1)));
                 numeros.remove(operandos.indexOf('-') + 1);
                 operandos.remove(operandos.indexOf('-'));
             }
+
             while (operandos.contains('+')) {
                 numeros.set(operandos.indexOf('+'), ((float) numeros.get(operandos.indexOf('+'))) + ((float) numeros.get(operandos.indexOf('+') + 1)));
                 numeros.remove(operandos.indexOf('+') + 1);
                 operandos.remove(operandos.indexOf('+'));
             }
+
             float resu = (float) (numeros.get(0));
             this.numeros = new ArrayList();
             this.operandos = new ArrayList();
-            return resu+"";
+            return resu + "";
 
-        }catch(ArithmeticException e){
+        } catch (ArithmeticException e) {
             return "Error 2";
-        }        
-        catch(Exception e){
+        } catch (Exception e) {
             return "Error 1";
-
         }
-
     }
 
 }
