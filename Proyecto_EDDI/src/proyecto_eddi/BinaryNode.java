@@ -14,16 +14,13 @@ public class BinaryNode {
     private BinaryNode L;
     private Object Data;
     private BinaryNode R;
-
-    public BinaryNode() {
-        this.L = null;
-        this.R = null;
+    
+    public BinaryNode(){
+    
     }
 
     public BinaryNode(Object Data) {
-        this.L = null;
         this.Data = Data;
-        this.R = null;
     }
 
     public BinaryNode getL() {
@@ -54,5 +51,9 @@ public class BinaryNode {
     public String toString() {
         return ((String) Data);
     }
+    
+    
+    
+    
 
 }

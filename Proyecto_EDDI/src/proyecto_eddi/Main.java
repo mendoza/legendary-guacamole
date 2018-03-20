@@ -586,7 +586,7 @@ public class Main extends javax.swing.JFrame {
         jButton33.setBackground(new java.awt.Color(51, 54, 63));
         jButton33.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
         jButton33.setForeground(new java.awt.Color(255, 255, 255));
-        jButton33.setText("<-");
+        jButton33.setText("DEL");
         jButton33.setBorder(null);
         jButton33.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
