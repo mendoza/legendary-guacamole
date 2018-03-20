@@ -70,16 +70,6 @@ public class laberinto extends JPanel {
 
     }
 
-    public laberinto(int mazetype) {
-        if (mazetype == 1) {
-            type = 1;
-            maze = maze1.clone();
-        } else if (mazetype == 2) {
-            type = 2;
-            maze = maze2.clone();
-        }
-    }
-
     public laberinto(int x, int y, int reso) {
         this.x = x;
         this.y = y;
