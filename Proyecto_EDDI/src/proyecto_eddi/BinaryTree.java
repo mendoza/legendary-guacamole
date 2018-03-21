@@ -75,7 +75,7 @@ public class BinaryTree {
     public void print(BinaryNode node) {
         if (node != null) {
             print(node.getL());
-            System.out.println(node.getData());
+            System.out.print(","+node.getData());
             print(node.getR());
 
         }
