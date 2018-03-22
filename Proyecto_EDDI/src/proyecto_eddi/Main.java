@@ -8,7 +8,17 @@ package proyecto_eddi;
 
 import java.awt.CardLayout;
 import java.awt.Color;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 //</editor-fold>
 /**
@@ -51,7 +61,7 @@ public class Main extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         panelLaberinto = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        laberintopanel = new proyecto_eddi.laberinto(600,600,22);
+        laberintopanel = new proyecto_eddi.Laberinto(600,600,22);
         rb_labe1 = new javax.swing.JRadioButton();
         rb_labe2 = new javax.swing.JRadioButton();
         comenzarLaberinto = new javax.swing.JButton();
@@ -80,6 +90,11 @@ public class Main extends javax.swing.JFrame {
         jButton33 = new javax.swing.JButton();
         panelCompresion = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
+        jt_direccion = new javax.swing.JTextField();
+        jButton2 = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        jButton3 = new javax.swing.JButton();
         panelColoreable = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         panelOrigen = new javax.swing.JPanel();
@@ -695,21 +710,79 @@ public class Main extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Compresion de archivos");
 
+        jt_direccion.setEditable(false);
+        jt_direccion.setBackground(new java.awt.Color(51, 54, 63));
+        jt_direccion.setForeground(new java.awt.Color(255, 255, 255));
+        jt_direccion.setText("Direccion de archivo");
+        jt_direccion.setBorder(null);
+
+        jButton2.setBackground(new java.awt.Color(51, 54, 63));
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
+        jButton2.setText("...");
+        jButton2.setBorderPainted(false);
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
+
+        jTextArea1.setEditable(false);
+        jTextArea1.setBackground(new java.awt.Color(51, 54, 63));
+        jTextArea1.setColumns(20);
+        jTextArea1.setForeground(new java.awt.Color(255, 255, 255));
+        jTextArea1.setLineWrap(true);
+        jTextArea1.setRows(5);
+        jTextArea1.setWrapStyleWord(true);
+        jTextArea1.setBorder(null);
+        jScrollPane1.setViewportView(jTextArea1);
+
+        jButton3.setBackground(new java.awt.Color(51, 54, 63));
+        jButton3.setForeground(new java.awt.Color(255, 255, 255));
+        jButton3.setText("Save");
+        jButton3.setBorderPainted(false);
+        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton3MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout panelCompresionLayout = new javax.swing.GroupLayout(panelCompresion);
         panelCompresion.setLayout(panelCompresionLayout);
         panelCompresionLayout.setHorizontalGroup(
             panelCompresionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelCompresionLayout.createSequentialGroup()
-                .addGap(295, 295, 295)
-                .addComponent(jLabel5)
-                .addContainerGap(334, Short.MAX_VALUE))
+                .addGap(30, 30, 30)
+                .addGroup(panelCompresionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel5)
+                    .addGroup(panelCompresionLayout.createSequentialGroup()
+                        .addComponent(jt_direccion, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(340, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelCompresionLayout.createSequentialGroup()
+                .addGroup(panelCompresionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelCompresionLayout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(jScrollPane1))
+                    .addGroup(panelCompresionLayout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton3)))
+                .addGap(54, 54, 54))
         );
         panelCompresionLayout.setVerticalGroup(
             panelCompresionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelCompresionLayout.createSequentialGroup()
                 .addGap(102, 102, 102)
                 .addComponent(jLabel5)
-                .addContainerGap(826, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(panelCompresionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jt_direccion, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(31, 31, 31)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 518, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton3)
+                .addContainerGap(183, Short.MAX_VALUE))
         );
 
         panelPrincipal.add(panelCompresion, "panelCompresion");
@@ -992,8 +1065,8 @@ public class Main extends javax.swing.JFrame {
     private void rb_labe2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rb_labe2MouseClicked
         // TODO add your handling code here:
         if (buttonGroup2.isSelected(rb_labe2.getModel())) {
-            int[][] maze2 = ((laberinto) laberintopanel).getMaze2();
-            ((laberinto) laberintopanel).setMaze(maze2);
+            int[][] maze2 = ((Laberinto) laberintopanel).getMaze2();
+            ((Laberinto) laberintopanel).setMaze(maze2);
             laberintopanel.repaint();
         }
 
@@ -1002,14 +1075,14 @@ public class Main extends javax.swing.JFrame {
     private void rb_labe1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rb_labe1MouseClicked
         // TODO add your handling code here:
         if (buttonGroup2.isSelected(rb_labe1.getModel())) {
-            int[][] maze1 = ((laberinto) laberintopanel).getMaze1();
-            ((laberinto) laberintopanel).setMaze(maze1);
+            int[][] maze1 = ((Laberinto) laberintopanel).getMaze1();
+            ((Laberinto) laberintopanel).setMaze(maze1);
             laberintopanel.repaint();
         }
     }//GEN-LAST:event_rb_labe1MouseClicked
 
     private void comenzarLaberintoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comenzarLaberintoActionPerformed
-        ((laberinto) laberintopanel).getOut();
+        ((Laberinto) laberintopanel).getOut();
         laberintopanel.repaint();
     }//GEN-LAST:event_comenzarLaberintoActionPerformed
 
@@ -1195,6 +1268,57 @@ public class Main extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton33ActionPerformed
 
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+        // TODO add your handling code here:
+        JFileChooser jf = new JFileChooser();
+        jf.setFileFilter(new FileNameExtensionFilter("Text files", "txt"));
+        int retorno = jf.showOpenDialog(this);
+        if (retorno == 0) {
+            File f = jf.getSelectedFile();
+            try {
+                texto = readfile(f.getAbsolutePath());
+                jt_direccion.setText(f.getAbsolutePath());
+                jTextArea1.setText(texto);
+                Huffman hf = new Huffman(texto);
+                hf.PlantaryTalar();
+            } catch (IOException ex) {
+                Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }//GEN-LAST:event_jButton2MouseClicked
+
+    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+        // TODO add your handling code here:
+        if (jTextArea1.getText().length() != 0) {
+            JFileChooser jf = new JFileChooser();
+            int reto = jf.showSaveDialog(this);
+            if (reto == 0) {
+                String path = jf.getSelectedFile().getAbsolutePath();
+                String filename = jf.getSelectedFile().getName();
+                try {
+                    FileOutputStream fos = new FileOutputStream(new File(path += ".ara"));
+                    fos.flush();
+                    fos.close();
+                    jt_direccion.setText("Direccion de archivo");
+                    jTextArea1.setText("");
+                } catch (Exception ex) {
+                }
+            }
+        }
+    }//GEN-LAST:event_jButton3MouseClicked
+    public static String readfile(String path) throws FileNotFoundException, IOException {
+        String acum;
+        FileReader fr = new FileReader(path);
+        try (BufferedReader br = new BufferedReader(new FileReader(path))) {
+            String line;
+            acum = "";
+            while ((line = br.readLine()) != null) {
+                acum += line;
+            }
+        }
+        return acum;
+    }
+
     /**
      * @param args the command line arguments
      */
@@ -1247,6 +1371,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton jButton17;
     private javax.swing.JButton jButton18;
     private javax.swing.JButton jButton19;
+    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton20;
     private javax.swing.JButton jButton21;
     private javax.swing.JButton jButton22;
@@ -1257,6 +1382,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton jButton27;
     private javax.swing.JButton jButton28;
     private javax.swing.JButton jButton29;
+    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton30;
     private javax.swing.JButton jButton31;
     private javax.swing.JButton jButton32;
@@ -1271,6 +1397,9 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextField jt_direccion;
     public javax.swing.JPanel laberintopanel;
     private javax.swing.JTextField operacionIngresada;
     private javax.swing.JPanel panelArbol;
@@ -1289,5 +1418,6 @@ public class Main extends javax.swing.JFrame {
     private CardLayout card = new CardLayout();
     CalculadoraMat Calculadora = new CalculadoraMat();
     private boolean respondio = false;
+    String texto = "";
 //</editor-fold>
 }

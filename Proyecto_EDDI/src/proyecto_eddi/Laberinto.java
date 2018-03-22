@@ -13,7 +13,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 import javax.swing.JPanel;
 
-public class laberinto extends JPanel {
+public class Laberinto extends JPanel {
 
     private int x;
     private int y;
@@ -66,11 +66,11 @@ public class laberinto extends JPanel {
         {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 3},
         {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}};
 
-    public laberinto() {
+    public Laberinto() {
 
     }
 
-    public laberinto(int x, int y, int reso) {
+    public Laberinto(int x, int y, int reso) {
         this.x = x;
         this.y = y;
         this.reso = reso;

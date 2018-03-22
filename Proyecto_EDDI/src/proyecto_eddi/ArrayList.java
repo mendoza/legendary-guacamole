@@ -16,7 +16,19 @@ public class ArrayList {
 
     ArrayList() {
         this.availpos = 0;
-        this.list = new Object[1000];
+        this.list = new Object[1483400];
+    }
+    
+    public int length(){
+        return availpos;
+    }
+
+    public Object[] getList() {
+        return list;
+    }
+
+    public void setList(Object[] list) {
+        this.list = list;
     }
     
     public int indexOf(Object obj) {
@@ -92,7 +104,7 @@ public class ArrayList {
     }
 
     public void clear() {
-        list = new Object[1000];
+        list = new Object[1483400];
         this.availpos = 0;
     }
 
@@ -108,12 +120,11 @@ public class ArrayList {
         System.out.print("[");
         for (int i = 0; i < availpos; i++) {
             if (i == 0) {
-                System.out.print(list[i]);
+                System.out.print(""+list[i]);
             } else {
                 System.out.print("," + list[i]);
             }
         }
         System.out.print("]");
     }
-
 }

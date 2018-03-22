@@ -46,10 +46,10 @@ public class BinaryNode {
     public void setR(BinaryNode R) {
         this.R = R;
     }
-
+    
     @Override
     public String toString() {
-        return ((String) Data);
+        return (Data.toString());
     }
     
     

@@ -9,12 +9,16 @@ package proyecto_eddi;
  *
  * @author david
  */
-public class BinaryTree {
+public class BinaryTree extends BinaryNode{
 
     private BinaryNode Root;
 
     public BinaryTree() {
         Root = null;
+    }
+
+    public BinaryTree(Object data) {
+        this.Root = new BinaryNode(data);
     }
 
     public BinaryNode getRoot() {
@@ -24,24 +28,7 @@ public class BinaryTree {
     public void setRoot(BinaryNode Root) {
         this.Root = Root;
     }
-
-    //FALTAN TODOS LOS METODOS ADMINISTRATIVOS, PARA PODER HACER LA COMPRESION DE HUFFMAN
-    /*public boolean Insert(Object data){
-        boolean out;
-        if (isEmpty(Root)) {
-            
-        } else if((int)data){
-            
-        }
-    }*/
- /*public boolean isEmpty(BinaryNode bn){
-        return (bn.getData() == null);
-    }*/
-    public void Create(Object data) {
-        this.Root = new BinaryNode(data);
-
-    }
-
+    
     public void Erase() {
         this.Root = null;
     }
@@ -75,9 +62,14 @@ public class BinaryTree {
     public void print(BinaryNode node) {
         if (node != null) {
             print(node.getL());
-            System.out.print(","+node.getData());
+            System.out.println(node.getData());
             print(node.getR());
 
         }
+    }
+
+    @Override
+    public String toString() {
+        return "BinaryTree{" + "Root=" + Root + '}';
     }
 }
