@@ -7,9 +7,11 @@ package proyecto_eddi;
 
 /**
  *
- * @author josue
+ * @author Josue
+ * @better author David :v
+ * @param <T>
  */
-public class ArrayList {
+public class ArrayList<T> {
 
     private Object[] list;
     private int availpos;
@@ -18,8 +20,8 @@ public class ArrayList {
         this.availpos = 0;
         this.list = new Object[1483400];
     }
-    
-    public int length(){
+
+    public int length() {
         return availpos;
     }
 
@@ -30,8 +32,8 @@ public class ArrayList {
     public void setList(Object[] list) {
         this.list = list;
     }
-    
-    public int indexOf(Object obj) {
+
+    public int indexOf(T obj) {
         int pos = 0;
         for (int i = 0; i < availpos; i++) {
             if (obj == list[i]) {
@@ -44,7 +46,7 @@ public class ArrayList {
         return pos;
     }
 
-    public boolean set(int pos, Object obj) {
+    public boolean set(int pos, T obj) {
         if (pos >= 0 && pos <= availpos) {
             list[pos] = obj;
             return true;
@@ -53,7 +55,7 @@ public class ArrayList {
         }
     }
 
-    public boolean contains(Object obj) {
+    public boolean contains(T obj) {
         for (int i = 0; i < availpos; i++) {
             if (obj == list[i]) {
                 return true;
@@ -62,7 +64,7 @@ public class ArrayList {
         return false;
     }
 
-    public boolean insert(Object obj, int pos) {
+    public boolean insert(int pos,T obj) {
         if (pos >= 0 && pos <= availpos) {
             if (pos == availpos) {
                 list[pos] = obj;
@@ -79,15 +81,15 @@ public class ArrayList {
         return false;
     }
 
-    public boolean add(Object obj) {
+    public boolean add(T obj) {
         list[availpos] = obj;
         availpos++;
         return true;
     }
 
-    public Object get(int pos) {
+    public T get(int pos) {
         if (pos >= 0 && pos < availpos) {
-            return list[pos];
+            return ((T) list[pos]);
         } else {
             return null;
         }
@@ -109,22 +111,21 @@ public class ArrayList {
     }
 
     public boolean isEmpty() {
-        if (availpos == 0) {
-            return true;
-        } else {
-            return false;
-        }
+        return availpos == 0;
     }
 
-    public void printList() {
-        System.out.print("[");
+    @Override
+    public String toString() {
+        String reto ="";
+        reto+="[";
         for (int i = 0; i < availpos; i++) {
             if (i == 0) {
-                System.out.print(""+list[i]);
+                reto+=("" + list[i]);
             } else {
-                System.out.print("," + list[i]);
+                reto+=("," + list[i]);
             }
         }
-        System.out.print("]");
+        reto+="]";
+        return reto;
     }
 }

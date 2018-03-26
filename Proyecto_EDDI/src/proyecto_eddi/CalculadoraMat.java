@@ -11,9 +11,8 @@ package proyecto_eddi;
  */
 public class CalculadoraMat {
 
-    private ArrayList numeros = new ArrayList();
-    private ArrayList operandos = new ArrayList();
-
+    private ArrayList<Float> numeros = new ArrayList();
+    private ArrayList<Character> operandos = new ArrayList();
     CalculadoraMat() {
 
     }

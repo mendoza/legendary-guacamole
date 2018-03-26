@@ -9,7 +9,7 @@ package proyecto_eddi;
  *
  * @author david
  */
-public class BinaryTree extends BinaryNode{
+public class BinaryTree {
 
     private BinaryNode Root;
 
@@ -17,14 +17,15 @@ public class BinaryTree extends BinaryNode{
         Root = null;
     }
 
-    public BinaryTree(Object data) {
-        this.Root = new BinaryNode(data);
+    public BinaryTree(BinaryNode raizArbol) {
+        Root = raizArbol;
     }
 
     public BinaryNode getRoot() {
         return Root;
     }
 
+<<<<<<< Updated upstream
     public void setRoot(BinaryNode Root) {
         this.Root = Root;
     }
@@ -53,45 +54,37 @@ public class BinaryTree extends BinaryNode{
 ///>>>>>>> Stashed changes
     public void Erase() {
         this.Root = null;
+=======
+    public void setRoot(BinaryNode raiz) {
+        this.Root = raiz;
+>>>>>>> Stashed changes
     }
 
-    public void Insert(Object data) {
-        BinaryNode newnode = new BinaryNode(data);
+    public void insertar(char letra, Integer d) {
+        BinaryNode nuevo = new BinaryNode(letra, d);
         if (Root == null) {
-            Root = newnode;
+            Root = nuevo;
         } else {
-            BinaryNode focus = Root;
-            BinaryNode parent;
-            while (true) {
-                parent = focus;
-                if ((int) data < (int) focus.getData()) {
-                    focus = focus.getL();
-                    if (focus == null) {
-                        parent.setL(newnode);
-                        return;
-                    }
+            BinaryNode aux = Root;
+            BinaryNode ant = null;
+            while (aux != null) {
+                ant = aux;
+                if (d <= aux.getFrecuencia()) {
+                    aux = aux.getL();
                 } else {
-                    focus = focus.getR();
-                    if (focus == null) {
-                        parent.setR(newnode);
-                        return;
-                    }
+                    aux.getR();
                 }
+            }
+            if (d <= ant.getFrecuencia()) {
+                ant.setL(nuevo);
+            } else {
+                ant.setR(nuevo);
             }
         }
     }
 
-    public void print(BinaryNode node) {
-        if (node != null) {
-            print(node.getL());
-            System.out.println(node.getData());
-            print(node.getR());
-
-        }
-    }
-
-    @Override
     public String toString() {
-        return "BinaryTree{" + "Root=" + Root + '}';
+        return Root.toString();
     }
+
 }

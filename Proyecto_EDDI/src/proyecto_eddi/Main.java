@@ -14,6 +14,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
@@ -23,10 +24,9 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 //</editor-fold>
 /**
  *
- * @author David Mendoza & Josue Rodriguez
+ * @authors David Mendoza & Josue Rodriguez
  */
 public class Main extends javax.swing.JFrame {
-
     /**
      * Creates new form Main
      */
@@ -947,15 +947,15 @@ public class Main extends javax.swing.JFrame {
     private void bt_inicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_inicioActionPerformed
         buttonGroup1.setSelected(bt_inicio.getModel(), true);
         if (buttonGroup1.isSelected(bt_inicio.getModel())) {
-            bt_Laberinto.setBackground(new Color(51, 54, 63));
-            bt_calculo.setBackground(new Color(51, 54, 63));
-            bt_resolucion.setBackground(new Color(51, 54, 63));
-            bt_compresion.setBackground(new Color(51, 54, 63));
-            bt_coloreable.setBackground(new Color(51, 54, 63));
-            bt_origenes.setBackground(new Color(51, 53, 63));
-            bt_origen.setBackground(new Color(51, 54, 63));
-            bt_arbol.setBackground(new Color(51, 54, 63));
-            bt_inicio.setBackground(new Color(56, 70, 101));
+            bt_Laberinto.setBackground(noselected);
+            bt_calculo.setBackground(noselected);
+            bt_resolucion.setBackground(noselected);
+            bt_compresion.setBackground(noselected);
+            bt_coloreable.setBackground(noselected);
+            bt_origenes.setBackground(noselected);
+            bt_origen.setBackground(noselected);
+            bt_arbol.setBackground(noselected);
+            bt_inicio.setBackground(selected);
         }
         card = (CardLayout) panelPrincipal.getLayout();
         card.show(panelPrincipal, "panelInicio");
@@ -964,15 +964,15 @@ public class Main extends javax.swing.JFrame {
     private void bt_LaberintoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_LaberintoActionPerformed
         buttonGroup1.setSelected(bt_Laberinto.getModel(), true);
         if (buttonGroup1.isSelected(bt_Laberinto.getModel())) {
-            bt_calculo.setBackground(new Color(51, 54, 63));
-            bt_inicio.setBackground(new Color(51, 54, 63));
-            bt_resolucion.setBackground(new Color(51, 54, 63));
-            bt_compresion.setBackground(new Color(51, 54, 63));
-            bt_coloreable.setBackground(new Color(51, 54, 63));
-            bt_origenes.setBackground(new Color(51, 53, 63));
-            bt_origen.setBackground(new Color(51, 54, 63));
-            bt_arbol.setBackground(new Color(51, 54, 63));
-            bt_Laberinto.setBackground(new Color(56, 70, 101));
+            bt_calculo.setBackground(noselected);
+            bt_inicio.setBackground(noselected);
+            bt_resolucion.setBackground(noselected);
+            bt_compresion.setBackground(noselected);
+            bt_coloreable.setBackground(noselected);
+            bt_origenes.setBackground(noselected);
+            bt_origen.setBackground(noselected);
+            bt_arbol.setBackground(noselected);
+            bt_Laberinto.setBackground(selected);
         }
         card = (CardLayout) panelPrincipal.getLayout();
         card.show(panelPrincipal, "panelLaberinto");
@@ -981,15 +981,15 @@ public class Main extends javax.swing.JFrame {
     private void bt_calculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_calculoActionPerformed
         buttonGroup1.setSelected(bt_calculo.getModel(), true);
         if (buttonGroup1.isSelected(bt_calculo.getModel())) {
-            bt_Laberinto.setBackground(new Color(51, 54, 63));
-            bt_inicio.setBackground(new Color(51, 54, 63));
-            bt_resolucion.setBackground(new Color(51, 54, 63));
-            bt_compresion.setBackground(new Color(51, 54, 63));
-            bt_coloreable.setBackground(new Color(51, 54, 63));
-            bt_origenes.setBackground(new Color(51, 53, 63));
-            bt_origen.setBackground(new Color(51, 54, 63));
-            bt_arbol.setBackground(new Color(51, 54, 63));
-            bt_calculo.setBackground(new Color(56, 70, 101));
+            bt_Laberinto.setBackground(noselected);
+            bt_inicio.setBackground(noselected);
+            bt_resolucion.setBackground(noselected);
+            bt_compresion.setBackground(noselected);
+            bt_coloreable.setBackground(noselected);
+            bt_origenes.setBackground(noselected);
+            bt_origen.setBackground(noselected);
+            bt_arbol.setBackground(noselected);
+            bt_calculo.setBackground(selected);
         }
         card = (CardLayout) panelPrincipal.getLayout();
         card.show(panelPrincipal, "panelCalculo");
@@ -998,35 +998,33 @@ public class Main extends javax.swing.JFrame {
     private void bt_resolucionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_resolucionActionPerformed
         buttonGroup1.setSelected(bt_resolucion.getModel(), true);
         if (buttonGroup1.isSelected(bt_resolucion.getModel())) {
-            bt_Laberinto.setBackground(new Color(51, 54, 63));
-            bt_calculo.setBackground(new Color(51, 54, 63));
-            bt_inicio.setBackground(new Color(51, 54, 63));
-            bt_compresion.setBackground(new Color(51, 54, 63));
-            bt_coloreable.setBackground(new Color(51, 54, 63));
-            bt_origenes.setBackground(new Color(51, 53, 63));
-            bt_origen.setBackground(new Color(51, 54, 63));
-            bt_arbol.setBackground(new Color(51, 54, 63));
-            bt_resolucion.setBackground(new Color(56, 70, 101));
+            bt_Laberinto.setBackground(noselected);
+            bt_calculo.setBackground(noselected);
+            bt_inicio.setBackground(noselected);
+            bt_compresion.setBackground(noselected);
+            bt_coloreable.setBackground(noselected);
+            bt_origenes.setBackground(noselected);
+            bt_origen.setBackground(noselected);
+            bt_arbol.setBackground(noselected);
+            bt_resolucion.setBackground(selected);
         }
         card = (CardLayout) panelPrincipal.getLayout();
         card.show(panelPrincipal, "panelResolucion");
         operacionIngresada.setText("");
-        //String operacion = "6-4/2*1+3*2";
-        //System.out.println("esto es el resultado: " + Calculadora.Resolver(operacion));
     }//GEN-LAST:event_bt_resolucionActionPerformed
 
     private void bt_compresionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_compresionActionPerformed
         buttonGroup1.setSelected(bt_compresion.getModel(), true);
         if (buttonGroup1.isSelected(bt_compresion.getModel())) {
-            bt_Laberinto.setBackground(new Color(51, 54, 63));
-            bt_calculo.setBackground(new Color(51, 54, 63));
-            bt_inicio.setBackground(new Color(51, 54, 63));
-            bt_resolucion.setBackground(new Color(51, 54, 63));
-            bt_coloreable.setBackground(new Color(51, 54, 63));
-            bt_origenes.setBackground(new Color(51, 53, 63));
-            bt_origen.setBackground(new Color(51, 54, 63));
-            bt_arbol.setBackground(new Color(51, 54, 63));
-            bt_compresion.setBackground(new Color(56, 70, 101));
+            bt_Laberinto.setBackground(noselected);
+            bt_calculo.setBackground(noselected);
+            bt_inicio.setBackground(noselected);
+            bt_resolucion.setBackground(noselected);
+            bt_coloreable.setBackground(noselected);
+            bt_origenes.setBackground(noselected);
+            bt_origen.setBackground(noselected);
+            bt_arbol.setBackground(noselected);
+            bt_compresion.setBackground(selected);
         }
         card = (CardLayout) panelPrincipal.getLayout();
         card.show(panelPrincipal, "panelCompresion");
@@ -1035,15 +1033,15 @@ public class Main extends javax.swing.JFrame {
     private void bt_coloreableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_coloreableActionPerformed
         buttonGroup1.setSelected(bt_coloreable.getModel(), true);
         if (buttonGroup1.isSelected(bt_coloreable.getModel())) {
-            bt_Laberinto.setBackground(new Color(51, 54, 63));
-            bt_calculo.setBackground(new Color(51, 54, 63));
-            bt_inicio.setBackground(new Color(51, 54, 63));
-            bt_resolucion.setBackground(new Color(51, 54, 63));
-            bt_compresion.setBackground(new Color(51, 54, 63));
-            bt_origenes.setBackground(new Color(51, 53, 63));
-            bt_origen.setBackground(new Color(51, 54, 63));
-            bt_arbol.setBackground(new Color(51, 54, 63));
-            bt_coloreable.setBackground(new Color(56, 70, 101));
+            bt_Laberinto.setBackground(noselected);
+            bt_calculo.setBackground(noselected);
+            bt_inicio.setBackground(noselected);
+            bt_resolucion.setBackground(noselected);
+            bt_compresion.setBackground(noselected);
+            bt_origenes.setBackground(noselected);
+            bt_origen.setBackground(noselected);
+            bt_arbol.setBackground(noselected);
+            bt_coloreable.setBackground(selected);
         }
         card = (CardLayout) panelPrincipal.getLayout();
         card.show(panelPrincipal, "panelColoreable");
@@ -1052,15 +1050,15 @@ public class Main extends javax.swing.JFrame {
     private void bt_origenesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_origenesActionPerformed
         buttonGroup1.setSelected(bt_origenes.getModel(), true);
         if (buttonGroup1.isSelected(bt_origenes.getModel())) {
-            bt_Laberinto.setBackground(new Color(51, 54, 63));
-            bt_calculo.setBackground(new Color(51, 54, 63));
-            bt_inicio.setBackground(new Color(51, 54, 63));
-            bt_resolucion.setBackground(new Color(51, 54, 63));
-            bt_compresion.setBackground(new Color(51, 54, 63));
-            bt_coloreable.setBackground(new Color(51, 54, 63));
-            bt_origen.setBackground(new Color(51, 54, 63));
-            bt_arbol.setBackground(new Color(51, 54, 63));
-            bt_origenes.setBackground(new Color(56, 70, 101));
+            bt_Laberinto.setBackground(noselected);
+            bt_calculo.setBackground(noselected);
+            bt_inicio.setBackground(noselected);
+            bt_resolucion.setBackground(noselected);
+            bt_compresion.setBackground(noselected);
+            bt_coloreable.setBackground(noselected);
+            bt_origen.setBackground(noselected);
+            bt_arbol.setBackground(noselected);
+            bt_origenes.setBackground(selected);
         }
         card = (CardLayout) panelPrincipal.getLayout();
         card.show(panelPrincipal, "panelOrigenes");
@@ -1069,15 +1067,15 @@ public class Main extends javax.swing.JFrame {
     private void bt_origenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_origenActionPerformed
         buttonGroup1.setSelected(bt_origen.getModel(), true);
         if (buttonGroup1.isSelected(bt_origen.getModel())) {
-            bt_Laberinto.setBackground(new Color(51, 54, 63));
-            bt_calculo.setBackground(new Color(51, 54, 63));
-            bt_inicio.setBackground(new Color(51, 54, 63));
-            bt_resolucion.setBackground(new Color(51, 54, 63));
-            bt_compresion.setBackground(new Color(51, 54, 63));
-            bt_coloreable.setBackground(new Color(51, 54, 63));
-            bt_origenes.setBackground(new Color(51, 53, 63));
-            bt_arbol.setBackground(new Color(51, 54, 63));
-            bt_origen.setBackground(new Color(56, 70, 101));
+            bt_Laberinto.setBackground(noselected);
+            bt_calculo.setBackground(noselected);
+            bt_inicio.setBackground(noselected);
+            bt_resolucion.setBackground(noselected);
+            bt_compresion.setBackground(noselected);
+            bt_coloreable.setBackground(noselected);
+            bt_origenes.setBackground(noselected);
+            bt_arbol.setBackground(noselected);
+            bt_origen.setBackground(selected);
         }
         card = (CardLayout) panelPrincipal.getLayout();
         card.show(panelPrincipal, "panelOrigen");
@@ -1086,15 +1084,15 @@ public class Main extends javax.swing.JFrame {
     private void bt_arbolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_arbolActionPerformed
         buttonGroup1.setSelected(bt_arbol.getModel(), true);
         if (buttonGroup1.isSelected(bt_arbol.getModel())) {
-            bt_Laberinto.setBackground(new Color(51, 54, 63));
-            bt_calculo.setBackground(new Color(51, 54, 63));
-            bt_inicio.setBackground(new Color(51, 54, 63));
-            bt_resolucion.setBackground(new Color(51, 54, 63));
-            bt_compresion.setBackground(new Color(51, 54, 63));
-            bt_coloreable.setBackground(new Color(51, 54, 63));
-            bt_origenes.setBackground(new Color(51, 53, 63));
-            bt_origen.setBackground(new Color(51, 53, 63));
-            bt_arbol.setBackground(new Color(56, 70, 101));
+            bt_Laberinto.setBackground(noselected);
+            bt_calculo.setBackground(noselected);
+            bt_inicio.setBackground(noselected);
+            bt_resolucion.setBackground(noselected);
+            bt_compresion.setBackground(noselected);
+            bt_coloreable.setBackground(noselected);
+            bt_origenes.setBackground(noselected);
+            bt_origen.setBackground(noselected);
+            bt_arbol.setBackground(selected);
         }
         card = (CardLayout) panelPrincipal.getLayout();
         card.show(panelPrincipal, "panelArbol");
@@ -1318,7 +1316,8 @@ public class Main extends javax.swing.JFrame {
                 jt_direccion.setText(f.getAbsolutePath());
                 jTextArea1.setText(texto);
                 Huffman hf = new Huffman(texto);
-                hf.PlantaryTalar();
+                texto = hf.comprimir();
+                comprimido = new Comprimido(creararreglo(texto), hf.getPaths());
             } catch (IOException ex) {
                 Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -1329,9 +1328,11 @@ public class Main extends javax.swing.JFrame {
         // TODO add your handling code here:
         if (jTextArea1.getText().length() != 0) {
             JFileChooser jf = new JFileChooser();
+            jf.setFileFilter(new FileNameExtensionFilter("ara files", "ara"));
             int reto = jf.showSaveDialog(this);
             if (reto == 0) {
                 String path = jf.getSelectedFile().getAbsolutePath();
+<<<<<<< Updated upstream
                 String filename = jf.getSelectedFile().getName();
                 try {
                     FileOutputStream fos = new FileOutputStream(new File(path += ".ara"));
@@ -1344,6 +1345,19 @@ public class Main extends javax.swing.JFrame {
                 }
             } else {
                 System.out.println("holi :b");
+=======
+                if (!path.endsWith(".ara")) {
+                    path += ".ara";
+                }
+                try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(new File(path)))) {
+                    oos.writeObject(comprimido);
+                    oos.close();
+                } catch (IOException ex) {
+
+                }
+                jt_direccion.setText("Direccion de archivo");
+                jTextArea1.setText("");
+>>>>>>> Stashed changes
             }
         }
     }//GEN-LAST:event_jButton3MouseClicked
@@ -1381,16 +1395,34 @@ public class Main extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jButton4ActionPerformed
     public static String readfile(String path) throws FileNotFoundException, IOException {
-        String acum;
-        FileReader fr = new FileReader(path);
-        try (BufferedReader br = new BufferedReader(new FileReader(path))) {
-            String line;
-            acum = "";
-            while ((line = br.readLine()) != null) {
-                acum += line;
-            }
+        String acum, line;
+        BufferedReader br = new BufferedReader(new FileReader(path));
+        acum = "";
+        while ((line = br.readLine()) != null) {
+            acum += line;
         }
         return acum;
+    }
+
+    public static byte[] creararreglo(String text) {
+        int size;
+        size = text.length() / 8;
+        if (text.length() % 8 != 0) {
+            size += 1;
+        }
+        byte[] d = new byte[size];
+        String p = "";
+        for (int i = 0; i < text.length(); i++) {
+            p += text.charAt(i);
+            if (p.length() == 8) {
+                d[i / 8] = ((byte) Short.parseShort(p, 2));
+                p = "";
+            }
+            if (i == size) {
+                d[size - 1] = (byte) Short.parseShort(p, 2);
+            }
+        }
+        return d;
     }
 
     /**
@@ -1407,16 +1439,24 @@ public class Main extends javax.swing.JFrame {
                 if ("Metal".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
+
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Main.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Main.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Main.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Main.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         /* Create and display the form */
@@ -1492,8 +1532,11 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JRadioButton rb_labe2;
     // End of variables declaration//GEN-END:variables
     private CardLayout card = new CardLayout();
-    CalculadoraMat Calculadora = new CalculadoraMat();
+    private final CalculadoraMat Calculadora = new CalculadoraMat();
     private boolean respondio = false;
-    String texto = "";
+    private String texto = "";
+    private Comprimido comprimido;
+    private final Color selected = new Color(56,70,101);
+    private final Color noselected = new Color(51,54,63);
 //</editor-fold>
 }

@@ -1,5 +1,5 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
+ * To change this license heaR, choose License HeaRs in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
@@ -11,16 +11,32 @@ package proyecto_eddi;
  */
 public class BinaryNode {
 
+    private int frecuencia;
+    private char letra;
     private BinaryNode L;
-    private Object Data;
     private BinaryNode R;
-    
-    public BinaryNode(){
-    
+
+    public BinaryNode(char letra, int frecuencia) {
+        this.letra = letra;
+        this.frecuencia = frecuencia;
+        L = null;
+        R = null;
     }
 
-    public BinaryNode(Object Data) {
-        this.Data = Data;
+    public int getFrecuencia() {
+        return frecuencia;
+    }
+
+    public void setFrecuencia(int dato) {
+        this.frecuencia = dato;
+    }
+
+    public char getLetra() {
+        return letra;
+    }
+
+    public void setLetra(char letra) {
+        this.letra = letra;
     }
 
     public BinaryNode getL() {
@@ -31,14 +47,6 @@ public class BinaryNode {
         this.L = L;
     }
 
-    public Object getData() {
-        return Data;
-    }
-
-    public void setData(Object Data) {
-        this.Data = Data;
-    }
-
     public BinaryNode getR() {
         return R;
     }
@@ -46,14 +54,10 @@ public class BinaryNode {
     public void setR(BinaryNode R) {
         this.R = R;
     }
-    
+
     @Override
     public String toString() {
-        return (Data.toString());
+        return letra + ":" + frecuencia;
     }
-    
-    
-    
-    
 
 }
