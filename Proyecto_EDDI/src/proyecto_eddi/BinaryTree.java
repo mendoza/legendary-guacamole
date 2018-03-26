@@ -28,7 +28,29 @@ public class BinaryTree extends BinaryNode{
     public void setRoot(BinaryNode Root) {
         this.Root = Root;
     }
+//<<<<<<< Updated upstream
     
+//=======
+
+    //FALTAN TODOS LOS METODOS ADMINISTRATIVOS, PARA PODER HACER LA COMPRESION DE HUFFMAN
+    /*public boolean Insert(Object data){
+        boolean out;
+        if (isEmpty(Root)) {
+            
+        } else if((int)data){
+            
+        }
+    }*/
+ /*public boolean isEmpty(BinaryNode bn){
+        return (bn.getData() == null);
+    }*/
+    
+    public void Create(Object data) {
+        this.Root = new BinaryNode(data);
+
+    }
+
+///>>>>>>> Stashed changes
     public void Erase() {
         this.Root = null;
     }

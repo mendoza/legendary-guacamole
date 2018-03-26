@@ -99,6 +99,8 @@ public class Main extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         panelOrigen = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
+        jt_direccion1 = new javax.swing.JTextField();
+        jButton4 = new javax.swing.JButton();
         panelOrigenes = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         panelArbol = new javax.swing.JPanel();
@@ -299,7 +301,7 @@ public class Main extends javax.swing.JFrame {
         );
         laberintopanelLayout.setVerticalGroup(
             laberintopanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 886, Short.MAX_VALUE)
+            .addGap(0, 943, Short.MAX_VALUE)
         );
 
         rb_labe1.setBackground(new java.awt.Color(29, 30, 35));
@@ -361,7 +363,7 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(panelLaberintoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelLaberintoLayout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addComponent(laberintopanel, javax.swing.GroupLayout.DEFAULT_SIZE, 886, Short.MAX_VALUE)
+                        .addComponent(laberintopanel, javax.swing.GroupLayout.DEFAULT_SIZE, 943, Short.MAX_VALUE)
                         .addContainerGap())
                     .addGroup(panelLaberintoLayout.createSequentialGroup()
                         .addGap(53, 53, 53)
@@ -395,7 +397,7 @@ public class Main extends javax.swing.JFrame {
             .addGroup(panelCalculoLayout.createSequentialGroup()
                 .addGap(116, 116, 116)
                 .addComponent(jLabel3)
-                .addContainerGap(812, Short.MAX_VALUE))
+                .addContainerGap(869, Short.MAX_VALUE))
         );
 
         panelPrincipal.add(panelCalculo, "panelCalculo");
@@ -700,7 +702,7 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(panelResolucionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton30, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton32, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(263, Short.MAX_VALUE))
+                .addContainerGap(320, Short.MAX_VALUE))
         );
 
         panelPrincipal.add(panelResolucion, "panelResolucion");
@@ -723,6 +725,11 @@ public class Main extends javax.swing.JFrame {
         jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton2MouseClicked(evt);
+            }
+        });
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
             }
         });
 
@@ -760,12 +767,11 @@ public class Main extends javax.swing.JFrame {
                         .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(340, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelCompresionLayout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(panelCompresionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelCompresionLayout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addComponent(jScrollPane1))
+                    .addComponent(jScrollPane1)
                     .addGroup(panelCompresionLayout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jButton3)))
                 .addGap(54, 54, 54))
         );
@@ -779,10 +785,10 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(jt_direccion, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(31, 31, 31)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 518, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton3)
-                .addContainerGap(183, Short.MAX_VALUE))
+                .addContainerGap(383, Short.MAX_VALUE))
         );
 
         panelPrincipal.add(panelCompresion, "panelCompresion");
@@ -806,7 +812,7 @@ public class Main extends javax.swing.JFrame {
             .addGroup(panelColoreableLayout.createSequentialGroup()
                 .addGap(98, 98, 98)
                 .addComponent(jLabel6)
-                .addContainerGap(830, Short.MAX_VALUE))
+                .addContainerGap(887, Short.MAX_VALUE))
         );
 
         panelPrincipal.add(panelColoreable, "panelColoreable");
@@ -816,21 +822,53 @@ public class Main extends javax.swing.JFrame {
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Origen");
 
+        jt_direccion1.setEditable(false);
+        jt_direccion1.setBackground(new java.awt.Color(51, 54, 63));
+        jt_direccion1.setForeground(new java.awt.Color(255, 255, 255));
+        jt_direccion1.setText("Direccion de archivo");
+        jt_direccion1.setBorder(null);
+
+        jButton4.setBackground(new java.awt.Color(51, 54, 63));
+        jButton4.setForeground(new java.awt.Color(255, 255, 255));
+        jButton4.setText("...");
+        jButton4.setBorderPainted(false);
+        jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton4MouseClicked(evt);
+            }
+        });
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout panelOrigenLayout = new javax.swing.GroupLayout(panelOrigen);
         panelOrigen.setLayout(panelOrigenLayout);
         panelOrigenLayout.setHorizontalGroup(
             panelOrigenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelOrigenLayout.createSequentialGroup()
-                .addGap(297, 297, 297)
-                .addComponent(jLabel7)
-                .addContainerGap(453, Short.MAX_VALUE))
+                .addGroup(panelOrigenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelOrigenLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel7))
+                    .addGroup(panelOrigenLayout.createSequentialGroup()
+                        .addGap(157, 157, 157)
+                        .addComponent(jt_direccion1, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(213, Short.MAX_VALUE))
         );
         panelOrigenLayout.setVerticalGroup(
             panelOrigenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelOrigenLayout.createSequentialGroup()
-                .addGap(126, 126, 126)
+                .addContainerGap()
                 .addComponent(jLabel7)
-                .addContainerGap(802, Short.MAX_VALUE))
+                .addGap(55, 55, 55)
+                .addGroup(panelOrigenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jt_direccion1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(885, Short.MAX_VALUE))
         );
 
         panelPrincipal.add(panelOrigen, "panelOrigen");
@@ -854,7 +892,7 @@ public class Main extends javax.swing.JFrame {
             .addGroup(panelOrigenesLayout.createSequentialGroup()
                 .addGap(121, 121, 121)
                 .addComponent(jLabel8)
-                .addContainerGap(807, Short.MAX_VALUE))
+                .addContainerGap(864, Short.MAX_VALUE))
         );
 
         panelPrincipal.add(panelOrigenes, "panelOrigenes");
@@ -878,7 +916,7 @@ public class Main extends javax.swing.JFrame {
             .addGroup(panelArbolLayout.createSequentialGroup()
                 .addGap(114, 114, 114)
                 .addComponent(jLabel9)
-                .addContainerGap(814, Short.MAX_VALUE))
+                .addContainerGap(871, Short.MAX_VALUE))
         );
 
         panelPrincipal.add(panelArbol, "panelArbol");
@@ -1299,13 +1337,49 @@ public class Main extends javax.swing.JFrame {
                     FileOutputStream fos = new FileOutputStream(new File(path += ".ara"));
                     fos.flush();
                     fos.close();
-                    jt_direccion.setText("Direccion de archivo");
+                    jt_direccion.setText("asgagsgs");
                     jTextArea1.setText("");
                 } catch (Exception ex) {
+                    ex.printStackTrace();
                 }
+            } else {
+                System.out.println("holi :b");
             }
         }
     }//GEN-LAST:event_jButton3MouseClicked
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton4MouseClicked
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // Leer el archivo para el grafo :v
+        JFileChooser jf = new JFileChooser();
+        jf.setFileFilter(new FileNameExtensionFilter("Text files", "txt"));
+        int retorno = jf.showOpenDialog(this);
+        if (retorno == 0) {
+            String path = jf.getSelectedFile().getAbsolutePath();
+            String filename = jf.getSelectedFile().getName();
+            jt_direccion1.setText(filename);
+            Grafo g = new Grafo();
+            try {            
+                g.crearGrafo(path);
+                g.Dijkstra("A");
+                g.printDijkstra(g.vertexMap.get("A"));
+            } catch (IOException ex) {
+                Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            } catch(Exception e){
+                e.printStackTrace();
+            }
+            
+            System.out.println("holi boli :v");
+        }
+
+    }//GEN-LAST:event_jButton4ActionPerformed
     public static String readfile(String path) throws FileNotFoundException, IOException {
         String acum;
         FileReader fr = new FileReader(path);
@@ -1387,6 +1461,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton jButton31;
     private javax.swing.JButton jButton32;
     private javax.swing.JButton jButton33;
+    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -1400,6 +1475,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jt_direccion;
+    private javax.swing.JTextField jt_direccion1;
     public javax.swing.JPanel laberintopanel;
     private javax.swing.JTextField operacionIngresada;
     private javax.swing.JPanel panelArbol;
