@@ -20,8 +20,13 @@ public class Comprimido implements Serializable {
     public Comprimido() {
     }
 
-    public Comprimido(byte[] array, LinkedList paths) {
-        this.array = array;
+    public Comprimido(String texto, LinkedList paths) {
+        String[] s = texto.split("(?<=\\G........)");
+        array = new byte[s.length];
+        for (int i = 0; i < s.length; i++) {
+            array[i] = ((byte) Short.parseShort(s[i], 2));
+            System.out.println(array[i]);
+        }
         this.paths = paths;
     }
 
@@ -51,10 +56,6 @@ public class Comprimido implements Serializable {
 
     public String descomprimir() {
         String reto = "";
-        for (int i = 0; i < array.length; i++) {
-            String ac = Integer.toBinaryString(array[i] & 0xFF);
-            reto += ac;
-        }
         return reto;
     }
 }

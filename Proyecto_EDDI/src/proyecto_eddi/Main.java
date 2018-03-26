@@ -1318,7 +1318,7 @@ public class Main extends javax.swing.JFrame {
                 jTextArea1.setText(texto);
                 Huffman hf = new Huffman(texto);
                 texto = hf.comprimir();
-                comprimido = new Comprimido(creararreglo(texto), hf.getPaths());
+                comprimido = new Comprimido(texto, hf.getPaths());
             } catch (IOException ex) {
                 Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -1334,14 +1334,14 @@ public class Main extends javax.swing.JFrame {
             if (reto == 0) {
                 String path = jf.getSelectedFile().getAbsolutePath();
                 String filename = jf.getSelectedFile().getName();
+                if (!path.endsWith(".ara")) {
+                    path += ".ara";
+                }
                 try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(new File(path)))) {
                     oos.writeObject(comprimido);
                     oos.close();
                 } catch (IOException ex) {
 
-                }
-                if (!path.endsWith(".ara")) {
-                    path += ".ara";
                 }
                 jt_direccion.setText("Direccion de archivo");
                 jTextArea1.setText("");
