@@ -27,6 +27,7 @@ import javax.swing.filechooser.FileNameExtensionFilter;
  * @authors David Mendoza & Josue Rodriguez
  */
 public class Main extends javax.swing.JFrame {
+
     /**
      * Creates new form Main
      */
@@ -1332,32 +1333,18 @@ public class Main extends javax.swing.JFrame {
             int reto = jf.showSaveDialog(this);
             if (reto == 0) {
                 String path = jf.getSelectedFile().getAbsolutePath();
-<<<<<<< Updated upstream
                 String filename = jf.getSelectedFile().getName();
-                try {
-                    FileOutputStream fos = new FileOutputStream(new File(path += ".ara"));
-                    fos.flush();
-                    fos.close();
-                    jt_direccion.setText("asgagsgs");
-                    jTextArea1.setText("");
-                } catch (Exception ex) {
-                    ex.printStackTrace();
-                }
-            } else {
-                System.out.println("holi :b");
-=======
-                if (!path.endsWith(".ara")) {
-                    path += ".ara";
-                }
                 try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(new File(path)))) {
                     oos.writeObject(comprimido);
                     oos.close();
                 } catch (IOException ex) {
 
                 }
+                if (!path.endsWith(".ara")) {
+                    path += ".ara";
+                }
                 jt_direccion.setText("Direccion de archivo");
                 jTextArea1.setText("");
->>>>>>> Stashed changes
             }
         }
     }//GEN-LAST:event_jButton3MouseClicked
@@ -1380,16 +1367,16 @@ public class Main extends javax.swing.JFrame {
             String filename = jf.getSelectedFile().getName();
             jt_direccion1.setText(filename);
             Grafo g = new Grafo();
-            try {            
+            try {
                 g.crearGrafo(path);
                 g.Dijkstra("A");
                 g.printDijkstra(g.vertexMap.get("A"));
             } catch (IOException ex) {
                 Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-            } catch(Exception e){
+            } catch (Exception e) {
                 e.printStackTrace();
             }
-            
+
             System.out.println("holi boli :v");
         }
 
@@ -1536,7 +1523,7 @@ public class Main extends javax.swing.JFrame {
     private boolean respondio = false;
     private String texto = "";
     private Comprimido comprimido;
-    private final Color selected = new Color(56,70,101);
-    private final Color noselected = new Color(51,54,63);
+    private final Color selected = new Color(56, 70, 101);
+    private final Color noselected = new Color(51, 54, 63);
 //</editor-fold>
 }

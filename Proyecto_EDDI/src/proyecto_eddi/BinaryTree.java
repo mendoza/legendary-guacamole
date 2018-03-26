@@ -25,14 +25,12 @@ public class BinaryTree {
         return Root;
     }
 
-<<<<<<< Updated upstream
     public void setRoot(BinaryNode Root) {
         this.Root = Root;
     }
 //<<<<<<< Updated upstream
-    
-//=======
 
+//=======
     //FALTAN TODOS LOS METODOS ADMINISTRATIVOS, PARA PODER HACER LA COMPRESION DE HUFFMAN
     /*public boolean Insert(Object data){
         boolean out;
@@ -45,20 +43,12 @@ public class BinaryTree {
  /*public boolean isEmpty(BinaryNode bn){
         return (bn.getData() == null);
     }*/
-    
-    public void Create(Object data) {
-        this.Root = new BinaryNode(data);
-
-    }
 
 ///>>>>>>> Stashed changes
     public void Erase() {
         this.Root = null;
-=======
-    public void setRoot(BinaryNode raiz) {
-        this.Root = raiz;
->>>>>>> Stashed changes
     }
+
 
     public void insertar(char letra, Integer d) {
         BinaryNode nuevo = new BinaryNode(letra, d);
