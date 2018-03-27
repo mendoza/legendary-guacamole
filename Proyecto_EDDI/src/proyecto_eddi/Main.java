@@ -102,6 +102,12 @@ public class Main extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jt_direccion1 = new javax.swing.JTextField();
         jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        campoGrafo = new javax.swing.JTextArea();
+        campoDistancia = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        campoOrigen = new javax.swing.JTextField();
         panelOrigenes = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         panelArbol = new javax.swing.JPanel();
@@ -844,6 +850,37 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
+        jButton5.setBackground(new java.awt.Color(51, 54, 63));
+        jButton5.setForeground(new java.awt.Color(255, 255, 255));
+        jButton5.setText("Calcular");
+        jButton5.setBorder(null);
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+
+        campoGrafo.setBackground(new java.awt.Color(51, 54, 63));
+        campoGrafo.setColumns(20);
+        campoGrafo.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
+        campoGrafo.setForeground(new java.awt.Color(255, 255, 255));
+        campoGrafo.setRows(5);
+        campoGrafo.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Grafo en Forma de Matriz", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 18), new java.awt.Color(255, 255, 255))); // NOI18N
+        jScrollPane2.setViewportView(campoGrafo);
+
+        campoDistancia.setBackground(new java.awt.Color(51, 54, 63));
+        campoDistancia.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
+        campoDistancia.setForeground(new java.awt.Color(255, 255, 255));
+        campoDistancia.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Distancia Minima", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 18), new java.awt.Color(255, 255, 255))); // NOI18N
+
+        jLabel10.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setText("Origen: ");
+
+        campoOrigen.setBackground(new java.awt.Color(51, 54, 63));
+        campoOrigen.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
+        campoOrigen.setForeground(new java.awt.Color(255, 255, 255));
+
         javax.swing.GroupLayout panelOrigenLayout = new javax.swing.GroupLayout(panelOrigen);
         panelOrigen.setLayout(panelOrigenLayout);
         panelOrigenLayout.setHorizontalGroup(
@@ -857,8 +894,20 @@ public class Main extends javax.swing.JFrame {
                         .addGap(157, 157, 157)
                         .addComponent(jt_direccion1, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(213, Short.MAX_VALUE))
+                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelOrigenLayout.createSequentialGroup()
+                        .addGap(57, 57, 57)
+                        .addGroup(panelOrigenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(campoDistancia)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 657, Short.MAX_VALUE)))
+                    .addGroup(panelOrigenLayout.createSequentialGroup()
+                        .addGap(135, 135, 135)
+                        .addComponent(jLabel10)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(campoOrigen, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(88, 88, 88)
+                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(84, Short.MAX_VALUE))
         );
         panelOrigenLayout.setVerticalGroup(
             panelOrigenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -869,7 +918,16 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(panelOrigenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jt_direccion1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(885, Short.MAX_VALUE))
+                .addGap(26, 26, 26)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(panelOrigenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel10)
+                    .addComponent(campoOrigen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(43, 43, 43)
+                .addComponent(campoDistancia, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(349, Short.MAX_VALUE))
         );
 
         panelPrincipal.add(panelOrigen, "panelOrigen");
@@ -1358,7 +1416,6 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4MouseClicked
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // Leer el archivo para el grafo :v
         JFileChooser jf = new JFileChooser();
         jf.setFileFilter(new FileNameExtensionFilter("Text files", "txt"));
         int retorno = jf.showOpenDialog(this);
@@ -1366,21 +1423,24 @@ public class Main extends javax.swing.JFrame {
             String path = jf.getSelectedFile().getAbsolutePath();
             String filename = jf.getSelectedFile().getName();
             jt_direccion1.setText(filename);
-            Grafo g = new Grafo();
             try {
-                g.crearGrafo(path);
-                g.Dijkstra("A");
-                g.printDijkstra(g.vertexMap.get("A"));
+                dj.readGraph(path);
             } catch (IOException ex) {
                 Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (Exception e) {
-                e.printStackTrace();
             }
-
-            System.out.println("holi boli :v");
         }
+        campoGrafo.setText(dj.GraphtoString());
+            
 
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        if(!campoOrigen.getText().equals("")){
+            int origen = Integer.parseInt(campoOrigen.getText());
+            int[] distancias = dj.startDijkstra(origen);
+            campoDistancia.setText(dj.printDijkstra(distancias));
+        }
+    }//GEN-LAST:event_jButton5ActionPerformed
     public static String readfile(String path) throws FileNotFoundException, IOException {
         String acum, line;
         BufferedReader br = new BufferedReader(new FileReader(path));
@@ -1467,6 +1527,9 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton bt_resolucion;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.JTextField campoDistancia;
+    private javax.swing.JTextArea campoGrafo;
+    private javax.swing.JTextField campoOrigen;
     private javax.swing.JButton comenzarLaberinto;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton17;
@@ -1489,7 +1552,9 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton jButton32;
     private javax.swing.JButton jButton33;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -1500,6 +1565,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jt_direccion;
     private javax.swing.JTextField jt_direccion1;
@@ -1525,5 +1591,6 @@ public class Main extends javax.swing.JFrame {
     private Comprimido comprimido;
     private final Color selected = new Color(56, 70, 101);
     private final Color noselected = new Color(51, 54, 63);
+    private Dijkstra dj = new Dijkstra();
 //</editor-fold>
 }
