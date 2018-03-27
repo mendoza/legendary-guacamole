@@ -98,8 +98,8 @@ public class Dijkstra {
     
     public String GraphtoString(){
         String retorno = "";
-        for (int i = 0; i < vertices; i++) {
-            for (int j = 0; j < vertices; j++) {
+        for (int i = 0; i < vertices+1; i++) {
+            for (int j = 0; j < vertices+1; j++) {
                 if(i==0&&j==0){
                     retorno+="[V]";
                 }else if(i==0){
