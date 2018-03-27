@@ -9,6 +9,7 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -18,25 +19,13 @@ public class Dijkstra {
 
     private final int infinito = (int) Double.POSITIVE_INFINITY;
     public int vertices;
-    /*public int[][] grafo = {
-    {0, 4, 0, 0, 0, 0, 0, 8, 0},
-    {4, 0, 8, 0, 0, 0, 0, 11, 0},
-    {0, 8, 0, 7, 0, 4, 0, 0, 2},
-    {0, 0, 7, 0, 9, 14, 0, 0, 0},
-    {0, 0, 0, 9, 0, 10, 0, 0, 0},
-    {0, 0, 4, 0, 10, 0, 2, 0, 0},
-    {0, 0, 0, 14, 0, 2, 0, 1, 6},
-    {8, 11, 0, 0, 0, 0, 1, 0, 7},
-    {0, 0, 2, 0, 0, 0, 6, 7, 0}
-    };*/
     public int[][] grafo;
 
-    public Dijkstra(){
-        
+    public Dijkstra() {
+
     }
 
     public int minDistance(int[] dist, boolean[] visitados) {
-        //int min = Integer.MAX_VALUE;
         int min = infinito;
         int min_index = 0;
         for (int i = 0; i < vertices; i++) {
@@ -50,21 +39,23 @@ public class Dijkstra {
 
     public String printDijkstra(int[] distancias) {
         String retorno = "";
-        //System.out.println("Distancia minima del vertice seleccionado(vertice " + n + "): ");
-        for (int i = 0; i < distancias.length; i++) {
-            retorno+="["+distancias[i]+"]";
+        if (distancias != null) {
+            for (int i = 0; i < distancias.length; i++) {
+                retorno += "[" + distancias[i] + "]";
+            }
         }
         return retorno;
     }
 
     public int[] startDijkstra(int origen) {
+        origen = origen - 1;
         int[] distancias = new int[vertices];
         boolean[] visitados = new boolean[vertices];
         for (int i = 0; i < vertices; i++) {
             distancias[i] = infinito;
             visitados[i] = false;
         }
-        //if (origen - 1 >= vertices || origen - 1 < 0) {
+        if (inBounds(origen)) {
             distancias[origen] = 0;
             for (int i = 0; i < vertices - 1; i++) {
                 int indice_menor = minDistance(distancias, visitados);
@@ -76,54 +67,50 @@ public class Dijkstra {
                     }
                 }
             }
-            //printDijkstra(distancias,origen);
-            //System.out.println(GraphtoString());
             //System.out.println("∞");
+            return distancias;
 
-        //} else {
-          /*  System.out.println("Ese origen no es valido");
-            System.out.println(origen - 1);
-            System.out.println(grafo.length);
-            System.out.println(vertices);
-        }*/
-          return distancias;
+        } else {
+            JOptionPane.showMessageDialog(null, "Origen no valido", "Error", JOptionPane.ERROR_MESSAGE);
+
+        }
+        return null;
 
     }
-    
-    public boolean inBounds(int posicion){
-        return posicion-1>=grafo.length||posicion-1<0;
+
+    public boolean inBounds(int posicion) {
+        return posicion < grafo.length && posicion >= 0;
     }
-    
+
     //Metodos de utileria
-    
-    public String GraphtoString(){
+    public String GraphtoString() {
         String retorno = "";
-        for (int i = 0; i < vertices+1; i++) {
-            for (int j = 0; j < vertices+1; j++) {
-                if(i==0&&j==0){
-                    retorno+="[V]";
-                }else if(i==0){
-                    retorno+="["+j+"]";
-                }else if(j==0){
-                    retorno+="["+i+"]";
-                }else{
-                    retorno+="["+grafo[i-1][j-1]+"]";
+        for (int i = 0; i < vertices + 1; i++) {
+            for (int j = 0; j < vertices + 1; j++) {
+                if (i == 0 && j == 0) {
+                    retorno += "[V]";
+                } else if (i == 0) {
+                    retorno += "[" + j + "]";
+                } else if (j == 0) {
+                    retorno += "[" + i + "]";
+                } else {
+                    retorno += "[" + grafo[i - 1][j - 1] + "]";
                 }
             }
-            retorno+='\n';
-            
+            retorno += '\n';
+
         }
         return retorno;
     }
-    
-    public void readGraph(String path) throws FileNotFoundException, IOException{
+
+    public void readGraph(String path) throws FileNotFoundException, IOException {
         String line;
         int fila = 0;
         boolean creado = false;
         BufferedReader br = new BufferedReader(new FileReader(path));
         while ((line = br.readLine()) != null) {
-            String[]temporal = line.split(",");
-            if(creado==false){
+            String[] temporal = line.split(",");
+            if (creado == false) {
                 grafo = new int[temporal.length][temporal.length];
                 creado = true;
             }
@@ -133,8 +120,7 @@ public class Dijkstra {
             fila++;
         }
         vertices = grafo.length;
-        //System.out.println(GraphtoString());
-        
+
     }
 
 }
