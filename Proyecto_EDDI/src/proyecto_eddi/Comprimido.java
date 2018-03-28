@@ -52,15 +52,4 @@ public class Comprimido implements Serializable {
     public void setPaths(LinkedList paths) {
         this.paths = paths;
     }
-
-    public String descomprimir() {
-        String reto = "", binario = "";
-        for (int i = 0; i < this.array.length; i++) {
-            binario += Integer.toBinaryString(array[i] & 0xFF);
-        }
-        /*
-          ya no se que hacer jajaja :v
-         */
-        return reto;
-    }
 }

@@ -734,11 +734,6 @@ public class Main extends javax.swing.JFrame {
                 jButton2MouseClicked(evt);
             }
         });
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
 
         jTextArea1.setEditable(false);
         jTextArea1.setBackground(new java.awt.Color(51, 54, 63));
@@ -839,11 +834,6 @@ public class Main extends javax.swing.JFrame {
         jButton4.setForeground(new java.awt.Color(255, 255, 255));
         jButton4.setText("...");
         jButton4.setBorderPainted(false);
-        jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton4MouseClicked(evt);
-            }
-        });
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
@@ -1391,7 +1381,6 @@ public class Main extends javax.swing.JFrame {
             int reto = jf.showSaveDialog(this);
             if (reto == 0) {
                 String path = jf.getSelectedFile().getAbsolutePath();
-                String filename = jf.getSelectedFile().getName();
                 if (!path.endsWith(".ara")) {
                     path += ".ara";
                 }
@@ -1407,13 +1396,13 @@ public class Main extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton3MouseClicked
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4MouseClicked
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        if (!campoOrigen.getText().equals("")) {
+            int origen = Integer.parseInt(campoOrigen.getText());
+            int[] distancias = dj.startDijkstra(origen);
+            campoDistancia.setText(dj.printDijkstra(distancias));
+        }
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         JFileChooser jf = new JFileChooser();
@@ -1430,17 +1419,8 @@ public class Main extends javax.swing.JFrame {
             }
         }
         campoGrafo.setText(dj.GraphtoString());
-            
 
     }//GEN-LAST:event_jButton4ActionPerformed
-
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        if(!campoOrigen.getText().equals("")){
-            int origen = Integer.parseInt(campoOrigen.getText());
-            int[] distancias = dj.startDijkstra(origen);
-            campoDistancia.setText(dj.printDijkstra(distancias));
-        }
-    }//GEN-LAST:event_jButton5ActionPerformed
     public static String readfile(String path) throws FileNotFoundException, IOException {
         String acum, line;
         BufferedReader br = new BufferedReader(new FileReader(path));
@@ -1449,27 +1429,6 @@ public class Main extends javax.swing.JFrame {
             acum += line;
         }
         return acum;
-    }
-
-    public static byte[] creararreglo(String text) {
-        int size;
-        size = text.length() / 8;
-        if (text.length() % 8 != 0) {
-            size += 1;
-        }
-        byte[] d = new byte[size];
-        String p = "";
-        for (int i = 0; i < text.length(); i++) {
-            p += text.charAt(i);
-            if (p.length() == 8) {
-                d[i / 8] = ((byte) Short.parseShort(p, 2));
-                p = "";
-            }
-            if (i == size) {
-                d[size - 1] = (byte) Short.parseShort(p, 2);
-            }
-        }
-        return d;
     }
 
     /**
