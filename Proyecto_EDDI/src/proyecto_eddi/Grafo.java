@@ -26,6 +26,7 @@ public class Grafo {
 
     public Graph graph = new SingleGraph("Grafo");
     public double[][] adyacente;
+    public double[][] adyacentefloyd;
 
     public Grafo() {
 
@@ -114,6 +115,7 @@ public class Grafo {
         }
         br.close();
         adyacente = getVicinity();
+        adyacentefloyd = getVicinity();
     }
     
     public Viewer showGraph(){
@@ -133,6 +135,50 @@ public class Grafo {
         }
         return graph.display();
         
+    }
+    
+    public boolean inBounds(int posicion) {
+        return posicion < adyacente.length && posicion >= 0;
+    }
+    
+    public String GraphtoString() {
+        String retorno = "";
+        for (int i = 0; i < graph.getNodeCount() + 1; i++) {
+            for (int j = 0; j < graph.getNodeCount() + 1; j++) {
+                if (i == 0 && j == 0) {
+                    retorno += "[V]";
+                } else if (i == 0) {
+                    retorno += "[-" + j + "-]";
+                } else if (j == 0) {
+                    retorno += "[" + i + "]";
+                } else {
+                    retorno += "[" + (int)adyacente[i - 1][j - 1] + "]";
+                }
+            }
+            retorno += '\n';
+
+        }
+        return retorno;
+    }
+    
+    public String GraphtoString(double[][] matriz) {
+        String retorno = "";
+        for (int i = 0; i < graph.getNodeCount() + 1; i++) {
+            for (int j = 0; j < graph.getNodeCount() + 1; j++) {
+                if (i == 0 && j == 0) {
+                    retorno += "[V]";
+                } else if (i == 0) {
+                    retorno += "[-" + j + "-]";
+                } else if (j == 0) {
+                    retorno += "[" + i + "]";
+                } else {
+                    retorno += "[" + matriz[i - 1][j - 1] + "]";
+                }
+            }
+            retorno += '\n';
+
+        }
+        return retorno;
     }
 
 }

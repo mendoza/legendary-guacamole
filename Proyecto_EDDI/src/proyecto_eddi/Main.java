@@ -1430,11 +1430,18 @@ public class Main extends javax.swing.JFrame {
             jt_direccion1.setText(filename);
             try {
                 dj.readGraph(path);
+                mayweather.readGraph(path);
             } catch (IOException ex) {
                 Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
         campoDistancia.setText("");
+        campoOrigen.setText("");
+        mayweather.prepareFloyd();
+        System.out.println("AdyacenteFloyd");
+        System.out.println(mayweather.GraphtoString(mayweather.adyacentefloyd));
+        System.out.println("Floyd");
+        System.out.println(mayweather.GraphtoString(mayweather.floyd));
         campoGrafo.setText(dj.GraphtoString());
         Viewer viewer = dj.showGraph();
         viewer.setCloseFramePolicy(Viewer.CloseFramePolicy.HIDE_ONLY);
@@ -1582,6 +1589,7 @@ public class Main extends javax.swing.JFrame {
     private final Color selected = new Color(56, 70, 101);
     private final Color noselected = new Color(51, 54, 63);
     private Dijkstra dj = new Dijkstra();
+    private Floyd mayweather = new Floyd();
 
 //</editor-fold>
 }

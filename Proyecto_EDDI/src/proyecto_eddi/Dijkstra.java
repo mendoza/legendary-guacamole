@@ -35,16 +35,6 @@ public class Dijkstra extends Grafo{
         return min_index;
     }
 
-    public String printDijkstra(int[] distancias) {
-        String retorno = "";
-        if (distancias != null) {
-            for (int i = 0; i < distancias.length; i++) {
-                retorno += "[" + distancias[i] + "]";
-            }
-        }
-        return retorno;
-    }
-
     public int[] startDijkstra(int origen) {
         origen = origen - 1;
         int[] distancias = new int[graph.getNodeCount()];
@@ -76,31 +66,17 @@ public class Dijkstra extends Grafo{
 
     }
 
-    public boolean inBounds(int posicion) {
-        return posicion < adyacente.length && posicion >= 0;
-    }
-
     //Metodos de utileria
-    public String GraphtoString() {
+    public String printDijkstra(int[] distancias) {
         String retorno = "";
-        for (int i = 0; i < graph.getNodeCount() + 1; i++) {
-            for (int j = 0; j < graph.getNodeCount() + 1; j++) {
-                if (i == 0 && j == 0) {
-                    retorno += "[V]";
-                } else if (i == 0) {
-                    retorno += "[-" + j + "-]";
-                } else if (j == 0) {
-                    retorno += "[" + i + "]";
-                } else {
-                    retorno += "[" + adyacente[i - 1][j - 1] + "]";
-                }
+        if (distancias != null) {
+            for (int i = 0; i < distancias.length; i++) {
+                retorno += "[" + distancias[i] + "]";
             }
-            retorno += '\n';
-
         }
         return retorno;
     }
-
+    
     /*public void readGraph(String path) throws FileNotFoundException, IOException {
         String line;
         int fila = 0;
