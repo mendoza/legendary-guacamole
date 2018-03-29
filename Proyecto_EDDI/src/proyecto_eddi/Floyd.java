@@ -19,40 +19,37 @@ public class Floyd extends Grafo {
 
     public void prepareFloyd() {
         if (graph.getNodeCount() > 0) {
-
-            floyd = new double[graph.getNodeCount()][graph.getNodeCount()];
             for (int k = 0; k < graph.getNodeCount(); k++) {
                 for (int i = 0; i < graph.getNodeCount(); i++) {
                     for (int j = 0; j < graph.getNodeCount(); j++) {
-                        double dt = adyacentefloyd[i][k] + adyacentefloyd[k][j];
-                        if (adyacentefloyd[i][j] > dt) {
-                            adyacentefloyd[i][j] = dt;
-                            floyd[i][j]=k;
+                        if (i != j) {
+                            if (adyacentefloyd[i][j] == 0) {
+                                adyacentefloyd[i][j] = min(Double.POSITIVE_INFINITY, adyacentefloyd[i][k] + adyacentefloyd[k][j]);
+                            } else {
+                                adyacentefloyd[i][j] = min(adyacentefloyd[i][j], adyacentefloyd[i][k] + adyacentefloyd[k][j]);
+                            }
                         }
-                    }
-                }
-            }
-            /*floyd = new double[graph.getNodeCount()][graph.getNodeCount()];
-            for (int i = 0; i < floyd.length; i++) {
-                for (int j = 0; j < floyd.length; j++) {
-                    floyd[i][j] = 0;
-                }
 
-            }
-            
-            for (int k = 0; k < graph.getNodeCount(); k++) {
-                for (int i = 0; i < graph.getNodeCount(); i++) {
-                    for (int j = 0; j < graph.getNodeCount(); j++) {
-                        if(adyacentefloyd[i][k]+adyacentefloyd[k][j] < adyacentefloyd[i][j]){
-                            System.out.println("entro al if");
-                            adyacentefloyd[i][j]= adyacentefloyd[i][k]+adyacentefloyd[k][j];
-                            floyd[i][j] = k;
-                        }
+                        //System.out.println("ij: " + adyacentefloyd[i][j]);
+                        //System.out.println("ik: " + adyacentefloyd[i][k]);
+                        //System.out.println("kj: " + adyacentefloyd[k][j]);
+                        
+                        //System.out.println("ij: " + adyacentefloyd[i][j]);
                     }
                 }
-            }*/
+            }
 
         }
 
+    }
+
+    public double min(double a, double b) {
+        if (a > b) {
+            System.out.println("elijio b: " + b);
+            return b;
+        } else {
+            System.out.println("elijio a: " + a);
+            return a;
+        }
     }
 }

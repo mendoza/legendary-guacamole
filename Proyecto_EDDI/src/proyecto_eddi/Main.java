@@ -1441,7 +1441,6 @@ public class Main extends javax.swing.JFrame {
         System.out.println("AdyacenteFloyd");
         System.out.println(mayweather.GraphtoString(mayweather.adyacentefloyd));
         System.out.println("Floyd");
-        System.out.println(mayweather.GraphtoString(mayweather.floyd));
         campoGrafo.setText(dj.GraphtoString());
         Viewer viewer = dj.showGraph();
         viewer.setCloseFramePolicy(Viewer.CloseFramePolicy.HIDE_ONLY);
