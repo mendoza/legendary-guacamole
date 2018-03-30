@@ -21,6 +21,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
+import javax.swing.tree.TreeModel;
 import org.graphstream.ui.view.Viewer;
 
 //</editor-fold>
@@ -68,8 +69,6 @@ public class Main extends javax.swing.JFrame {
         rb_labe1 = new javax.swing.JRadioButton();
         rb_labe2 = new javax.swing.JRadioButton();
         comenzarLaberinto = new javax.swing.JButton();
-        panelCalculo = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
         panelResolucion = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         operacionIngresada = new javax.swing.JTextField();
@@ -115,6 +114,10 @@ public class Main extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         panelArbol = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
+        panelCalculo = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTree1 = new javax.swing.JTree();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Proyecto EDD1");
@@ -387,30 +390,6 @@ public class Main extends javax.swing.JFrame {
 
         panelPrincipal.add(panelLaberinto, "panelLaberinto");
         panelLaberinto.getAccessibleContext().setAccessibleName("");
-
-        panelCalculo.setBackground(new java.awt.Color(29, 30, 35));
-
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Calculo de evaluacion");
-
-        javax.swing.GroupLayout panelCalculoLayout = new javax.swing.GroupLayout(panelCalculo);
-        panelCalculo.setLayout(panelCalculoLayout);
-        panelCalculoLayout.setHorizontalGroup(
-            panelCalculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelCalculoLayout.createSequentialGroup()
-                .addGap(237, 237, 237)
-                .addComponent(jLabel3)
-                .addContainerGap(408, Short.MAX_VALUE))
-        );
-        panelCalculoLayout.setVerticalGroup(
-            panelCalculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelCalculoLayout.createSequentialGroup()
-                .addGap(116, 116, 116)
-                .addComponent(jLabel3)
-                .addContainerGap(869, Short.MAX_VALUE))
-        );
-
-        panelPrincipal.add(panelCalculo, "panelCalculo");
 
         panelResolucion.setBackground(new java.awt.Color(29, 30, 35));
 
@@ -986,6 +965,40 @@ public class Main extends javax.swing.JFrame {
 
         panelPrincipal.add(panelArbol, "panelArbol");
 
+        panelCalculo.setBackground(new java.awt.Color(29, 30, 35));
+
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Calculo de evaluacion");
+
+        jTree1.setBackground(new java.awt.Color(51, 54, 63));
+        jScrollPane3.setViewportView(jTree1);
+
+        javax.swing.GroupLayout panelCalculoLayout = new javax.swing.GroupLayout(panelCalculo);
+        panelCalculo.setLayout(panelCalculoLayout);
+        panelCalculoLayout.setHorizontalGroup(
+            panelCalculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelCalculoLayout.createSequentialGroup()
+                .addGroup(panelCalculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelCalculoLayout.createSequentialGroup()
+                        .addGap(297, 297, 297)
+                        .addComponent(jLabel3))
+                    .addGroup(panelCalculoLayout.createSequentialGroup()
+                        .addGap(60, 60, 60)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 626, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(112, Short.MAX_VALUE))
+        );
+        panelCalculoLayout.setVerticalGroup(
+            panelCalculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelCalculoLayout.createSequentialGroup()
+                .addGap(49, 49, 49)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 690, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(240, Short.MAX_VALUE))
+        );
+
+        panelPrincipal.add(panelCalculo, "panelCalculo");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -1452,11 +1465,17 @@ public class Main extends javax.swing.JFrame {
         if (dj.getGraph().getNodeCount() > 0) {
             Viewer viewer = dj.showGraph();
             viewer.setCloseFramePolicy(Viewer.CloseFramePolicy.HIDE_ONLY);
-        }else{
+        } else {
             JOptionPane.showMessageDialog(null, "Cargue un grafo primero", "Error", JOptionPane.ERROR_MESSAGE);
         }
 
     }//GEN-LAST:event_jButton6ActionPerformed
+
+    public TreeModel AGtoJT() {
+        TreeModel tm = jTree1.getModel();
+        return tm;
+    }
+
     public static String readfile(String path) throws FileNotFoundException, IOException {
         String acum, line;
         BufferedReader br = new BufferedReader(new FileReader(path));
@@ -1465,7 +1484,7 @@ public class Main extends javax.swing.JFrame {
             acum += line;
         }
         return acum;
-        
+
     }
 
     /**
@@ -1563,7 +1582,9 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTree jTree1;
     private javax.swing.JTextField jt_direccion;
     private javax.swing.JTextField jt_direccion1;
     public javax.swing.JPanel laberintopanel;
@@ -1590,6 +1611,6 @@ public class Main extends javax.swing.JFrame {
     private final Color noselected = new Color(51, 54, 63);
     private Dijkstra dj = new Dijkstra();
     private Floyd mayweather = new Floyd();
-
+    private Tree AG = new Tree();
 //</editor-fold>
 }
