@@ -45,10 +45,8 @@ public class Floyd extends Grafo {
 
     public double min(double a, double b) {
         if (a > b) {
-            System.out.println("elijio b: " + b);
             return b;
         } else {
-            System.out.println("elijio a: " + a);
             return a;
         }
     }
