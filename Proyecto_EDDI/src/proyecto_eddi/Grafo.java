@@ -18,7 +18,6 @@ import org.graphstream.graph.implementations.*;
 import org.graphstream.stream.GraphParseException;
 import org.graphstream.ui.view.Viewer;
 
-
 /**
  *
  * @author josue
@@ -27,7 +26,7 @@ public class Grafo {
 
     public Graph graph = new SingleGraph("Grafo");
     public double[][] adyacente;
-    public double[][] adyacentefloyd;
+    
 
     public Grafo() {
 
@@ -50,7 +49,7 @@ public class Grafo {
     }
 
     //Metodo para sacar la matriz de adyacencia del graph
-    public double[][] getVicinity() {
+    public double[][] getVicinity(int dirigido) {
         double[][] retorno = new double[graph.getNodeCount()][graph.getNodeCount()];
         java.util.ArrayList<String> labels = new java.util.ArrayList();
         for (int i = 0; i < retorno.length; i++) {
@@ -71,30 +70,40 @@ public class Grafo {
                 Edge arista = edges.next();
                 Node origin = arista.getSourceNode();
                 Node destiny = arista.getTargetNode();
-                j = labels.indexOf(destiny.getId());
-                retorno[i][j] = arista.getNumber("Weight");
-                /*if (n.getId().equals(origin.getId())) {
+                if (dirigido == 4) {
+                    j = labels.indexOf(destiny.getId());
+                    retorno[i][j] = arista.getNumber("Weight");
+
+                } else if(dirigido == 3){
+                    if (n.getId().equals(origin.getId())) {
+                        j = labels.indexOf(destiny.getId());
+                        retorno[i][j] = arista.getNumber("Weight");
+                    } else if (n.getId().equals(destiny.getId())) {
+                        j = labels.indexOf(origin.getId());
+                        retorno[i][j] = arista.getNumber("Weight");
+                    } 
+                } 
+                    /*if (n.getId().equals(origin.getId())) {
                     j = labels.indexOf(destiny.getId());
                     retorno[i][j] = arista.getNumber("Weight");
                 } else if (n.getId().equals(destiny.getId())) {
                     j = labels.indexOf(origin.getId());
                     retorno[i][j] = arista.getNumber("Weight");
                 }*/
-
             }
-            i++;
-        }
-        /*for (int k = 0; k < retorno.length; k++) {
+                i++;
+            
+            /*for (int k = 0; k < retorno.length; k++) {
             for (int l = 0; l < retorno.length; l++) {
                 System.out.print("[" + retorno[k][l] + "]");
             }
             System.out.println();
         }
         System.out.println("");*/
-        return retorno;
-    }
-
-    //Metodo para leer Grafo de un archivo
+        }
+            return retorno;
+        }
+        //Metodo para leer Grafo de un archivo
     public void readGraph(String path) throws FileNotFoundException, IOException {
         graph.clear();
         String line, tag, origin, destiny, di;
@@ -121,15 +130,15 @@ public class Grafo {
                     dirigido = false;
                 }
                 graph.addEdge(tag, origin, destiny, dirigido);
-            }else{
+            } else {
                 graph.addEdge(tag, origin, destiny);
             }
             Edge e = graph.getEdge(tag);
             e.addAttribute("Weight", weight);
         }
         br.close();
-        adyacente = getVicinity();
-        adyacentefloyd = getVicinity();
+
+        adyacente = getVicinity(auxiliar.length);
     }
 
     public Viewer showGraph() {
@@ -186,7 +195,11 @@ public class Grafo {
                 } else if (j == 0) {
                     retorno += "[" + i + "]";
                 } else {
-                    retorno += "[" + matriz[i - 1][j - 1] + "]";
+                    if(matriz[i - 1][j - 1]==Double.POSITIVE_INFINITY){
+                        retorno += "[+∞]";
+                    }else{
+                        retorno += "[" + matriz[i - 1][j - 1] + "]";
+                    }                    
                 }
             }
             retorno += '\n';

@@ -1457,7 +1457,7 @@ public class Main extends javax.swing.JFrame {
         campoOrigen.setText("");
         mayweather.startFloyd();
         System.out.println("AdyacenteFloyd");
-        System.out.println(mayweather.GraphtoString(mayweather.adyacentefloyd));
+        System.out.println(mayweather.GraphtoString(mayweather.distancias));
         campoGrafo.setText(dj.GraphtoString());
         Viewer viewer = dj.showGraph();
         viewer.setCloseFramePolicy(Viewer.CloseFramePolicy.HIDE_ONLY);
@@ -1489,10 +1489,8 @@ public class Main extends javax.swing.JFrame {
         }
         return acum;
 
-<<<<<<< Updated upstream
-=======
     }
-
+    
     public boolean isNumeric(String cadena) {
         try {
             double parseo = Double.parseDouble(cadena);
@@ -1500,7 +1498,6 @@ public class Main extends javax.swing.JFrame {
             return false;
         }
         return true;
->>>>>>> Stashed changes
     }
 
     /**

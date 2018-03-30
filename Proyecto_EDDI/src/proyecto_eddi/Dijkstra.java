@@ -71,7 +71,11 @@ public class Dijkstra extends Grafo{
         String retorno = "";
         if (distancias != null) {
             for (int i = 0; i < distancias.length; i++) {
-                retorno += "[" + distancias[i] + "]";
+                if(distancias[i]==(int)Double.POSITIVE_INFINITY){
+                    retorno += "[+∞]";
+                }else{
+                    retorno += "[" + distancias[i] + "]";
+                }
             }
         }
         return retorno;
