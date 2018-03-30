@@ -71,13 +71,15 @@ public class Grafo {
                 Edge arista = edges.next();
                 Node origin = arista.getSourceNode();
                 Node destiny = arista.getTargetNode();
-                if (n.getId().equals(origin.getId())) {
+                j = labels.indexOf(destiny.getId());
+                retorno[i][j] = arista.getNumber("Weight");
+                /*if (n.getId().equals(origin.getId())) {
                     j = labels.indexOf(destiny.getId());
                     retorno[i][j] = arista.getNumber("Weight");
                 } else if (n.getId().equals(destiny.getId())) {
                     j = labels.indexOf(origin.getId());
                     retorno[i][j] = arista.getNumber("Weight");
-                }
+                }*/
 
             }
             i++;
@@ -95,7 +97,8 @@ public class Grafo {
     //Metodo para leer Grafo de un archivo
     public void readGraph(String path) throws FileNotFoundException, IOException {
         graph.clear();
-        String line, tag, origin, destiny;
+        String line, tag, origin, destiny, di;
+        boolean dirigido;
         double weight;
         String[] auxiliar;
         BufferedReader br = new BufferedReader(new FileReader(path));
@@ -110,7 +113,17 @@ public class Grafo {
             origin = auxiliar[0];
             destiny = auxiliar[1];
             weight = Double.parseDouble(auxiliar[2]);
-            graph.addEdge(tag, origin, destiny);
+            if (auxiliar.length == 4) {
+                di = auxiliar[3];
+                if (di.equals("true")) {
+                    dirigido = true;
+                } else {
+                    dirigido = false;
+                }
+                graph.addEdge(tag, origin, destiny, dirigido);
+            }else{
+                graph.addEdge(tag, origin, destiny);
+            }
             Edge e = graph.getEdge(tag);
             e.addAttribute("Weight", weight);
         }
@@ -118,9 +131,9 @@ public class Grafo {
         adyacente = getVicinity();
         adyacentefloyd = getVicinity();
     }
-    
-    public Viewer showGraph(){
-        if(graph.hasAttribute("ui.quality")){
+
+    public Viewer showGraph() {
+        if (graph.hasAttribute("ui.quality")) {
             graph.clearAttributes();
         }
         graph.addAttribute("ui.quality");
@@ -135,13 +148,13 @@ public class Grafo {
             edge.setAttribute("ui.label", edge.getNumber("Weight"));
         }
         return graph.display();
-        
+
     }
-    
+
     public boolean inBounds(int posicion) {
         return posicion < adyacente.length && posicion >= 0;
     }
-    
+
     public String GraphtoString() {
         String retorno = "";
         for (int i = 0; i < graph.getNodeCount() + 1; i++) {
@@ -153,7 +166,7 @@ public class Grafo {
                 } else if (j == 0) {
                     retorno += "[" + i + "]";
                 } else {
-                    retorno += "[" + (int)adyacente[i - 1][j - 1] + "]";
+                    retorno += "[" + adyacente[i - 1][j - 1] + "]";
                 }
             }
             retorno += '\n';
@@ -161,7 +174,7 @@ public class Grafo {
         }
         return retorno;
     }
-    
+
     public String GraphtoString(double[][] matriz) {
         String retorno = "";
         for (int i = 0; i < graph.getNodeCount() + 1; i++) {
