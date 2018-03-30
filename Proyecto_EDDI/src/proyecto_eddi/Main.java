@@ -1465,6 +1465,7 @@ public class Main extends javax.swing.JFrame {
             acum += line;
         }
         return acum;
+        
     }
 
     /**
