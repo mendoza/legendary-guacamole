@@ -16,8 +16,8 @@ public class Floyd extends Grafo {
     public Floyd() {
 
     }
-
-    public void prepareFloyd() {
+    
+    public void startFloyd() {
         if (graph.getNodeCount() > 0) {
             for (int k = 0; k < graph.getNodeCount(); k++) {
                 for (int i = 0; i < graph.getNodeCount(); i++) {

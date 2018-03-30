@@ -1437,7 +1437,7 @@ public class Main extends javax.swing.JFrame {
         }
         campoDistancia.setText("");
         campoOrigen.setText("");
-        mayweather.prepareFloyd();
+        mayweather.startFloyd();
         System.out.println("AdyacenteFloyd");
         System.out.println(mayweather.GraphtoString(mayweather.adyacentefloyd));
         System.out.println("Floyd");
