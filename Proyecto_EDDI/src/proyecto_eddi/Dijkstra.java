@@ -14,12 +14,9 @@ import javax.swing.JOptionPane;
 public class Dijkstra extends Grafo{
 
     private final int infinito = (int) Double.POSITIVE_INFINITY;
-    //public int vertices;
-    //public int[][] grafo;
-
+    
     public Dijkstra() {
-        //readGraph(path);
-        //super.adyacente = getVicinity();
+        
         
     }
 
@@ -80,24 +77,4 @@ public class Dijkstra extends Grafo{
         }
         return retorno;
     }
-    
-    /*public void readGraph(String path) throws FileNotFoundException, IOException {
-        String line;
-        int fila = 0;
-        boolean creado = false;
-        BufferedReader br = new BufferedReader(new FileReader(path));
-        while ((line = br.readLine()) != null) {
-            String[] temporal = line.split(",");
-            if (creado == false) {
-                grafo = new int[temporal.length][temporal.length];
-                creado = true;
-            }
-            for (int i = 0; i < temporal.length; i++) {
-                grafo[fila][i] = Integer.parseInt(temporal[i]);
-            }
-            fila++;
-        }
-        vertices = grafo.length;
-
-    }*/
 }

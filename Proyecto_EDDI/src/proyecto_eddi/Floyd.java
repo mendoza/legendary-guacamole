@@ -11,7 +11,7 @@ package proyecto_eddi;
  */
 public class Floyd extends Grafo {
 
-    double[][] camino;
+    public double[][] camino;
     public double[][] distancias;
 
     public Floyd() {
@@ -20,29 +20,18 @@ public class Floyd extends Grafo {
 
     public void startFloyd() {
         if (graph.getNodeCount() > 0) {
-            prepareFloyd();
+            //prepareFloyd();
             for (int k = 0; k < graph.getNodeCount(); k++) {
                 for (int i = 0; i < graph.getNodeCount(); i++) {
                     for (int j = 0; j < graph.getNodeCount(); j++) {
-                        /*if (i != j) {
-                            if (distancias[i][j] == 0) {
-                                distancias[i][j] = min(Double.POSITIVE_INFINITY, distancias[i][k] + distancias[k][j]);
-                            } else {
-                                distancias[i][j] = min(distancias[i][j], distancias[i][k] + distancias[k][j]);
-                            }
-                        }*/
-                        double holi = distancias[i][k] + distancias[k][j];
-                        if (holi < distancias[i][j]) {
-                            distancias[i][j] = holi;
+                        double aux = distancias[i][k] + distancias[k][j];
+                        if (aux < distancias[i][j]) {
+                            distancias[i][j] = aux;
                             camino[i][j] = k;
                         }
                     }
                 }
             }
-            //System.out.println("");
-            //System.out.println("");
-            //printMatrix(camino);
-
         }
 
     }
@@ -70,11 +59,6 @@ public class Floyd extends Grafo {
                 }
             }
         }
-        //System.out.println("Matriz distancias: ");
-        //printMatrix(distancias);
-        //System.out.println("Matriz caminos: ");
-        //printMatrix(camino);
-
     }
     
     public void printMatrix(double[][] matrix){

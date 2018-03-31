@@ -81,6 +81,7 @@ public class CalculadoraMat {
         } catch (ArithmeticException e) {
             return "Error 2";
         } catch (Exception e) {
+            e.printStackTrace();
             return "Error 1";
         }
     }

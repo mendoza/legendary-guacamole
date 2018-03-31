@@ -26,7 +26,6 @@ public class Grafo {
 
     public Graph graph = new SingleGraph("Grafo");
     public double[][] adyacente;
-    
 
     public Grafo() {
 
@@ -60,9 +59,6 @@ public class Grafo {
         for (int i = 0; i < graph.getNodeCount(); i++) {
             labels.add(graph.getNode(i).getId());
         }
-        /*for (int i = 0; i < labels.size(); i++) {
-            System.out.print("[" + labels.get(i) + "]");
-        }*/
         int i = 0, j = 0;
         for (Node n : graph) {
             Iterator<? extends Edge> edges = n.getLeavingEdgeIterator();
@@ -73,37 +69,22 @@ public class Grafo {
                 if (dirigido == 4) {
                     j = labels.indexOf(destiny.getId());
                     retorno[i][j] = arista.getNumber("Weight");
-
-                } else if(dirigido == 3){
+                } else if (dirigido == 3) {
                     if (n.getId().equals(origin.getId())) {
                         j = labels.indexOf(destiny.getId());
                         retorno[i][j] = arista.getNumber("Weight");
                     } else if (n.getId().equals(destiny.getId())) {
                         j = labels.indexOf(origin.getId());
                         retorno[i][j] = arista.getNumber("Weight");
-                    } 
-                } 
-                    /*if (n.getId().equals(origin.getId())) {
-                    j = labels.indexOf(destiny.getId());
-                    retorno[i][j] = arista.getNumber("Weight");
-                } else if (n.getId().equals(destiny.getId())) {
-                    j = labels.indexOf(origin.getId());
-                    retorno[i][j] = arista.getNumber("Weight");
-                }*/
+                    }
+                }
             }
-                i++;
-            
-            /*for (int k = 0; k < retorno.length; k++) {
-            for (int l = 0; l < retorno.length; l++) {
-                System.out.print("[" + retorno[k][l] + "]");
-            }
-            System.out.println();
+            i++;
         }
-        System.out.println("");*/
-        }
-            return retorno;
-        }
-        //Metodo para leer Grafo de un archivo
+        return retorno;
+    }
+
+    //Metodo para leer Grafo de un archivo
     public void readGraph(String path) throws FileNotFoundException, IOException {
         graph.clear();
         String line, tag, origin, destiny, di;
@@ -194,12 +175,10 @@ public class Grafo {
                     retorno += "[-" + j + "-]";
                 } else if (j == 0) {
                     retorno += "[" + i + "]";
+                } else if (matriz[i - 1][j - 1] == Double.POSITIVE_INFINITY) {
+                    retorno += "[+∞]";
                 } else {
-                    if(matriz[i - 1][j - 1]==Double.POSITIVE_INFINITY){
-                        retorno += "[+∞]";
-                    }else{
-                        retorno += "[" + matriz[i - 1][j - 1] + "]";
-                    }                    
+                    retorno += "[" + matriz[i - 1][j - 1] + "]";
                 }
             }
             retorno += '\n';
