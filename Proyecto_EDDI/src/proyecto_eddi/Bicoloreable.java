@@ -9,7 +9,6 @@ import org.graphstream.graph.Edge;
 import org.graphstream.graph.Node;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
-import org.graphstream.graph.Graph;
 import org.graphstream.ui.view.Viewer;
 
 /**
@@ -19,10 +18,9 @@ import org.graphstream.ui.view.Viewer;
 public class Bicoloreable extends Grafo {
 
     int color = 1;
-    Graph bico;
-
+    
     public Bicoloreable() {
-
+        
     }
 
     public ArrayList<Node> findNeighbours(Node origen) {
@@ -42,15 +40,15 @@ public class Bicoloreable extends Grafo {
         }
         return neighbours;
     }
-    
-    public String getNeighbours(){
+
+    public String getNeighbours() {
         ArrayList<Node> temporal;
         String retorno = "";
         for (int i = 0; i < graph.getNodeCount(); i++) {
             Node n = graph.getNode(i);
             temporal = findNeighbours(n);
             int pos = i + 1;
-            retorno+=pos+") "+n.getId()+":" + temporal.toString()+"\n";
+            retorno += pos + ") " + n.getId() + ":" + temporal.toString() + "\n";
         }
         return retorno;
     }
@@ -63,15 +61,28 @@ public class Bicoloreable extends Grafo {
             graph.addAttribute("ui.stylesheet",
                     "node { fill-color: grey;}");
         }
-        bico = graph;
+        
     }
-    
-    public void startDFS(int origen){
-        if(origen>=0&&origen<graph.getNodeCount()){
+
+    public int startDFS(int origen) {
+        if (origen >= 0 && origen < graph.getNodeCount()) {
             DFS(graph.getNode(origen));
-        }else{
+            boolean es = Coloreable();
+            if (es) {
+                JOptionPane.showMessageDialog(null, "Es coloreable", "¿Es coloreable?", JOptionPane.INFORMATION_MESSAGE);
+                Viewer viewer = showGraph();
+                viewer.setCloseFramePolicy(Viewer.CloseFramePolicy.HIDE_ONLY);
+                return 1;
+            } else {
+                JOptionPane.showMessageDialog(null, "No es coloreable", "¿Es coloreable?", JOptionPane.INFORMATION_MESSAGE);
+                Viewer viewer = showGraph();
+                viewer.setCloseFramePolicy(Viewer.CloseFramePolicy.HIDE_ONLY);
+                return 2;
+            }
+        } else {
             JOptionPane.showMessageDialog(null, "Origen no valido", "Error", JOptionPane.ERROR_MESSAGE);
         }
+        return 3;
     }
 
     public void DFS(Node nodoOrigen) {
@@ -88,27 +99,37 @@ public class Bicoloreable extends Grafo {
             boolean vis = (boolean) m.getAttribute("Visited");
             //System.out.println(vis);
             if (m != null && vis == false) {
-               DFS(m);
+                DFS(m);
             }
         }
 
     }
-    
-    public boolean Coloreable(){
+
+    public boolean Coloreable() {
         boolean coloreable = true;
         for (Node node : graph) {
             ArrayList<Node> neighbours = findNeighbours(node);
             for (Node m : neighbours) {
-                if(node.getAttribute("ui.style")==m.getAttribute("ui.style")){
+                if (node.getAttribute("ui.style") == m.getAttribute("ui.style")) {
                     coloreable = false;
                 }
             }
         }
         return coloreable;
     }
-    
-    public Viewer showOriginal(){
-        return bico.display();
+
+    public Viewer showOriginal() {
+        reset();
+        return graph.display();
     }
     
+    public void reset(){
+        color = 1;
+        for (Node node : graph) {
+            node.setAttribute("Visited",false);
+            node.setAttribute("ui.style", "fill-color: grey;");
+        }
+        
+    }
+
 }

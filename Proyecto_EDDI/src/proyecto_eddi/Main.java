@@ -1816,6 +1816,8 @@ public class Main extends javax.swing.JFrame {
                 bc.readGraph(path);
                 bc.prepareDFS();
                 campoVecinos.setText(bc.getNeighbours());
+                campoOrigen.setText("");
+                esColoreable.setText("");
                 Viewer viewer = bc.showGraph();
                 viewer.setCloseFramePolicy(Viewer.CloseFramePolicy.HIDE_ONLY);
             } catch (IOException e) {
@@ -1837,23 +1839,19 @@ public class Main extends javax.swing.JFrame {
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
         int origen = 0;
         if (bc.getGraph().getNodeCount() > 0) {
+            bc.reset();
             if (campoOrigen1.getText().equals("")) {
                 bc.startDFS(0);
             } else if (!campoOrigen1.getText().equals("")) {
                 if (isNumeric(campoOrigen1.getText())) {
                     origen = Integer.parseInt(campoOrigen1.getText()) - 1;
-                    bc.startDFS(origen);
-                    boolean es = bc.Coloreable();
-                    if (es) {
-                        JOptionPane.showMessageDialog(null, "Es coloreable", "¿Es coloreable?", JOptionPane.INFORMATION_MESSAGE);
+                    int es = bc.startDFS(origen);
+                    if(es == 1){
                         esColoreable.setText("Sí");
-                        Viewer viewer = bc.showGraph();
-                        viewer.setCloseFramePolicy(Viewer.CloseFramePolicy.HIDE_ONLY);
-                    } else {
-                        JOptionPane.showMessageDialog(null, "No es coloreable", "¿Es coloreable?", JOptionPane.INFORMATION_MESSAGE);
+                    }else if(es == 2){
                         esColoreable.setText("No");
-                        Viewer viewer = bc.showGraph();
-                        viewer.setCloseFramePolicy(Viewer.CloseFramePolicy.HIDE_ONLY);
+                    }else{
+                        esColoreable.setText("");
                     }
                 } else {
                     JOptionPane.showMessageDialog(null, "Ingrese un numero, no otro caracter", "Error", JOptionPane.ERROR_MESSAGE);
