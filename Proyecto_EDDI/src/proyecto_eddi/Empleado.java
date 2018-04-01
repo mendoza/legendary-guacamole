@@ -50,7 +50,7 @@ class Empleado {
 
     @Override
     public String toString() {
-        return "Empleado{" + "Nombre=" + Nombre + ", Posicion=" + Posicion + ", Calificacion=" + Calificacion + '}';
+        return this.Nombre+" " +this.Posicion+" "+'('+this.Calificacion+')';
     }
     
 }

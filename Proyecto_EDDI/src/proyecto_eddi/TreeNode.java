@@ -19,6 +19,10 @@ public class TreeNode {
         this.data = data;
     }
 
+    TreeNode() {
+
+    }
+
     public TreeNode addChild(TreeNode child) {
         child.setParent(this);
         this.children.add(child);
@@ -64,11 +68,12 @@ public class TreeNode {
 
     public void CalificarNodo(TreeNode node) {
         if (!node.isLeaf(node)) {
+            for (int i = 0; i < this.children.length(); i++) {
+                this.children.get(i).CalificarNodo(this.children.get(i));
+            }
             node.getData().setCalificacion(node.CalificarHijos(node, 0) / node.getChildren().length());
         }
-        for (int i = 0; i < this.children.length(); i++) {
-            this.children.get(i).CalificarNodo(node);
-        }
+
     }
 
     public boolean isLeaf(TreeNode node) {
@@ -76,12 +81,11 @@ public class TreeNode {
     }
 
     public float CalificarHijos(TreeNode node, float num) {
-
         if (node.isLeaf(node)) {
             return node.getData().getCalificacion();
         } else {
             for (int i = 0; i < node.getChildren().length(); i++) {
-                num += node.getChildren().get(i).getData().getCalificacion();
+                num += node.getChildren().get(i).CalificarHijos(node.getChildren().get(i), 0);
                 node.getData().setCalificacion(num);
             }
         }
