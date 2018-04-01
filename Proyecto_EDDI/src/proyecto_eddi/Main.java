@@ -25,7 +25,6 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeCellRenderer;
 import javax.swing.tree.DefaultTreeModel;
-import javax.swing.tree.TreeModel;
 import org.graphstream.ui.view.Viewer;
 
 //</editor-fold>
@@ -1710,7 +1709,6 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_bt_arbolActionPerformed
 
     private void rb_labe2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rb_labe2MouseClicked
-        // TODO add your handling code here:
         if (buttonGroup2.isSelected(rb_labe2.getModel())) {
             int[][] maze2 = ((Laberinto) laberintopanel).getMaze2();
             ((Laberinto) laberintopanel).setMaze(maze2);
@@ -1720,7 +1718,6 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_rb_labe2MouseClicked
 
     private void rb_labe1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rb_labe1MouseClicked
-        // TODO add your handling code here:
         if (buttonGroup2.isSelected(rb_labe1.getModel())) {
             int[][] maze1 = ((Laberinto) laberintopanel).getMaze1();
             ((Laberinto) laberintopanel).setMaze(maze1);
@@ -2100,7 +2097,6 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton12ActionPerformed
 
     private void jTree1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTree1MouseClicked
-        // TODO add your handling code here:
         if (evt.isMetaDown()) {
             int row = jTree1.getClosestRowForLocation(evt.getX(), evt.getY());
             jTree1.setSelectionRow(row);
@@ -2111,7 +2107,6 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_jTree1MouseClicked
 
     private void AddemployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddemployeeActionPerformed
-        // TODO add your handling code here:
         addEmployeeD.pack();
         addEmployeeD.setModal(true);
         addEmployeeD.setLocationRelativeTo(this);
@@ -2119,7 +2114,6 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_AddemployeeActionPerformed
 
     private void modemployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modemployeeActionPerformed
-        // TODO add your handling code here:
         try {
             Empleado d = (Empleado) seleccionado.getUserObject();
             modtf_pos.setText(d.getPosicion());
@@ -2135,7 +2129,6 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_modemployeeActionPerformed
 
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
-        // TODO add your handling code here:
         String nombre = adtf_nombre.getText();
         String posicion = adtf_pos.getText();
         float calif = Float.parseFloat(jSpinner1.getValue().toString());
@@ -2155,7 +2148,6 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton13ActionPerformed
 
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
-        // TODO add your handling code here:
         String nombre = mdtf_nombre.getText();
         String posicion = modtf_pos.getText();
         float calif = Float.parseFloat(jSpinner2.getValue().toString());
@@ -2169,7 +2161,6 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton14ActionPerformed
 
     private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
-        // TODO add your handling code here:
         TreeNode root2 = new TreeNode((Empleado) ((DefaultMutableTreeNode) jTree1.getModel().getRoot()).getUserObject());
         toAG(root2, (DefaultMutableTreeNode) jTree1.getModel().getRoot());
         AG.setRoot(root2);
