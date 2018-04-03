@@ -86,6 +86,44 @@ public class Grafo {
     //Metodo para leer Grafo de un archivo
     public void readGraph(String path) throws FileNotFoundException, IOException {
         graph.clear();
+        String line;
+        boolean creado = false;
+        double weight;
+        int fila = 0, arista = 0;
+        String[] auxiliar;
+        BufferedReader br = new BufferedReader(new FileReader(path));
+        line = br.readLine();
+        auxiliar = line.split(",");
+        for (int i = 0; i < auxiliar.length; i++) {
+            graph.addNode(i + "");
+        }
+        do {
+            String o = fila + "";
+            auxiliar = line.split(",");
+            if (creado == false) {
+                creado = true;
+                adyacente = new double[auxiliar.length][auxiliar.length];
+            }
+            for (int i = 0; i < auxiliar.length; i++) {
+                weight = Double.parseDouble(auxiliar[i]);
+                if (i != fila) {
+                    adyacente[fila][i] = Double.parseDouble(auxiliar[i]);
+                    if (weight != 0) {
+                        String d = i + "";
+                        String id = o + i;
+                        graph.addEdge(id, o, d, true);
+                        graph.getEdge(id).addAttribute("Weight", weight);
+                    }
+                } else {
+                    adyacente[fila][i] = 0;
+                }
+            }
+            fila++;
+        } while ((line = br.readLine()) != null);
+    }
+
+    /*public void readGraph(String path) throws FileNotFoundException, IOException {
+        graph.clear();
         String line, tag, origin, destiny, di;
         boolean dirigido;
         double weight;
@@ -119,8 +157,7 @@ public class Grafo {
         br.close();
 
         adyacente = getVicinity(auxiliar.length);
-    }
-
+    }*/
     public Viewer showGraph() {
         if (graph.hasAttribute("ui.quality")) {
             graph.clearAttributes();
