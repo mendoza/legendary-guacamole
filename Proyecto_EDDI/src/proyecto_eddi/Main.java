@@ -2080,12 +2080,16 @@ public class Main extends javax.swing.JFrame {
                 if (isNumeric(campoOrigen1.getText())) {
                     origen = Integer.parseInt(campoOrigen1.getText()) - 1;
                     int es = bc.startDFS(origen);
-                    if (es == 1) {
-                        esColoreable.setText("Sí");
-                    } else if (es == 2) {
-                        esColoreable.setText("No");
-                    } else {
-                        esColoreable.setText("");
+                    switch (es) {
+                        case 1:
+                            esColoreable.setText("Sí");
+                            break;
+                        case 2:
+                            esColoreable.setText("No");
+                            break;
+                        default:
+                            esColoreable.setText("");
+                            break;
                     }
                 } else {
                     JOptionPane.showMessageDialog(null, "Ingrese un numero, no otro caracter", "Error", JOptionPane.ERROR_MESSAGE);
@@ -2165,7 +2169,7 @@ public class Main extends javax.swing.JFrame {
         toAG(root2, (DefaultMutableTreeNode) jTree1.getModel().getRoot());
         AG.setRoot(root2);
         JOptionPane.showMessageDialog(this, "se a convertido en un nuevo arbol");
-        AG.getRoot().CalificarNodo(AG.getRoot());
+        AG.getRoot().CalificarNodo();
         ((DefaultMutableTreeNode) jTree1.getModel().getRoot()).removeAllChildren();
         listar(AG.getRoot(), (DefaultMutableTreeNode) jTree1.getModel().getRoot());
         DefaultTreeModel dt = ((DefaultTreeModel) jTree1.getModel());
@@ -2212,7 +2216,7 @@ public class Main extends javax.swing.JFrame {
         try {
             for (int i = 0; i < node.getChildren().length(); i++) {
                 TreeNode s = node.getChildren().get(i);
-                if (s.isLeaf(s)) {
+                if (s.isLeaf()) {
                     DefaultMutableTreeNode n = new DefaultMutableTreeNode(s.getData());
                     nodo.add(n);
                 } else {

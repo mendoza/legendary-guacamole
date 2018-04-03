@@ -66,29 +66,29 @@ public class TreeNode {
         }
     }
 
-    public void CalificarNodo(TreeNode node) {
-        if (!node.isLeaf(node)) {
+    public void CalificarNodo() {
+        if (!this.isLeaf()) {
             for (int i = 0; i < this.children.length(); i++) {
-                this.children.get(i).CalificarNodo(this.children.get(i));
+                this.children.get(i).CalificarNodo();
             }
-            node.getData().setCalificacion(node.CalificarHijos(node, 0) / node.getChildren().length());
+            this.getData().setCalificacion(this.CalificarHijos(0) / this.getChildren().length());
         }
 
     }
 
-    public boolean isLeaf(TreeNode node) {
-        return (node.getChildren().length() == 0);
+    public boolean isLeaf() {
+        return (this.getChildren().length() == 0);
     }
 
-    public float CalificarHijos(TreeNode node, float num) {
-        if (node.isLeaf(node)) {
-            return node.getData().getCalificacion();
+    public float CalificarHijos(float num) {
+        if (this.isLeaf()) {
+            return this.getData().getCalificacion();
         } else {
-            for (int i = 0; i < node.getChildren().length(); i++) {
-                num += node.getChildren().get(i).CalificarHijos(node.getChildren().get(i), 0);
-                node.getData().setCalificacion(num);
+            for (int i = 0; i < this.getChildren().length(); i++) {
+                num += this.getChildren().get(i).CalificarHijos(0);
+                this.getData().setCalificacion(num);
             }
         }
-        return node.getData().getCalificacion();
+        return this.getData().getCalificacion();
     }
 }

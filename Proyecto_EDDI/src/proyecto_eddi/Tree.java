@@ -59,25 +59,4 @@ public class Tree {
             this.Root.getChildren().get(i).printTree(this.Root.getChildren().get(i), appender + appender);
         }
     }
-
-    public void CalificarNodo(TreeNode node) {
-        if (!node.isLeaf(node)) {
-            node.getData().setCalificacion(node.CalificarHijos(node, 0) / node.getChildren().length());
-            for (int i = 0; i < node.getChildren().length(); i++) {
-                node.getChildren().get(i).CalificarNodo(node.getChildren().get(i));
-            }
-        }
-    }
-
-    public float CalificarHijos(TreeNode node, float num) {
-        if (node.isLeaf(node)) {
-            return node.getData().getCalificacion();
-        } else {
-            for (int i = 0; i < node.getChildren().length(); i++) {
-                num += node.getChildren().get(i).CalificarHijos(node.getChildren().get(i), 0);
-                node.getData().setCalificacion(num);
-            }
-        }
-        return node.getData().getCalificacion();
-    }
 }

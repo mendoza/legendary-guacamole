@@ -15,7 +15,6 @@ import org.graphstream.graph.Graph;
 import org.graphstream.graph.Node;
 //import org.graphstream.graph.*;
 import org.graphstream.graph.implementations.*;
-import org.graphstream.stream.GraphParseException;
 import org.graphstream.ui.view.Viewer;
 
 /**
