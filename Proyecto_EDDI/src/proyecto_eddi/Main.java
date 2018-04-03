@@ -429,7 +429,7 @@ public class Main extends javax.swing.JFrame {
 
         bt_coloreable.setBackground(new java.awt.Color(51, 54, 63));
         bt_coloreable.setForeground(new java.awt.Color(255, 255, 255));
-        bt_coloreable.setText("bi-coloreable");
+        bt_coloreable.setText("Bicoloreable");
         bt_coloreable.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         buttonGroup1.add(bt_coloreable);
         bt_coloreable.setFocusPainted(false);
@@ -599,7 +599,7 @@ public class Main extends javax.swing.JFrame {
                 .addComponent(jLabel15)
                 .addGap(65, 65, 65)
                 .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(209, Short.MAX_VALUE))
+                .addContainerGap(210, Short.MAX_VALUE))
             .addGroup(panelInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(panelInicioLayout.createSequentialGroup()
                     .addGap(70, 70, 70)
@@ -687,7 +687,7 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(panelLaberintoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelLaberintoLayout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addComponent(laberintopanel, javax.swing.GroupLayout.DEFAULT_SIZE, 743, Short.MAX_VALUE)
+                        .addComponent(laberintopanel, javax.swing.GroupLayout.DEFAULT_SIZE, 740, Short.MAX_VALUE)
                         .addContainerGap())
                     .addGroup(panelLaberintoLayout.createSequentialGroup()
                         .addGap(53, 53, 53)
@@ -2072,14 +2072,26 @@ public class Main extends javax.swing.JFrame {
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
         int origen = 0;
+        int es = 0;
         if (bc.getGraph().getNodeCount() > 0) {
             bc.reset();
             if (campoOrigen1.getText().equals("")) {
-                bc.startDFS(0);
+                es = bc.startDFS(0);
+                switch (es) {
+                    case 1:
+                        esColoreable.setText("Sí");
+                        break;
+                    case 2:
+                        esColoreable.setText("No");
+                        break;
+                    default:
+                        esColoreable.setText("");
+                        break;
+                }
             } else if (!campoOrigen1.getText().equals("")) {
                 if (isNumeric(campoOrigen1.getText())) {
                     origen = Integer.parseInt(campoOrigen1.getText()) - 1;
-                    int es = bc.startDFS(origen);
+                    es = bc.startDFS(origen);
                     switch (es) {
                         case 1:
                             esColoreable.setText("Sí");

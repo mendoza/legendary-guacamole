@@ -95,10 +95,11 @@ public class Grafo {
         line = br.readLine();
         auxiliar = line.split(",");
         for (int i = 0; i < auxiliar.length; i++) {
-            graph.addNode(i + "");
+            int alpha = i+1;
+            graph.addNode(alpha + "");
         }
         do {
-            String o = fila + "";
+            String o = (fila+1) + "";
             auxiliar = line.split(",");
             if (creado == false) {
                 creado = true;
@@ -109,7 +110,7 @@ public class Grafo {
                 if (i != fila) {
                     adyacente[fila][i] = Double.parseDouble(auxiliar[i]);
                     if (weight != 0) {
-                        String d = i + "";
+                        String d = (i+1) + "";
                         String id = o + i;
                         graph.addEdge(id, o, d, true);
                         graph.getEdge(id).addAttribute("Weight", weight);
@@ -158,6 +159,7 @@ public class Grafo {
 
         adyacente = getVicinity(auxiliar.length);
     }*/
+    
     public Viewer showGraph() {
         if (graph.hasAttribute("ui.quality")) {
             graph.clearAttributes();

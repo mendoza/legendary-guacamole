@@ -81,8 +81,8 @@ public class Bicoloreable extends Grafo {
             }
         } else {
             JOptionPane.showMessageDialog(null, "Origen no valido", "Error", JOptionPane.ERROR_MESSAGE);
+            return 3;
         }
-        return 3;
     }
 
     public void DFS(Node nodoOrigen) {
