@@ -74,16 +74,37 @@ public class CalculadoraMat {
             }
 
             float resu = (float) (numeros.get(0));
-            this.numeros = new ArrayList();
-            this.operandos = new ArrayList();
+            this.numeros.clear();
+            this.operandos.clear();
             return resu + "";
 
         } catch (ArithmeticException e) {
+            this.numeros.clear();
+            this.operandos.clear();
             return "Error 2";
         } catch (Exception e) {
-            e.printStackTrace();
+            this.numeros.clear();
+            this.operandos.clear();
             return "Error 1";
         }
     }
+
+    public ArrayList<Float> getNumeros() {
+        return numeros;
+    }
+
+    public void setNumeros(ArrayList<Float> numeros) {
+        this.numeros = numeros;
+    }
+
+    public ArrayList<Character> getOperandos() {
+        return operandos;
+    }
+
+    public void setOperandos(ArrayList<Character> operandos) {
+        this.operandos = operandos;
+    }
+    
+    
 
 }

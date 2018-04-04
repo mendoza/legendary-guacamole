@@ -5,7 +5,6 @@
  */
 package proyecto_eddi;
 //<editor-fold defaultstate="collapsed" desc=" Imports ">
-
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.io.BufferedReader;
@@ -2177,15 +2176,21 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton14ActionPerformed
 
     private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
-        TreeNode root2 = new TreeNode((Empleado) ((DefaultMutableTreeNode) jTree1.getModel().getRoot()).getUserObject());
-        toAG(root2, (DefaultMutableTreeNode) jTree1.getModel().getRoot());
-        AG.setRoot(root2);
-        JOptionPane.showMessageDialog(this, "se a convertido en un nuevo arbol");
-        AG.getRoot().CalificarNodo();
-        ((DefaultMutableTreeNode) jTree1.getModel().getRoot()).removeAllChildren();
-        listar(AG.getRoot(), (DefaultMutableTreeNode) jTree1.getModel().getRoot());
-        DefaultTreeModel dt = ((DefaultTreeModel) jTree1.getModel());
-        dt.reload((javax.swing.tree.TreeNode) dt.getRoot());
+        try {
+            TreeNode root2 = null;
+            root2 = new TreeNode((Empleado) ((DefaultMutableTreeNode) jTree1.getModel().getRoot()).getUserObject());
+            toAG(root2, (DefaultMutableTreeNode) jTree1.getModel().getRoot());
+            AG.setRoot(root2);
+            JOptionPane.showMessageDialog(this, "Se a convertido en un nuevo arbol");
+            AG.getRoot().CalificarNodo();
+            ((DefaultMutableTreeNode) jTree1.getModel().getRoot()).removeAllChildren();
+            listar(AG.getRoot(), (DefaultMutableTreeNode) jTree1.getModel().getRoot());
+            DefaultTreeModel dt = ((DefaultTreeModel) jTree1.getModel());
+            dt.reload((javax.swing.tree.TreeNode) dt.getRoot());
+        } catch (java.lang.ClassCastException e) {
+            JOptionPane.showMessageDialog(this, "No se puede crear un arbol en este momento \n ya que usted no tiene el diseño de su empresa ", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+
     }//GEN-LAST:event_jButton15ActionPerformed
 
     public static String readfile(String path) throws FileNotFoundException, IOException {
