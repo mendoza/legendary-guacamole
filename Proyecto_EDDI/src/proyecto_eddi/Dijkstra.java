@@ -15,21 +15,8 @@ public class Dijkstra extends Grafo{
 
     private final int infinito = (int) Double.POSITIVE_INFINITY;
     
-    public Dijkstra() {
+    public Dijkstra() {        
         
-        
-    }
-
-    public int minDistance(int[] dist, boolean[] visitados) {
-        int min = infinito;
-        int min_index = 0;
-        for (int i = 0; i < graph.getNodeCount(); i++) {
-            if (visitados[i] == false && dist[i] <= min) {
-                min = dist[i];
-                min_index = i;
-            }
-        }
-        return min_index;
     }
 
     public int[] startDijkstra(int origen) {
@@ -60,7 +47,6 @@ public class Dijkstra extends Grafo{
 
         }
         return null;
-
     }
 
     //Metodos de utileria

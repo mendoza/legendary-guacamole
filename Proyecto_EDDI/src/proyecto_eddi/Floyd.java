@@ -36,21 +36,13 @@ public class Floyd extends Grafo {
 
     }
 
-    public double min(double a, double b) {
-        if (a > b) {
-            return b;
-        } else {
-            return a;
-        }
-    }
-
     public void prepareFloyd() {
         this.distancias = super.adyacente.clone();
         camino = new double[distancias.length][distancias.length];
         for (int i = 0; i < distancias.length; i++) {
             for (int j = 0; j < distancias.length; j++) {
                 if (j != i) {
-                    if (distancias[i][j] == 0) {
+                    if (distancias[i][j] <= 0) {
                         distancias[i][j] = Double.POSITIVE_INFINITY;
                     }
                     camino[i][j] = j;

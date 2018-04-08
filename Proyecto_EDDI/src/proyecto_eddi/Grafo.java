@@ -13,7 +13,6 @@ import java.util.Iterator;
 import org.graphstream.graph.Edge;
 import org.graphstream.graph.Graph;
 import org.graphstream.graph.Node;
-//import org.graphstream.graph.*;
 import org.graphstream.graph.implementations.*;
 import org.graphstream.ui.view.Viewer;
 
@@ -44,6 +43,18 @@ public class Grafo {
 
     public void setAdyacente(double[][] adyacente) {
         this.adyacente = adyacente;
+    }
+    
+    public int minDistance(int[] dist, boolean[] visitados) {
+        int min = Integer.MAX_VALUE;
+        int min_index = 0;
+        for (int i = 0; i < graph.getNodeCount(); i++) {
+            if (visitados[i] == false && dist[i] <= min) {
+                min = dist[i];
+                min_index = i;
+            }
+        }
+        return min_index;
     }
 
     //Metodo para sacar la matriz de adyacencia del graph
@@ -89,7 +100,7 @@ public class Grafo {
         String line;
         boolean creado = false;
         double weight;
-        int fila = 0, arista = 0;
+        int fila = 0;
         String[] auxiliar;
         BufferedReader br = new BufferedReader(new FileReader(path));
         line = br.readLine();
@@ -121,44 +132,7 @@ public class Grafo {
             }
             fila++;
         } while ((line = br.readLine()) != null);
-    }
-
-    /*public void readGraph(String path) throws FileNotFoundException, IOException {
-        graph.clear();
-        String line, tag, origin, destiny, di;
-        boolean dirigido;
-        double weight;
-        String[] auxiliar;
-        BufferedReader br = new BufferedReader(new FileReader(path));
-        line = br.readLine();
-        auxiliar = line.split(",");
-        for (int i = 0; i < auxiliar.length; i++) {
-            graph.addNode(auxiliar[i]);
-        }
-        while ((line = br.readLine()) != null) {
-            auxiliar = line.split(",");
-            tag = auxiliar[0] + auxiliar[1];
-            origin = auxiliar[0];
-            destiny = auxiliar[1];
-            weight = Double.parseDouble(auxiliar[2]);
-            if (auxiliar.length == 4) {
-                di = auxiliar[3];
-                if (di.equals("true")) {
-                    dirigido = true;
-                } else {
-                    dirigido = false;
-                }
-                graph.addEdge(tag, origin, destiny, dirigido);
-            } else {
-                graph.addEdge(tag, origin, destiny);
-            }
-            Edge e = graph.getEdge(tag);
-            e.addAttribute("Weight", weight);
-        }
-        br.close();
-
-        adyacente = getVicinity(auxiliar.length);
-    }*/
+    }    
     
     public Viewer showGraph() {
         if (graph.hasAttribute("ui.quality")) {
