@@ -5,6 +5,7 @@
  */
 package proyecto_eddi;
 //<editor-fold defaultstate="collapsed" desc=" Imports ">
+
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.io.BufferedReader;
@@ -157,6 +158,13 @@ public class Main extends javax.swing.JFrame {
         jButton6 = new javax.swing.JButton();
         panelArbol = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
+        jt_direccion4 = new javax.swing.JTextField();
+        jButton16 = new javax.swing.JButton();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        campoMST = new javax.swing.JTextArea();
+        jButton34 = new javax.swing.JButton();
+        jButton35 = new javax.swing.JButton();
+        jButton36 = new javax.swing.JButton();
         panelCalculo = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
@@ -1346,23 +1354,105 @@ public class Main extends javax.swing.JFrame {
         panelArbol.setBackground(new java.awt.Color(29, 30, 35));
 
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("Arbol");
+        jLabel9.setText("Árbol de Expansión Mínima");
+
+        jt_direccion4.setEditable(false);
+        jt_direccion4.setBackground(new java.awt.Color(51, 54, 63));
+        jt_direccion4.setForeground(new java.awt.Color(255, 255, 255));
+        jt_direccion4.setText("Direccion de archivo");
+        jt_direccion4.setBorder(null);
+
+        jButton16.setBackground(new java.awt.Color(51, 54, 63));
+        jButton16.setForeground(new java.awt.Color(255, 255, 255));
+        jButton16.setText("...");
+        jButton16.setBorderPainted(false);
+        jButton16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton16ActionPerformed(evt);
+            }
+        });
+
+        campoMST.setBackground(new java.awt.Color(51, 54, 63));
+        campoMST.setColumns(20);
+        campoMST.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
+        campoMST.setForeground(new java.awt.Color(255, 255, 255));
+        campoMST.setRows(5);
+        campoMST.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Árbol de Expansión Mínima", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 18), new java.awt.Color(255, 255, 255))); // NOI18N
+        jScrollPane8.setViewportView(campoMST);
+
+        jButton34.setBackground(new java.awt.Color(51, 54, 63));
+        jButton34.setForeground(new java.awt.Color(255, 255, 255));
+        jButton34.setText("Determinar");
+        jButton34.setBorder(null);
+        jButton34.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton34ActionPerformed(evt);
+            }
+        });
+
+        jButton35.setBackground(new java.awt.Color(51, 54, 63));
+        jButton35.setForeground(new java.awt.Color(255, 255, 255));
+        jButton35.setText("Mostrar Arbol");
+        jButton35.setBorder(null);
+        jButton35.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton35ActionPerformed(evt);
+            }
+        });
+
+        jButton36.setBackground(new java.awt.Color(51, 54, 63));
+        jButton36.setForeground(new java.awt.Color(255, 255, 255));
+        jButton36.setText("Mostrar Original");
+        jButton36.setBorder(null);
+        jButton36.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton36ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelArbolLayout = new javax.swing.GroupLayout(panelArbol);
         panelArbol.setLayout(panelArbolLayout);
         panelArbolLayout.setHorizontalGroup(
             panelArbolLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelArbolLayout.createSequentialGroup()
-                .addGap(288, 288, 288)
-                .addComponent(jLabel9)
-                .addContainerGap(473, Short.MAX_VALUE))
+                .addGroup(panelArbolLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelArbolLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel9))
+                    .addGroup(panelArbolLayout.createSequentialGroup()
+                        .addGap(180, 180, 180)
+                        .addComponent(jt_direccion4, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton16, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelArbolLayout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 749, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelArbolLayout.createSequentialGroup()
+                        .addGap(154, 154, 154)
+                        .addComponent(jButton34, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(65, 65, 65)
+                        .addComponent(jButton35, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(54, 54, 54)
+                        .addComponent(jButton36, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
         panelArbolLayout.setVerticalGroup(
             panelArbolLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelArbolLayout.createSequentialGroup()
-                .addGap(114, 114, 114)
+                .addContainerGap()
                 .addComponent(jLabel9)
-                .addContainerGap(671, Short.MAX_VALUE))
+                .addGap(50, 50, 50)
+                .addGroup(panelArbolLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jt_direccion4, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton16, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(43, 43, 43)
+                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(46, 46, 46)
+                .addGroup(panelArbolLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton34, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton35, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton36, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(218, Short.MAX_VALUE))
         );
 
         panelPrincipal.add(panelArbol, "panelArbol");
@@ -2193,6 +2283,56 @@ public class Main extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jButton15ActionPerformed
 
+    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
+        JFileChooser jf = new JFileChooser();
+        jf.setFileFilter(new FileNameExtensionFilter("Text files", "txt"));
+        int retorno = jf.showOpenDialog(this);
+        if (retorno == 0) {
+            String path = jf.getSelectedFile().getAbsolutePath();
+            String filename = jf.getSelectedFile().getName();
+            try {
+                primo = new Prim();
+                primo.readGraph(path);
+                primo.preparePrim();
+                jt_direccion4.setText(filename);
+                campoMST.setText("");
+                Viewer viewer = primo.showGraph();
+                viewer.setCloseFramePolicy(Viewer.CloseFramePolicy.HIDE_ONLY);
+            } catch (IOException ex) {
+                Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }//GEN-LAST:event_jButton16ActionPerformed
+
+    private void jButton34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton34ActionPerformed
+        if(primo.getGraph().getNodeCount()>0){
+            primo.startPrim();
+            campoMST.setText(primo.PrimToString());
+            Viewer pr = primo.showPrim();
+            pr.setCloseFramePolicy(Viewer.CloseFramePolicy.HIDE_ONLY);
+        }else{
+            JOptionPane.showMessageDialog(null, "Cargue un grafo primero", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_jButton34ActionPerformed
+
+    private void jButton35ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton35ActionPerformed
+        if(primo.getGraph().getNodeCount()>0 && primo.getCreado()){
+            Viewer pr = primo.showPrim();
+            pr.setCloseFramePolicy(Viewer.CloseFramePolicy.HIDE_ONLY);
+        }else{
+            JOptionPane.showMessageDialog(null, "Cargue un grafo primero y presione Determinar", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_jButton35ActionPerformed
+
+    private void jButton36ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton36ActionPerformed
+        if(primo.getGraph().getNodeCount()>0){
+            Viewer pr = primo.showGraph();
+            pr.setCloseFramePolicy(Viewer.CloseFramePolicy.HIDE_ONLY);
+        }else{
+            JOptionPane.showMessageDialog(null, "Cargue un grafo primero", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_jButton36ActionPerformed
+
     public static String readfile(String path) throws FileNotFoundException, IOException {
         String acum, line;
         BufferedReader br = new BufferedReader(new FileReader(path));
@@ -2309,6 +2449,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTextArea campoGrafo;
     private javax.swing.JTextArea campoGrafo1;
     private javax.swing.JTextArea campoGrafo2;
+    private javax.swing.JTextArea campoMST;
     private javax.swing.JTextField campoOrigen;
     private javax.swing.JTextField campoOrigen1;
     private javax.swing.JTextArea campoVecinos;
@@ -2321,6 +2462,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton15;
+    private javax.swing.JButton jButton16;
     private javax.swing.JButton jButton17;
     private javax.swing.JButton jButton18;
     private javax.swing.JButton jButton19;
@@ -2340,6 +2482,9 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton jButton31;
     private javax.swing.JButton jButton32;
     private javax.swing.JButton jButton33;
+    private javax.swing.JButton jButton34;
+    private javax.swing.JButton jButton35;
+    private javax.swing.JButton jButton36;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
@@ -2380,6 +2525,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JSpinner jSpinner1;
     private javax.swing.JSpinner jSpinner2;
     private javax.swing.JTextArea jTextArea1;
@@ -2389,6 +2535,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTextField jt_direccion1;
     private javax.swing.JTextField jt_direccion2;
     private javax.swing.JTextField jt_direccion3;
+    private javax.swing.JTextField jt_direccion4;
     public javax.swing.JPanel laberintopanel;
     private javax.swing.JTextField mdtf_nombre;
     private javax.swing.JDialog modEmployeeD;
@@ -2422,5 +2569,6 @@ public class Main extends javax.swing.JFrame {
     private Object root = null;
     private TreeNode rootAG = new TreeNode();
     private DefaultMutableTreeNode seleccionado = null;
+    private Prim primo = new Prim();
 //</editor-fold>
 }

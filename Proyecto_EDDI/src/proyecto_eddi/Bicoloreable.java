@@ -5,7 +5,6 @@
  */
 package proyecto_eddi;
 
-import org.graphstream.graph.Edge;
 import org.graphstream.graph.Node;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
