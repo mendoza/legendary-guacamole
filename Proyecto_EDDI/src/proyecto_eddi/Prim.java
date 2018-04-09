@@ -73,7 +73,7 @@ public class Prim extends Grafo {
         mst.addAttribute("ui.quality");
         mst.addAttribute("ui.antialias");
         mst.addAttribute("ui.stylesheet",
-                "edge { fill-color: grey;}");
+                "edge { fill-color: grey;}"+"node{size:32px; fill-mode: image-scaled; fill-image: url('electric-tower.png');}");
         for (Node node : mst) {
             node.setAttribute("ui.label", node.getId());
             node.addAttribute("ui.size", 10);
