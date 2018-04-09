@@ -500,7 +500,7 @@ public class Main extends javax.swing.JFrame {
 
         bt_arbol.setBackground(new java.awt.Color(51, 54, 63));
         bt_arbol.setForeground(new java.awt.Color(255, 255, 255));
-        bt_arbol.setText("Arbol");
+        bt_arbol.setText("Árbol de Expansión Mínima");
         bt_arbol.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         buttonGroup1.add(bt_arbol);
         bt_arbol.setFocusPainted(false);
@@ -634,7 +634,7 @@ public class Main extends javax.swing.JFrame {
                 .addComponent(jLabel15)
                 .addGap(65, 65, 65)
                 .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(210, Short.MAX_VALUE))
+                .addContainerGap(180, Short.MAX_VALUE))
             .addGroup(panelInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(panelInicioLayout.createSequentialGroup()
                     .addGap(70, 70, 70)
@@ -722,7 +722,7 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(panelLaberintoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelLaberintoLayout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addComponent(laberintopanel, javax.swing.GroupLayout.DEFAULT_SIZE, 743, Short.MAX_VALUE)
+                        .addComponent(laberintopanel, javax.swing.GroupLayout.DEFAULT_SIZE, 746, Short.MAX_VALUE)
                         .addContainerGap())
                     .addGroup(panelLaberintoLayout.createSequentialGroup()
                         .addGap(53, 53, 53)
@@ -1198,28 +1198,19 @@ public class Main extends javax.swing.JFrame {
             .addGroup(panelColoreableLayout.createSequentialGroup()
                 .addGap(54, 54, 54)
                 .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(panelColoreableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(89, 89, 89)
+                .addGroup(panelColoreableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jLabel17)
                     .addGroup(panelColoreableLayout.createSequentialGroup()
-                        .addGroup(panelColoreableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(panelColoreableLayout.createSequentialGroup()
-                                .addGap(119, 119, 119)
-                                .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(panelColoreableLayout.createSequentialGroup()
-                                .addGap(102, 102, 102)
-                                .addComponent(jButton11)))
-                        .addContainerGap(123, Short.MAX_VALUE))
+                        .addComponent(jLabel16)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(campoOrigen1, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(panelColoreableLayout.createSequentialGroup()
-                        .addGap(89, 89, 89)
-                        .addGroup(panelColoreableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel17)
-                            .addGroup(panelColoreableLayout.createSequentialGroup()
-                                .addComponent(jLabel16)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(campoOrigen1, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(panelColoreableLayout.createSequentialGroup()
-                                .addComponent(esColoreable, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(37, 37, 37)))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                        .addComponent(esColoreable, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(37, 37, 37))
+                    .addComponent(jButton11, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton12, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 127, Short.MAX_VALUE))
             .addGroup(panelColoreableLayout.createSequentialGroup()
                 .addGroup(panelColoreableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelColoreableLayout.createSequentialGroup()
@@ -1256,9 +1247,10 @@ public class Main extends javax.swing.JFrame {
                         .addComponent(esColoreable, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(40, 40, 40)
                         .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(56, 56, 56)
-                        .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(287, Short.MAX_VALUE))
+                        .addGap(45, 45, 45)
+                        .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(11, 11, 11)))
+                .addContainerGap(289, Short.MAX_VALUE))
         );
 
         panelPrincipal.add(panelColoreable, "panelColoreable");
@@ -1430,7 +1422,7 @@ public class Main extends javax.swing.JFrame {
 
         jButton36.setBackground(new java.awt.Color(51, 54, 63));
         jButton36.setForeground(new java.awt.Color(255, 255, 255));
-        jButton36.setText("Mostrar Original");
+        jButton36.setText("Mostrar Grafo");
         jButton36.setBorder(null);
         jButton36.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
