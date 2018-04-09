@@ -73,7 +73,7 @@ public class Prim extends Grafo {
         mst.addAttribute("ui.quality");
         mst.addAttribute("ui.antialias");
         mst.addAttribute("ui.stylesheet",
-                "edge { fill-color: grey;}");
+                "edge { fill-color: grey;}"+"node{size:32px; text-background-mode: plain; text-background-color: yellow; fill-mode: image-scaled; fill-image: url('./src/electric-tower.png');}");
         for (Node node : mst) {
             node.setAttribute("ui.label", node.getId());
             node.addAttribute("ui.size", 10);
@@ -99,6 +99,26 @@ public class Prim extends Grafo {
             retorno+= "Desde "+ o + " hasta " + d +" con costo "+ adyacente[i][indicePadres[i]]+"\n";                    
         }
         return retorno;
+    }
+    
+    @Override
+    public Viewer showGraph() {
+        if (graph.hasAttribute("ui.quality")) {
+            graph.clearAttributes();
+        }
+        graph.addAttribute("ui.quality");
+        graph.addAttribute("ui.antialias");
+        graph.addAttribute("ui.stylesheet",
+                "edge { fill-color: grey;}"+"node{size:32px; text-background-mode: plain; text-background-color: yellow; fill-mode: image-scaled; fill-image: url('./src/electric-tower.png');}");
+        for (Node node : graph) {
+            node.setAttribute("ui.label", node.getId());
+            node.addAttribute("ui.size", 10);
+        }
+        for (Edge edge : graph.getEachEdge()) {
+            edge.setAttribute("ui.label", edge.getNumber("Weight"));
+        }
+        return graph.display();
+
     }
     
 }

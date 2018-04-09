@@ -2073,6 +2073,8 @@ public class Main extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Ingrese un numero, no otro caracter", "Error", JOptionPane.ERROR_MESSAGE);
             }
 
+        }else{
+            JOptionPane.showMessageDialog(null, "Ingrese un nodo de inicio", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_jButton5ActionPerformed
 

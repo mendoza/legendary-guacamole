@@ -5,6 +5,10 @@
  */
 package proyecto_eddi;
 
+import org.graphstream.graph.Edge;
+import org.graphstream.graph.Node;
+import org.graphstream.ui.view.Viewer;
+
 /**
  *
  * @author josue
@@ -60,5 +64,25 @@ public class Floyd extends Grafo {
             }
             System.out.println();
         }
+    }
+    
+    @Override
+    public Viewer showGraph() {
+        if (graph.hasAttribute("ui.quality")) {
+            graph.clearAttributes();
+        }
+        graph.addAttribute("ui.quality");
+        graph.addAttribute("ui.antialias");
+        graph.addAttribute("ui.stylesheet",
+                "edge { fill-color: grey;}"+"node{size:32px; text-background-mode: plain; text-background-color: yellow; fill-mode: image-scaled; fill-image: url('./src/electric-tower.png');}");
+        for (Node node : graph) {
+            node.setAttribute("ui.label", node.getId());
+            node.addAttribute("ui.size", 10);
+        }
+        for (Edge edge : graph.getEachEdge()) {
+            edge.setAttribute("ui.label", edge.getNumber("Weight"));
+        }
+        return graph.display();
+
     }
 }
