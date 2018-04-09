@@ -5,6 +5,8 @@
  */
 package proyecto_eddi;
 
+import javax.swing.ProgressMonitor;
+
 /**
  *
  * @author david
@@ -130,9 +132,5 @@ public class Huffman {
             c += busca(mensaje.charAt(i), camino);
         }
         return c;
-    }
-
-    public void descomprimir() {
-
     }
 }

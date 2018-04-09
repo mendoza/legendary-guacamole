@@ -79,6 +79,9 @@ public class Main extends javax.swing.JFrame {
         jSpinner2 = new javax.swing.JSpinner();
         mdtf_nombre = new javax.swing.JTextField();
         jButton14 = new javax.swing.JButton();
+        jDialog1 = new javax.swing.JDialog();
+        jProgressBar1 = new javax.swing.JProgressBar();
+        jLabel18 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         bt_Laberinto = new javax.swing.JButton();
         bt_calculo = new javax.swing.JButton();
@@ -365,6 +368,31 @@ public class Main extends javax.swing.JFrame {
         modEmployeeDLayout.setVerticalGroup(
             modEmployeeDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+
+        jLabel18.setText("Por favor espere");
+
+        javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
+        jDialog1.getContentPane().setLayout(jDialog1Layout);
+        jDialog1Layout.setHorizontalGroup(
+            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDialog1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jProgressBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDialog1Layout.createSequentialGroup()
+                .addContainerGap(145, Short.MAX_VALUE)
+                .addComponent(jLabel18)
+                .addGap(143, 143, 143))
+        );
+        jDialog1Layout.setVerticalGroup(
+            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDialog1Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(jLabel18)
+                .addGap(18, 18, 18)
+                .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(34, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -694,7 +722,7 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(panelLaberintoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelLaberintoLayout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addComponent(laberintopanel, javax.swing.GroupLayout.DEFAULT_SIZE, 740, Short.MAX_VALUE)
+                        .addComponent(laberintopanel, javax.swing.GroupLayout.DEFAULT_SIZE, 743, Short.MAX_VALUE)
                         .addContainerGap())
                     .addGroup(panelLaberintoLayout.createSequentialGroup()
                         .addGap(53, 53, 53)
@@ -2491,6 +2519,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
+    private javax.swing.JDialog jDialog1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -2500,6 +2529,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
@@ -2518,6 +2548,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPopupMenu jPopupMenu1;
+    public javax.swing.JProgressBar jProgressBar1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
