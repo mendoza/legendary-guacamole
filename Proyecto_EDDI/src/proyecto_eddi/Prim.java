@@ -73,7 +73,7 @@ public class Prim extends Grafo {
         mst.addAttribute("ui.quality");
         mst.addAttribute("ui.antialias");
         mst.addAttribute("ui.stylesheet",
-                "edge { fill-color: grey;}"+"node{size:32px; text-background-mode: plain; text-background-color: yellow; fill-mode: image-scaled; fill-image: url('./src/electric-tower.png');}");
+                "edge { fill-color: grey;}"+"node{size:32px; text-background-mode: plain; text-background-color: yellow; fill-mode: image-scaled; fill-image: url('./Images/electric-tower.png');}");
         for (Node node : mst) {
             node.setAttribute("ui.label", node.getId());
             node.addAttribute("ui.size", 10);
@@ -109,7 +109,7 @@ public class Prim extends Grafo {
         graph.addAttribute("ui.quality");
         graph.addAttribute("ui.antialias");
         graph.addAttribute("ui.stylesheet",
-                "edge { fill-color: grey;}"+"node{size:32px; text-background-mode: plain; text-background-color: yellow; fill-mode: image-scaled; fill-image: url('./src/electric-tower.png');}");
+                "edge { fill-color: grey;}"+"node{size:32px; text-background-mode: plain; text-background-color: yellow; fill-mode: image-scaled; fill-image: url('./Images/electric-tower.png');}");
         for (Node node : graph) {
             node.setAttribute("ui.label", node.getId());
             node.addAttribute("ui.size", 10);
