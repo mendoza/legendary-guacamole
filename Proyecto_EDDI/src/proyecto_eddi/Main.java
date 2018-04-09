@@ -39,6 +39,7 @@ public class Main extends javax.swing.JFrame {
      */
     public Main() {
         initComponents();
+        System.setProperty("org.graphstream.ui.renderer", "org.graphstream.ui.j2dviewer.J2DGraphRenderer");
         this.setLocationRelativeTo(null);
         DefaultTreeCellRenderer renderer = (DefaultTreeCellRenderer) jTree1.getCellRenderer();
         Icon onlyIcon = new ImageIcon("./Images/man-user.png");
@@ -2325,30 +2326,30 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton16ActionPerformed
 
     private void jButton34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton34ActionPerformed
-        if(primo.getGraph().getNodeCount()>0){
+        if (primo.getGraph().getNodeCount() > 0) {
             primo.startPrim();
             campoMST.setText(primo.PrimToString());
             Viewer pr = primo.showPrim();
             pr.setCloseFramePolicy(Viewer.CloseFramePolicy.HIDE_ONLY);
-        }else{
+        } else {
             JOptionPane.showMessageDialog(null, "Cargue un grafo primero", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_jButton34ActionPerformed
 
     private void jButton35ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton35ActionPerformed
-        if(primo.getGraph().getNodeCount()>0 && primo.getCreado()){
+        if (primo.getGraph().getNodeCount() > 0 && primo.getCreado()) {
             Viewer pr = primo.showPrim();
             pr.setCloseFramePolicy(Viewer.CloseFramePolicy.HIDE_ONLY);
-        }else{
+        } else {
             JOptionPane.showMessageDialog(null, "Cargue un grafo primero y presione Determinar", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_jButton35ActionPerformed
 
     private void jButton36ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton36ActionPerformed
-        if(primo.getGraph().getNodeCount()>0){
+        if (primo.getGraph().getNodeCount() > 0) {
             Viewer pr = primo.showGraph();
             pr.setCloseFramePolicy(Viewer.CloseFramePolicy.HIDE_ONLY);
-        }else{
+        } else {
             JOptionPane.showMessageDialog(null, "Cargue un grafo primero", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_jButton36ActionPerformed
