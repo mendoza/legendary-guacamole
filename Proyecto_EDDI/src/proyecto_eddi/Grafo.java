@@ -141,7 +141,7 @@ public class Grafo {
         graph.addAttribute("ui.quality");
         graph.addAttribute("ui.antialias");
         graph.addAttribute("ui.stylesheet",
-                "edge { fill-color: grey;}"+"node{size:32px; fill-mode: image-scaled; fill-image: url('electric-tower.png');}");
+                "edge { fill-color: grey;}"+"node{size:32px; fill-mode: image-scaled; fill-image: url('https://raw.githubusercontent.com/Dmendoza99/legendary-guacamole/master/Proyecto_EDDI/Images/electric-tower.png');}");
         for (Node node : graph) {
             node.setAttribute("ui.label", node.getId());
             node.addAttribute("ui.size", 10);
