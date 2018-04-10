@@ -398,7 +398,7 @@ public class Main extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Proyecto EDD1");
-        setIconImage(new ImageIcon("Images/poop.png").getImage());
+        setIconImage(new ImageIcon("./Images/poop.png").getImage());
         setSize(new java.awt.Dimension(0, 0));
 
         jPanel2.setBackground(new java.awt.Color(51, 54, 63));
@@ -635,7 +635,7 @@ public class Main extends javax.swing.JFrame {
                 .addComponent(jLabel15)
                 .addGap(65, 65, 65)
                 .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(180, Short.MAX_VALUE))
+                .addContainerGap(209, Short.MAX_VALUE))
             .addGroup(panelInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(panelInicioLayout.createSequentialGroup()
                     .addGap(70, 70, 70)
@@ -723,7 +723,7 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(panelLaberintoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelLaberintoLayout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addComponent(laberintopanel, javax.swing.GroupLayout.DEFAULT_SIZE, 746, Short.MAX_VALUE)
+                        .addComponent(laberintopanel, javax.swing.GroupLayout.DEFAULT_SIZE, 743, Short.MAX_VALUE)
                         .addContainerGap())
                     .addGroup(panelLaberintoLayout.createSequentialGroup()
                         .addGap(53, 53, 53)
