@@ -18,7 +18,7 @@ public class Dijkstra extends Grafo{
 
     private final int infinito = (int) Double.POSITIVE_INFINITY;
     
-    public Dijkstra() {        
+    public Dijkstra() {
         
     }
 

@@ -71,7 +71,7 @@ public class TreeNode {
             for (int i = 0; i < this.children.length(); i++) {
                 this.children.get(i).CalificarNodo();
             }
-            this.getData().setCalificacion(this.CalificarHijos(0) / this.getChildren().length());
+            this.getData().setCalificacion(this.CalificarHijos(0));
         }
 
     }
@@ -86,7 +86,7 @@ public class TreeNode {
         } else {
             for (int i = 0; i < this.getChildren().length(); i++) {
                 num += this.getChildren().get(i).CalificarHijos(0);
-                this.getData().setCalificacion(num);
+                this.getData().setCalificacion(num/this.getChildren().length());
             }
         }
         return this.getData().getCalificacion();
