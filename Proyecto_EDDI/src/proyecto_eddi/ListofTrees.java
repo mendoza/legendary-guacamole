@@ -44,6 +44,7 @@ public class ListofTrees {
         }
     }
 
+    //ayuda a crear bosque con los chars indicados
     public void minormax(BinaryTree d) {
         NodeofTree nuevo = new NodeofTree(d);
         if (inicio == null) {

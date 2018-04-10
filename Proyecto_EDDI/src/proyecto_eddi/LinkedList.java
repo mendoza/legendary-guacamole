@@ -47,7 +47,7 @@ public class LinkedList {
             aux.setSiguiente(nuevo);
         }
     }
-
+    //crea las frecuencias
     public int removechar(char valor) {
         int contador = 0;
         if (inicio != null) {

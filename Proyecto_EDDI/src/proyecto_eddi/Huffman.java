@@ -5,8 +5,6 @@
  */
 package proyecto_eddi;
 
-import javax.swing.ProgressMonitor;
-
 /**
  *
  * @author david
@@ -31,6 +29,7 @@ public class Huffman {
         this.mensaje = mensaje;
     }
 
+    //crea lista con nodos con caracter sin frecuencia
     public LinkedList toNodes() {
         LinkedList l = new LinkedList();
         for (int i = 0; i < mensaje.length(); i++) {
@@ -39,12 +38,12 @@ public class Huffman {
         return l;
 
     }
-
+    //arma por completo el bosque
     public ListofTrees cuentaLetras(LinkedList l) {
         ListofTrees la = new ListofTrees();
         LinkedNode aux = l.getInicio();
         while (aux != null) {
-            Integer x = l.removechar(aux.getData());
+            int x = l.removechar(aux.getData());
             BinaryNode nuevo = new BinaryNode(aux.getData(), x);
             BinaryTree a = new BinaryTree(nuevo);
             la.minormax(a);
@@ -59,7 +58,7 @@ public class Huffman {
         c.setR(b.getData().getRoot());
         return c;
     }
-
+    //crea un solo nodo del bosque
     public ListofTrees juntaNodo(ListofTrees l) {
         NodeofTree temp = l.getInicio();
         NodeofTree temp2;
@@ -84,7 +83,7 @@ public class Huffman {
         }
         return cadena;
     }
-
+    //recursiva para crear caminos o binarios :v
     public void pathfinder(BinaryNode r, String c) {
         resultado += c;
         if (r != null) {
@@ -107,7 +106,7 @@ public class Huffman {
     public LinkedList getPaths() {
         return Listacamino;
     }
-
+    //busca el camino para cada letra
     public String busca(char s, LinkedList l) {
         String camino = "";
         LinkedNode aux = l.getInicio();
