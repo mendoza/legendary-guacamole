@@ -137,6 +137,8 @@ public class Main extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         jButton3 = new javax.swing.JButton();
+        campoCargando = new javax.swing.JTextField();
+        jLabel25 = new javax.swing.JLabel();
         panelColoreable = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jt_direccion3 = new javax.swing.JTextField();
@@ -398,7 +400,7 @@ public class Main extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Proyecto EDD1");
-        setIconImage(new ImageIcon("./Images/poop.png").getImage());
+        setIconImage(new ImageIcon("./src/Images/poop.png").getImage());
         setSize(new java.awt.Dimension(0, 0));
 
         jPanel2.setBackground(new java.awt.Color(51, 54, 63));
@@ -635,7 +637,7 @@ public class Main extends javax.swing.JFrame {
                 .addComponent(jLabel15)
                 .addGap(65, 65, 65)
                 .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(209, Short.MAX_VALUE))
+                .addContainerGap(210, Short.MAX_VALUE))
             .addGroup(panelInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(panelInicioLayout.createSequentialGroup()
                     .addGap(70, 70, 70)
@@ -723,7 +725,7 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(panelLaberintoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelLaberintoLayout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addComponent(laberintopanel, javax.swing.GroupLayout.DEFAULT_SIZE, 743, Short.MAX_VALUE)
+                        .addComponent(laberintopanel, javax.swing.GroupLayout.DEFAULT_SIZE, 740, Short.MAX_VALUE)
                         .addContainerGap())
                     .addGroup(panelLaberintoLayout.createSequentialGroup()
                         .addGap(53, 53, 53)
@@ -1084,16 +1086,30 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
+        campoCargando.setBackground(new java.awt.Color(51, 54, 63));
+        campoCargando.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
+        campoCargando.setForeground(new java.awt.Color(255, 255, 255));
+        campoCargando.setText("Esperando...");
+
+        jLabel25.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
+        jLabel25.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel25.setText("Estado:");
+
         javax.swing.GroupLayout panelCompresionLayout = new javax.swing.GroupLayout(panelCompresion);
         panelCompresion.setLayout(panelCompresionLayout);
         panelCompresionLayout.setHorizontalGroup(
             panelCompresionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelCompresionLayout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(panelCompresionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane1)
                     .addGroup(panelCompresionLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addContainerGap()
+                        .addComponent(jScrollPane1))
+                    .addGroup(panelCompresionLayout.createSequentialGroup()
+                        .addGap(103, 103, 103)
+                        .addComponent(jLabel25)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(campoCargando, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton3)))
                 .addGap(54, 54, 54))
             .addGroup(panelCompresionLayout.createSequentialGroup()
@@ -1120,8 +1136,12 @@ public class Main extends javax.swing.JFrame {
                 .addGap(31, 31, 31)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton3)
-                .addContainerGap(188, Short.MAX_VALUE))
+                .addGroup(panelCompresionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton3)
+                    .addGroup(panelCompresionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(campoCargando, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel25)))
+                .addContainerGap(179, Short.MAX_VALUE))
         );
 
         panelPrincipal.add(panelCompresion, "panelCompresion");
@@ -2024,6 +2044,7 @@ public class Main extends javax.swing.JFrame {
 
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
         JFileChooser jf = new JFileChooser();
+        campoCargando.setText("Cargando...");
         jf.setFileFilter(new FileNameExtensionFilter("Text files", "txt"));
         int retorno = jf.showOpenDialog(this);
         if (retorno == 0) {
@@ -2033,11 +2054,14 @@ public class Main extends javax.swing.JFrame {
                 jt_direccion.setText(f.getAbsolutePath());
                 jTextArea1.setText(texto);
                 Huffman hf = new Huffman(texto);
-                texto = hf.comprimir();
+                texto = hf.comprimir();                
                 comprimido = new Comprimido(texto, hf.getPaths());
             } catch (IOException ex) {
                 Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
             }
+            campoCargando.setText("Listo.");
+        }else{
+            campoCargando.setText("Esperando...");
         }
     }//GEN-LAST:event_jButton2MouseClicked
 
@@ -2468,6 +2492,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton bt_resolucion;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.JTextField campoCargando;
     private javax.swing.JTextField campoDistancia;
     private javax.swing.JTextArea campoGrafo;
     private javax.swing.JTextArea campoGrafo1;
@@ -2532,6 +2557,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
